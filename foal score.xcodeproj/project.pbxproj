@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */; };
+		BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */; };
+		BF06B9401C57065E00700A6F /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */; };
+		BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */; };
+		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
+		BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */; };
+		BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F9901C586E5A00DF6445 /* LoginViewController.m */; };
+		BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA5F9911C586E5A00DF6445 /* LoginViewController.xib */; };
+		BFEF05DA1C54006200EF60C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05D91C54006200EF60C5 /* main.m */; };
+		BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05DC1C54006200EF60C5 /* AppDelegate.m */; };
+		BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEF05DE1C54006300EF60C5 /* Assets.xcassets */; };
+		BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */; };
+		BFEF05ED1C54006300EF60C5 /* foal_scoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05EC1C54006300EF60C5 /* foal_scoreTests.m */; };
+		BFEF05F81C54006300EF60C5 /* foal_scoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFEF05E91C54006300EF60C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFEF05CD1C54006200EF60C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFEF05D41C54006200EF60C5;
+			remoteInfo = "foal score";
+		};
+		BFEF05F41C54006300EF60C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFEF05CD1C54006200EF60C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFEF05D41C54006200EF60C5;
+			remoteInfo = "foal score";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF06B9361C5705A100700A6F /* SurvivalScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalScoreViewController.h; sourceTree = "<group>"; };
+		BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalScoreViewController.m; sourceTree = "<group>"; };
+		BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurvivalScoreViewController.xib; sourceTree = "<group>"; };
+		BF06B93D1C57065E00700A6F /* SepsisScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SepsisScoreViewController.h; sourceTree = "<group>"; };
+		BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SepsisScoreViewController.m; sourceTree = "<group>"; };
+		BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SepsisScoreViewController.xib; sourceTree = "<group>"; };
+		BF06B9491C570E6800700A6F /* UserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
+		BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewController.m; sourceTree = "<group>"; };
+		BFA5F98B1C57DD9600DF6445 /* OverviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewTableViewController.h; sourceTree = "<group>"; };
+		BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewTableViewController.m; sourceTree = "<group>"; };
+		BFA5F98F1C586E5A00DF6445 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BFA5F9901C586E5A00DF6445 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BFA5F9911C586E5A00DF6445 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		BFEF05D51C54006200EF60C5 /* foal score.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foal score.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEF05D91C54006200EF60C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BFEF05DB1C54006200EF60C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BFEF05DC1C54006200EF60C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BFEF05DE1C54006300EF60C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFEF05E11C54006300EF60C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFEF05E31C54006300EF60C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEF05E81C54006300EF60C5 /* foal scoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foal scoreTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEF05EC1C54006300EF60C5 /* foal_scoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foal_scoreTests.m; sourceTree = "<group>"; };
+		BFEF05EE1C54006300EF60C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEF05F31C54006300EF60C5 /* foal scoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foal scoreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foal_scoreUITests.m; sourceTree = "<group>"; };
+		BFEF05F91C54006300EF60C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFEF05D21C54006200EF60C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEF05E51C54006300EF60C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEF05F01C54006300EF60C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF06B93C1C5705CE00700A6F /* SurvivalScoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF06B9361C5705A100700A6F /* SurvivalScoreViewController.h */,
+				BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */,
+				BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */,
+			);
+			name = SurvivalScoreViewController;
+			sourceTree = "<group>";
+		};
+		BF06B9421C57066300700A6F /* SpesisScoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF06B93D1C57065E00700A6F /* SepsisScoreViewController.h */,
+				BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */,
+				BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */,
+			);
+			name = SpesisScoreViewController;
+			sourceTree = "<group>";
+		};
+		BF06B9481C5706B300700A6F /* InfoPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF06B9491C570E6800700A6F /* UserInfoTableViewController.h */,
+				BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */,
+			);
+			name = InfoPageViewController;
+			sourceTree = "<group>";
+		};
+		BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFA5F98B1C57DD9600DF6445 /* OverviewTableViewController.h */,
+				BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */,
+			);
+			name = OverviewTableViewController;
+			sourceTree = "<group>";
+		};
+		BFA5F9941C586E5F00DF6445 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFA5F98F1C586E5A00DF6445 /* LoginViewController.h */,
+				BFA5F9901C586E5A00DF6445 /* LoginViewController.m */,
+				BFA5F9911C586E5A00DF6445 /* LoginViewController.xib */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		BFEF05CC1C54006200EF60C5 = {
+			isa = PBXGroup;
+			children = (
+				BFEF05D71C54006200EF60C5 /* foal score */,
+				BFEF05EB1C54006300EF60C5 /* foal scoreTests */,
+				BFEF05F61C54006300EF60C5 /* foal scoreUITests */,
+				BFEF05D61C54006200EF60C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFEF05D61C54006200EF60C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF05D51C54006200EF60C5 /* foal score.app */,
+				BFEF05E81C54006300EF60C5 /* foal scoreTests.xctest */,
+				BFEF05F31C54006300EF60C5 /* foal scoreUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFEF05D71C54006200EF60C5 /* foal score */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF05DB1C54006200EF60C5 /* AppDelegate.h */,
+				BFEF05DC1C54006200EF60C5 /* AppDelegate.m */,
+				BFEF05DE1C54006300EF60C5 /* Assets.xcassets */,
+				BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */,
+				BFEF05E31C54006300EF60C5 /* Info.plist */,
+				BFEF05D81C54006200EF60C5 /* Supporting Files */,
+				BF06B93C1C5705CE00700A6F /* SurvivalScoreViewController */,
+				BF06B9421C57066300700A6F /* SpesisScoreViewController */,
+				BF06B9481C5706B300700A6F /* InfoPageViewController */,
+				BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */,
+				BFA5F9941C586E5F00DF6445 /* LoginViewController */,
+			);
+			path = "foal score";
+			sourceTree = "<group>";
+		};
+		BFEF05D81C54006200EF60C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF05D91C54006200EF60C5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFEF05EB1C54006300EF60C5 /* foal scoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF05EC1C54006300EF60C5 /* foal_scoreTests.m */,
+				BFEF05EE1C54006300EF60C5 /* Info.plist */,
+			);
+			path = "foal scoreTests";
+			sourceTree = "<group>";
+		};
+		BFEF05F61C54006300EF60C5 /* foal scoreUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */,
+				BFEF05F91C54006300EF60C5 /* Info.plist */,
+			);
+			path = "foal scoreUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFEF05D41C54006200EF60C5 /* foal score */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEF05FC1C54006300EF60C5 /* Build configuration list for PBXNativeTarget "foal score" */;
+			buildPhases = (
+				BFEF05D11C54006200EF60C5 /* Sources */,
+				BFEF05D21C54006200EF60C5 /* Frameworks */,
+				BFEF05D31C54006200EF60C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "foal score";
+			productName = "foal score";
+			productReference = BFEF05D51C54006200EF60C5 /* foal score.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFEF05E71C54006300EF60C5 /* foal scoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEF05FF1C54006300EF60C5 /* Build configuration list for PBXNativeTarget "foal scoreTests" */;
+			buildPhases = (
+				BFEF05E41C54006300EF60C5 /* Sources */,
+				BFEF05E51C54006300EF60C5 /* Frameworks */,
+				BFEF05E61C54006300EF60C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFEF05EA1C54006300EF60C5 /* PBXTargetDependency */,
+			);
+			name = "foal scoreTests";
+			productName = "foal scoreTests";
+			productReference = BFEF05E81C54006300EF60C5 /* foal scoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFEF05F21C54006300EF60C5 /* foal scoreUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEF06021C54006300EF60C5 /* Build configuration list for PBXNativeTarget "foal scoreUITests" */;
+			buildPhases = (
+				BFEF05EF1C54006300EF60C5 /* Sources */,
+				BFEF05F01C54006300EF60C5 /* Frameworks */,
+				BFEF05F11C54006300EF60C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFEF05F51C54006300EF60C5 /* PBXTargetDependency */,
+			);
+			name = "foal scoreUITests";
+			productName = "foal scoreUITests";
+			productReference = BFEF05F31C54006300EF60C5 /* foal scoreUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFEF05CD1C54006200EF60C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = osu.edu;
+				TargetAttributes = {
+					BFEF05D41C54006200EF60C5 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					BFEF05E71C54006300EF60C5 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = BFEF05D41C54006200EF60C5;
+					};
+					BFEF05F21C54006300EF60C5 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = BFEF05D41C54006200EF60C5;
+					};
+				};
+			};
+			buildConfigurationList = BFEF05D01C54006200EF60C5 /* Build configuration list for PBXProject "foal score" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFEF05CC1C54006200EF60C5;
+			productRefGroup = BFEF05D61C54006200EF60C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFEF05D41C54006200EF60C5 /* foal score */,
+				BFEF05E71C54006300EF60C5 /* foal scoreTests */,
+				BFEF05F21C54006300EF60C5 /* foal scoreUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFEF05D31C54006200EF60C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */,
+				BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */,
+				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
+				BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */,
+				BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEF05E61C54006300EF60C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEF05F11C54006300EF60C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFEF05D11C54006200EF60C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF06B9401C57065E00700A6F /* SepsisScoreViewController.m in Sources */,
+				BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */,
+				BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */,
+				BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */,
+				BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */,
+				BFEF05DA1C54006200EF60C5 /* main.m in Sources */,
+				BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEF05E41C54006300EF60C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEF05ED1C54006300EF60C5 /* foal_scoreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEF05EF1C54006300EF60C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEF05F81C54006300EF60C5 /* foal_scoreUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFEF05EA1C54006300EF60C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFEF05D41C54006200EF60C5 /* foal score */;
+			targetProxy = BFEF05E91C54006300EF60C5 /* PBXContainerItemProxy */;
+		};
+		BFEF05F51C54006300EF60C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFEF05D41C54006200EF60C5 /* foal score */;
+			targetProxy = BFEF05F41C54006300EF60C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFEF05E11C54006300EF60C5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFEF05FA1C54006300EF60C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFEF05FB1C54006300EF60C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFEF05FD1C54006300EF60C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "foal score/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-score";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BFEF05FE1C54006300EF60C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "foal score/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-score";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BFEF06001C54006300EF60C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "foal scoreTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-scoreTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foal score.app/foal score";
+			};
+			name = Debug;
+		};
+		BFEF06011C54006300EF60C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "foal scoreTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-scoreTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foal score.app/foal score";
+			};
+			name = Release;
+		};
+		BFEF06031C54006300EF60C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "foal scoreUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-scoreUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "foal score";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BFEF06041C54006300EF60C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "foal scoreUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-scoreUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "foal score";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFEF05D01C54006200EF60C5 /* Build configuration list for PBXProject "foal score" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEF05FA1C54006300EF60C5 /* Debug */,
+				BFEF05FB1C54006300EF60C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEF05FC1C54006300EF60C5 /* Build configuration list for PBXNativeTarget "foal score" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEF05FD1C54006300EF60C5 /* Debug */,
+				BFEF05FE1C54006300EF60C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEF05FF1C54006300EF60C5 /* Build configuration list for PBXNativeTarget "foal scoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEF06001C54006300EF60C5 /* Debug */,
+				BFEF06011C54006300EF60C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEF06021C54006300EF60C5 /* Build configuration list for PBXNativeTarget "foal scoreUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEF06031C54006300EF60C5 /* Debug */,
+				BFEF06041C54006300EF60C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFEF05CD1C54006200EF60C5 /* Project object */;
+}
