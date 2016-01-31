@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *choices;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) DataManager *dataManager;
 
 @end
 
@@ -93,13 +94,15 @@
         // login/user profile
         case 0:{
             NSLog(@"User info/Login");
-            //TODO: Need add condition to determine whether user has already logged in
-            if (YES) {
+            UserInfoModel* userInfo1 = [DataManager userInfo];
+            if ([userInfo1.userName isEqual: @""] || [userInfo1.password isEqual: @""] || userInfo1.userName == nil || userInfo1.password == nil){
                 LoginViewController *log = [[LoginViewController alloc]init];
                 [self presentViewController:log animated:YES completion:nil];
-                
             }else{
-                //TO DO
+                //test
+                UserInfoModel* userInfo = [DataManager userInfo];
+                NSLog(userInfo.userName);
+                NSLog(userInfo.password);
                 
             }
             break;
@@ -129,5 +132,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
 }
+
+
 
 @end

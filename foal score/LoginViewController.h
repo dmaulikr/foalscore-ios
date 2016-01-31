@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UserInfoModel.h"
+#import "DataManager.h"
 @interface LoginViewController : UIViewController
 
 @end

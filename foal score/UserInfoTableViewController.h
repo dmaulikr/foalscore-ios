@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "OverviewTableViewController.h"
 #import "LoginViewController.h"
+#import "DataManager.h"
+#import "UserInfoModel.h"
 @interface UserInfoTableViewController: UIViewController
 @end

@@ -12,6 +12,8 @@
 		BF06B9401C57065E00700A6F /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */; };
 		BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */; };
 		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
+		BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186F71C5B09CD00605426 /* UserInfoModel.m */; };
+		BF7187001C5D802700605426 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186FF1C5D802700605426 /* DataManager.m */; };
 		BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */; };
 		BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F9901C586E5A00DF6445 /* LoginViewController.m */; };
 		BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA5F9911C586E5A00DF6445 /* LoginViewController.xib */; };
@@ -49,6 +51,10 @@
 		BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SepsisScoreViewController.xib; sourceTree = "<group>"; };
 		BF06B9491C570E6800700A6F /* UserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
 		BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewController.m; sourceTree = "<group>"; };
+		BF7186F61C5B09CD00605426 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoModel.h; path = ../UserInfoModel.h; sourceTree = "<group>"; };
+		BF7186F71C5B09CD00605426 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = ../UserInfoModel.m; sourceTree = "<group>"; };
+		BF7186FE1C5D802700605426 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		BF7186FF1C5D802700605426 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		BFA5F98B1C57DD9600DF6445 /* OverviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewTableViewController.h; sourceTree = "<group>"; };
 		BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewTableViewController.m; sourceTree = "<group>"; };
 		BFA5F98F1C586E5A00DF6445 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -123,6 +129,24 @@
 			name = InfoPageViewController;
 			sourceTree = "<group>";
 		};
+		BF7186F91C5B0A0200605426 /* UserInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF7186F61C5B09CD00605426 /* UserInfoModel.h */,
+				BF7186F71C5B09CD00605426 /* UserInfoModel.m */,
+			);
+			name = UserInfoModel;
+			sourceTree = "<group>";
+		};
+		BF7187011C5D802D00605426 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				BF7186FE1C5D802700605426 /* DataManager.h */,
+				BF7186FF1C5D802700605426 /* DataManager.m */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
 		BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +189,7 @@
 		BFEF05D71C54006200EF60C5 /* foal score */ = {
 			isa = PBXGroup;
 			children = (
+				BF7186F91C5B0A0200605426 /* UserInfoModel */,
 				BFEF05DB1C54006200EF60C5 /* AppDelegate.h */,
 				BFEF05DC1C54006200EF60C5 /* AppDelegate.m */,
 				BFEF05DE1C54006300EF60C5 /* Assets.xcassets */,
@@ -176,6 +201,7 @@
 				BF06B9481C5706B300700A6F /* InfoPageViewController */,
 				BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */,
 				BFA5F9941C586E5F00DF6445 /* LoginViewController */,
+				BF7187011C5D802D00605426 /* DataManager */,
 			);
 			path = "foal score";
 			sourceTree = "<group>";
@@ -344,6 +370,8 @@
 				BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */,
 				BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */,
 				BFEF05DA1C54006200EF60C5 /* main.m in Sources */,
+				BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */,
+				BF7187001C5D802700605426 /* DataManager.m in Sources */,
 				BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

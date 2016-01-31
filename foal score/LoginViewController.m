@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (nonatomic, copy) UserInfoModel* userInfo;
 
 @end
 
@@ -24,6 +25,16 @@
     self.doneButton.enabled = NO;
     [self.userNameTextField addTarget:self action:@selector(textFieldDidChange_UserName) forControlEvents:UIControlEventEditingDidEnd];
     [self.passwordTextField addTarget:self action:@selector(textFieldDidChange_Password) forControlEvents:UIControlEventEditingDidEnd];
+    // Listen for keyboard appearances and disappearances
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,17 +49,54 @@
 - (IBAction)doneButtonPress:(id)sender {
     NSString *userName = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
-    NSLog(userName);
-    NSLog(password);
+    UserInfoModel* userInfo = [DataManager userInfo];
+    [userInfo modifyUserName:userName AndPassword:password];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)textFieldDidChange_UserName{
-    NSLog(@"a");
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""]) {
+        self.doneButton.enabled = YES;
+    }else{
+        self.doneButton.enabled = NO;
+    }
 }
 
 - (void)textFieldDidChange_Password{
-    NSLog(@"b");
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""]) {
+        self.doneButton.enabled = YES;
+    }else{
+        self.doneButton.enabled = NO;
+    }
+
 }
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];// this will do the trick
+}
+
+- (void)keyboardDidShow: (NSNotification *) notif{
+    CGFloat screenHeight =[[UIScreen mainScreen]bounds].size.height;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    self.view.frame = CGRectMake(self.view.frame.origin.x, (self.view.frame.origin.y - 0.25 * screenHeight), self.view.frame.size.width, self.view.frame.size.height);
+    [UIView commitAnimations];
+}
+
+- (void)keyboardDidHide: (NSNotification *) notif{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [UIView commitAnimations];
+
+}
+
 /*
 #pragma mark - Navigation
 

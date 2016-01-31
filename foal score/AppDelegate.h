@@ -10,6 +10,7 @@
 #import "SurvivalScoreViewController.h"
 #import "SepsisScoreViewController.h"
 #import "UserInfoTableViewController.h"
+#import "DataManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
