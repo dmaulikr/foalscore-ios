@@ -11,5 +11,6 @@
 #import "LoginViewController.h"
 #import "DataManager.h"
 #import "UserInfoModel.h"
+#import "UserInfoViewController.h"
 @interface UserInfoTableViewController: UIViewController
 @end

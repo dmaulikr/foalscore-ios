@@ -14,6 +14,8 @@
 		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
 		BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186F71C5B09CD00605426 /* UserInfoModel.m */; };
 		BF7187001C5D802700605426 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186FF1C5D802700605426 /* DataManager.m */; };
+		BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7187031C5E945E00605426 /* UserInfoViewController.m */; };
+		BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7187041C5E945E00605426 /* UserInfoViewController.xib */; };
 		BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */; };
 		BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F9901C586E5A00DF6445 /* LoginViewController.m */; };
 		BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA5F9911C586E5A00DF6445 /* LoginViewController.xib */; };
@@ -55,6 +57,9 @@
 		BF7186F71C5B09CD00605426 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = ../UserInfoModel.m; sourceTree = "<group>"; };
 		BF7186FE1C5D802700605426 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		BF7186FF1C5D802700605426 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		BF7187021C5E945E00605426 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		BF7187031C5E945E00605426 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		BF7187041C5E945E00605426 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		BFA5F98B1C57DD9600DF6445 /* OverviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewTableViewController.h; sourceTree = "<group>"; };
 		BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewTableViewController.m; sourceTree = "<group>"; };
 		BFA5F98F1C586E5A00DF6445 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -147,6 +152,16 @@
 			name = DataManager;
 			sourceTree = "<group>";
 		};
+		BF7187071C5E946300605426 /* UserInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF7187021C5E945E00605426 /* UserInfoViewController.h */,
+				BF7187031C5E945E00605426 /* UserInfoViewController.m */,
+				BF7187041C5E945E00605426 /* UserInfoViewController.xib */,
+			);
+			name = UserInfoViewController;
+			sourceTree = "<group>";
+		};
 		BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +217,7 @@
 				BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */,
 				BFA5F9941C586E5F00DF6445 /* LoginViewController */,
 				BF7187011C5D802D00605426 /* DataManager */,
+				BF7187071C5E946300605426 /* UserInfoViewController */,
 			);
 			path = "foal score";
 			sourceTree = "<group>";
@@ -338,6 +354,7 @@
 				BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */,
 				BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */,
 				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
+				BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */,
 				BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */,
 				BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */,
 			);
@@ -369,6 +386,7 @@
 				BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */,
 				BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */,
 				BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */,
+				BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */,
 				BFEF05DA1C54006200EF60C5 /* main.m in Sources */,
 				BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */,
 				BF7187001C5D802700605426 /* DataManager.m in Sources */,

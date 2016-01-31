@@ -16,17 +16,19 @@
 
 @implementation UserInfoModel
 
--(instancetype)initWithUserName:(NSString *)name AndPassword:(NSString *)password{
+-(instancetype)initWithUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email{
     if(self = [super init]){
         self.userName = name;
         self.password = password;
+        self.email = email;
     }
     return self;
 }
 
--(void)modifyUserName:(NSString *)name AndPassword:(NSString *)password{
+-(void)modifyUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email{
     self.userName = name;
     self.password = password;
+    self.email = email;
 }
 
 @end

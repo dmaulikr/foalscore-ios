@@ -99,11 +99,8 @@
                 LoginViewController *log = [[LoginViewController alloc]init];
                 [self presentViewController:log animated:YES completion:nil];
             }else{
-                //test
-                UserInfoModel* userInfo = [DataManager userInfo];
-                NSLog(userInfo.userName);
-                NSLog(userInfo.password);
-                
+                UserInfoViewController* userViewController = [[UserInfoViewController alloc]init];
+                [self.navigationController pushViewController:userViewController animated:YES];
             }
             break;
         }
