@@ -106,7 +106,8 @@
         }
         // my foals
         case 1:{
-            NSLog(@"ok");
+            MyFoalViewController* myFoalVc = [[MyFoalViewController alloc]init];
+            [[self navigationController]pushViewController:myFoalVc animated:YES];
             break;
         }
         // overview

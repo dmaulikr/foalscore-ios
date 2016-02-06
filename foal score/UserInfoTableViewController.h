@@ -12,5 +12,6 @@
 #import "DataManager.h"
 #import "UserInfoModel.h"
 #import "UserInfoViewController.h"
+#import "MyFoalViewController.h"
 @interface UserInfoTableViewController: UIViewController
 @end

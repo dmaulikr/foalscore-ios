@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "UserInfoModel.h"
+#import "FoalInfoModel.h"
 @interface DataManager : NSObject
 
 @property (nonatomic, strong) UserInfoModel* userInfo;
-+(UserInfoModel *)userInfo;
++ (UserInfoModel *)userInfo;
++ (NSMutableArray *)foals;
 @end
