@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sexSeg;
 @property (weak, nonatomic) IBOutlet UISwitch *dystociaSwich;
 @property (weak, nonatomic) IBOutlet UISwitch *survivedSwich;
+@property (weak, nonatomic) IBOutlet UILabel *date;
 
 
 @end
@@ -40,6 +41,9 @@
     self.tempLable.text = [@(foalNeedToShow.temperature) stringValue];
     self.rRateLable.text = [@(foalNeedToShow.respiratoryRate) stringValue];
     self.hRateLable.text = [@(foalNeedToShow.heartRate) stringValue];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd yyyy"];
+    self.date.text = [formatter stringFromDate: foalNeedToShow.addDate];
     if([foalNeedToShow.sex isEqual: @"Colt"]){
         self.sexSeg.selectedSegmentIndex = 0;
         [self.sexSeg sendActionsForControlEvents:UIControlEventValueChanged];
