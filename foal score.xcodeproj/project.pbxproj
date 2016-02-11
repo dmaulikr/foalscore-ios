@@ -12,6 +12,10 @@
 		BF06B9401C57065E00700A6F /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */; };
 		BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */; };
 		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
+		BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3650C01C6BAECB00E09DC3 /* OneFoalInfoViewController.m */; };
+		BF3650C31C6BAECB00E09DC3 /* OneFoalInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3650C11C6BAECB00E09DC3 /* OneFoalInfoViewController.xib */; };
+		BF3E6DB81C6AE64E00C07BED /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */; };
+		BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */; };
 		BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186F71C5B09CD00605426 /* UserInfoModel.m */; };
 		BF7187001C5D802700605426 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186FF1C5D802700605426 /* DataManager.m */; };
 		BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7187031C5E945E00605426 /* UserInfoViewController.m */; };
@@ -57,6 +61,13 @@
 		BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SepsisScoreViewController.xib; sourceTree = "<group>"; };
 		BF06B9491C570E6800700A6F /* UserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
 		BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewController.m; sourceTree = "<group>"; };
+		BF3650BF1C6BAECB00E09DC3 /* OneFoalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneFoalInfoViewController.h; sourceTree = "<group>"; };
+		BF3650C01C6BAECB00E09DC3 /* OneFoalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneFoalInfoViewController.m; sourceTree = "<group>"; };
+		BF3650C11C6BAECB00E09DC3 /* OneFoalInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneFoalInfoViewController.xib; sourceTree = "<group>"; };
+		BF3E6DB41C6AE64E00C07BED /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = "foal score/MGSwipeButton.h"; sourceTree = "<group>"; };
+		BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = "foal score/MGSwipeButton.m"; sourceTree = "<group>"; };
+		BF3E6DB61C6AE64E00C07BED /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = "foal score/MGSwipeTableCell.h"; sourceTree = "<group>"; };
+		BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = "foal score/MGSwipeTableCell.m"; sourceTree = "<group>"; };
 		BF7186F61C5B09CD00605426 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoModel.h; path = ../UserInfoModel.h; sourceTree = "<group>"; };
 		BF7186F71C5B09CD00605426 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = ../UserInfoModel.m; sourceTree = "<group>"; };
 		BF7186FE1C5D802700605426 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -143,6 +154,28 @@
 				BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */,
 			);
 			name = InfoPageViewController;
+			sourceTree = "<group>";
+		};
+		BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF3650BF1C6BAECB00E09DC3 /* OneFoalInfoViewController.h */,
+				BF3650C01C6BAECB00E09DC3 /* OneFoalInfoViewController.m */,
+				BF3650C11C6BAECB00E09DC3 /* OneFoalInfoViewController.xib */,
+			);
+			name = OneFoalInfoViewController;
+			sourceTree = "<group>";
+		};
+		BF3E6DBA1C6AE66400C07BED /* MGS */ = {
+			isa = PBXGroup;
+			children = (
+				BF3E6DB41C6AE64E00C07BED /* MGSwipeButton.h */,
+				BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */,
+				BF3E6DB61C6AE64E00C07BED /* MGSwipeTableCell.h */,
+				BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */,
+			);
+			name = MGS;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BF7186F91C5B0A0200605426 /* UserInfoModel */ = {
@@ -243,6 +276,7 @@
 		BFEF05D71C54006200EF60C5 /* foal score */ = {
 			isa = PBXGroup;
 			children = (
+				BF3E6DBA1C6AE66400C07BED /* MGS */,
 				BFEF05D81C54006200EF60C5 /* Supporting Files */,
 				BFAF13EC1C62E45600126A5B /* FoalInfoModel */,
 				BF7186F91C5B0A0200605426 /* UserInfoModel */,
@@ -260,6 +294,7 @@
 				BF7187071C5E946300605426 /* UserInfoViewController */,
 				BFAF13E81C62E13F00126A5B /* MyFoalViewController */,
 				BFD1B81A1C63FF4D0023C8C6 /* AddNewFoalViewController */,
+				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
 			);
 			path = "foal score";
 			sourceTree = "<group>";
@@ -398,6 +433,7 @@
 				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
 				BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */,
 				BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */,
+				BF3650C31C6BAECB00E09DC3 /* OneFoalInfoViewController.xib in Resources */,
 				BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */,
 				BFD1B8191C63FF460023C8C6 /* AddNewFoalViewController.xib in Resources */,
 			);
@@ -428,8 +464,11 @@
 				BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */,
 				BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */,
 				BFAF13E71C62E13100126A5B /* MyFoalViewController.m in Sources */,
+				BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */,
+				BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */,
 				BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */,
 				BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */,
+				BF3E6DB81C6AE64E00C07BED /* MGSwipeButton.m in Sources */,
 				BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */,
 				BFEF05DA1C54006200EF60C5 /* main.m in Sources */,
 				BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */,

@@ -255,6 +255,9 @@
                     <state key="normal" title="Save">
                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <state key="disabled">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="pressSaveButton:" destination="-1" eventType="touchUpInside" id="6xB-4x-657"/>
                     </connections>

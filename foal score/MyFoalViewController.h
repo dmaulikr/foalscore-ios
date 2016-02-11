@@ -10,6 +10,8 @@
 #import "FoalInfoModel.h"
 #import "DataManager.h"
 #import "AddNewFoalViewController.h"
+#import "MGSwipeTableCell.h"
+#import "OneFoalInfoViewController.h"
 
 @interface MyFoalViewController : UIViewController
 

@@ -31,6 +31,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    NSLog(@"HIHI");	
     [super viewWillAppear:YES];
     [self.tableView reloadData];
 }
@@ -83,10 +84,10 @@
     // Configure the cell...
     
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[MGSwipeTableCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     // modify cell content
     FoalInfoModel *foal = [self.foals objectAtIndex:indexPath.row];
@@ -95,24 +96,30 @@
     [formatter setDateFormat:@"MM-dd yyyy"];
     NSString *date_string = [formatter stringFromDate:foal.addDate];
     cell.detailTextLabel.text = date_string;
+    //configure right buttons
+    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell *sender) {
+        NSLog(@"Convenience callback for delete buttons!");
+        NSMutableArray* foals = [DataManager foals];
+        [foals removeObjectAtIndex:indexPath.row];
+        [tableView reloadData];
+        return YES;
+    }], [MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:[UIColor blueColor] callback:^BOOL(MGSwipeTableCell *sender) {
+        NSLog(@"Convenience callback for edit buttons!");
+        AddNewFoalViewController* addNewFoalVC = [[AddNewFoalViewController alloc]initWithAnIndexOfFoalThatNeedToModify:indexPath.row ModifyOrNot:YES];
+        [self.navigationController pushViewController:addNewFoalVC animated:YES];
+        return YES;
+    }]];
+    cell.rightSwipeSettings.transition = MGSwipeTransition3D;
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    AddNewFoalViewController* addNewFoalVC = [[AddNewFoalViewController alloc]initWithAnIndexOfFoalThatNeedToModify:indexPath.row ModifyOrNot:YES];
-    [self.navigationController pushViewController:addNewFoalVC animated:YES];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSMutableArray* foals = [DataManager foals];
-        [foals removeObjectAtIndex:indexPath.row];
-        [tableView reloadData];
-    }
+//    AddNewFoalViewController* addNewFoalVC = [[AddNewFoalViewController alloc]initWithAnIndexOfFoalThatNeedToModify:indexPath.row ModifyOrNot:YES];
+//    [self.navigationController pushViewController:addNewFoalVC animated:YES];
+    OneFoalInfoViewController* ofvc = [[OneFoalInfoViewController alloc]init];
+    ofvc.indexOfFoal =indexPath.row;
+    [self.navigationController pushViewController:ofvc animated:YES];			
 }
 
 /*
