@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FoalSurvivalScore.h"
+#import "ShowScoreViewController.h"
 @interface SurvivalScoreViewController : UIViewController
 
 @end

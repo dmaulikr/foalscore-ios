@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *dystociaSwich;
 @property (weak, nonatomic) IBOutlet UISwitch *survivedSwich;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *survivalScoreLabel;
 
 
 @end
@@ -65,7 +66,11 @@
     self.sexSeg.enabled = NO;
     self.survivedSwich.enabled = NO;
     self.dystociaSwich.enabled = NO;
-
+    
+    if(foalNeedToShow.survivalScore != -1){
+        NSString* stringNeedToShow = [NSString stringWithFormat:@"Survival Score is %d", foalNeedToShow.survivalScore];
+        self.survivalScoreLabel.text = stringNeedToShow;
+    }
     
 }
 - (IBAction)pressOKButton:(id)sender {

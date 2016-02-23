@@ -16,6 +16,7 @@
                 <outlet property="rRateLable" destination="Gv4-Pf-g6w" id="pba-eW-VM2"/>
                 <outlet property="scrollView" destination="9hO-K1-xae" id="NPH-xz-7Ni"/>
                 <outlet property="sexSeg" destination="AW7-cY-Iog" id="D6K-lh-X32"/>
+                <outlet property="survivalScoreLabel" destination="vpG-yu-9O8" id="Dvq-HD-Mep"/>
                 <outlet property="survivedSwich" destination="IWQ-TB-xvB" id="Nti-Am-Vxg"/>
                 <outlet property="tempLable" destination="tUR-i2-uTq" id="Ux1-bQ-Vzn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -105,12 +106,6 @@
                         <segment title="Filly"/>
                     </segments>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Survival Score Not Avaliable" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-yu-9O8">
-                    <rect key="frame" x="13" y="499" width="272" height="138"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba3-cx-Unj">
                     <rect key="frame" x="172" y="147" width="115" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -161,6 +156,12 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-f1-beq">
                     <rect key="frame" x="172" y="65" width="115" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Survival Score Not Avaliable" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-yu-9O8">
+                    <rect key="frame" x="13" y="499" width="272" height="138"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>

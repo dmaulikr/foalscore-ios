@@ -20,9 +20,11 @@
 @property (nonatomic, assign) BOOL dystocia;
 @property (nonatomic, assign) BOOL survivalUntilDischarge;
 @property (nonatomic, retain) NSDate* addDate;
+@property (nonatomic, assign) NSInteger survivalScore;
 
 - (instancetype) initWithName:(NSString *)name Age:(NSInteger)age Breed:(NSString *)breed Temperature:(NSInteger)temperature RespiratoryRate:(NSInteger)respiratoryRate HeartRate:(NSInteger)heartRate Sex:(NSString *)sex Dystocia:(BOOL)dystocia SurvivalUntilDischarge:(BOOL)survival Date:(NSDate *)date;
 
 - (void) modifyWithName:(NSString *)name Age:(NSInteger)age Breed:(NSString *)breed Temperature:(NSInteger)temperature RespiratoryRate:(NSInteger)respiratoryRate HeartRate:(NSInteger)heartRate Sex:(NSString *)sex Dystocia:(BOOL)dystocia SurvivalUntilDischarge:(BOOL)survival Date:(NSDate *)date;
 
+- (void) attachSurvivalScore:(NSInteger)survivalScore;
 @end

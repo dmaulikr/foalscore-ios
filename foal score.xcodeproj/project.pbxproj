@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */; };
 		BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */; };
-		BF06B9401C57065E00700A6F /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */; };
-		BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */; };
 		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
 		BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3650C01C6BAECB00E09DC3 /* OneFoalInfoViewController.m */; };
 		BF3650C31C6BAECB00E09DC3 /* OneFoalInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3650C11C6BAECB00E09DC3 /* OneFoalInfoViewController.xib */; };
 		BF3E6DB81C6AE64E00C07BED /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */; };
 		BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */; };
+		BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */; };
+		BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */; };
+		BF69C0941C7C0B390020F678 /* SepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF69C0921C7C0B390020F678 /* SepsisScoreViewController.xib */; };
 		BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186F71C5B09CD00605426 /* UserInfoModel.m */; };
 		BF7187001C5D802700605426 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7186FF1C5D802700605426 /* DataManager.m */; };
 		BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7187031C5E945E00605426 /* UserInfoViewController.m */; };
 		BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7187041C5E945E00605426 /* UserInfoViewController.xib */; };
+		BF7531011C6FAE6500CA923A /* FoalSurvivalScore.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7531001C6FAE6500CA923A /* FoalSurvivalScore.m */; };
 		BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */; };
 		BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5F9901C586E5A00DF6445 /* LoginViewController.m */; };
 		BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA5F9911C586E5A00DF6445 /* LoginViewController.xib */; };
@@ -33,6 +35,8 @@
 		BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */; };
 		BFEF05ED1C54006300EF60C5 /* foal_scoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05EC1C54006300EF60C5 /* foal_scoreTests.m */; };
 		BFEF05F81C54006300EF60C5 /* foal_scoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */; };
+		BFF878171C6FDC6F006B4FA7 /* ShowScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */; };
+		BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +60,6 @@
 		BF06B9361C5705A100700A6F /* SurvivalScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalScoreViewController.h; sourceTree = "<group>"; };
 		BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalScoreViewController.m; sourceTree = "<group>"; };
 		BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurvivalScoreViewController.xib; sourceTree = "<group>"; };
-		BF06B93D1C57065E00700A6F /* SepsisScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SepsisScoreViewController.h; sourceTree = "<group>"; };
-		BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SepsisScoreViewController.m; sourceTree = "<group>"; };
-		BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SepsisScoreViewController.xib; sourceTree = "<group>"; };
 		BF06B9491C570E6800700A6F /* UserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
 		BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewController.m; sourceTree = "<group>"; };
 		BF3650BF1C6BAECB00E09DC3 /* OneFoalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneFoalInfoViewController.h; sourceTree = "<group>"; };
@@ -68,6 +69,11 @@
 		BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = "foal score/MGSwipeButton.m"; sourceTree = "<group>"; };
 		BF3E6DB61C6AE64E00C07BED /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = "foal score/MGSwipeTableCell.h"; sourceTree = "<group>"; };
 		BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = "foal score/MGSwipeTableCell.m"; sourceTree = "<group>"; };
+		BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfFoalsChoosingToAttachedViewController.h; sourceTree = "<group>"; };
+		BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfFoalsChoosingToAttachedViewController.m; sourceTree = "<group>"; };
+		BF69C0901C7C0B390020F678 /* SepsisScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SepsisScoreViewController.h; sourceTree = "<group>"; };
+		BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SepsisScoreViewController.m; sourceTree = "<group>"; };
+		BF69C0921C7C0B390020F678 /* SepsisScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SepsisScoreViewController.xib; sourceTree = "<group>"; };
 		BF7186F61C5B09CD00605426 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoModel.h; path = ../UserInfoModel.h; sourceTree = "<group>"; };
 		BF7186F71C5B09CD00605426 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = ../UserInfoModel.m; sourceTree = "<group>"; };
 		BF7186FE1C5D802700605426 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		BF7187021C5E945E00605426 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		BF7187031C5E945E00605426 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		BF7187041C5E945E00605426 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
+		BF7530FF1C6FAE6500CA923A /* FoalSurvivalScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoalSurvivalScore.h; path = ../FoalSurvivalScore.h; sourceTree = "<group>"; };
+		BF7531001C6FAE6500CA923A /* FoalSurvivalScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoalSurvivalScore.m; path = ../FoalSurvivalScore.m; sourceTree = "<group>"; };
 		BFA5F98B1C57DD9600DF6445 /* OverviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewTableViewController.h; sourceTree = "<group>"; };
 		BFA5F98C1C57DD9600DF6445 /* OverviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewTableViewController.m; sourceTree = "<group>"; };
 		BFA5F98F1C586E5A00DF6445 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -100,6 +108,9 @@
 		BFEF05F31C54006300EF60C5 /* foal scoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foal scoreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foal_scoreUITests.m; sourceTree = "<group>"; };
 		BFEF05F91C54006300EF60C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFF878141C6FDC6E006B4FA7 /* ShowScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowScoreViewController.h; sourceTree = "<group>"; };
+		BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowScoreViewController.m; sourceTree = "<group>"; };
+		BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowScoreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +151,9 @@
 		BF06B9421C57066300700A6F /* SpesisScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF06B93D1C57065E00700A6F /* SepsisScoreViewController.h */,
-				BF06B93E1C57065E00700A6F /* SepsisScoreViewController.m */,
-				BF06B93F1C57065E00700A6F /* SepsisScoreViewController.xib */,
+				BF69C0901C7C0B390020F678 /* SepsisScoreViewController.h */,
+				BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */,
+				BF69C0921C7C0B390020F678 /* SepsisScoreViewController.xib */,
 			);
 			name = SpesisScoreViewController;
 			sourceTree = "<group>";
@@ -178,6 +189,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */,
+				BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */,
+			);
+			name = ListOfFoalsToAttachedViewController;
+			sourceTree = "<group>";
+		};
 		BF7186F91C5B0A0200605426 /* UserInfoModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +224,15 @@
 				BF7187041C5E945E00605426 /* UserInfoViewController.xib */,
 			);
 			name = UserInfoViewController;
+			sourceTree = "<group>";
+		};
+		BF7531021C6FAE8B00CA923A /* FoalSurvivalScoreModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF7530FF1C6FAE6500CA923A /* FoalSurvivalScore.h */,
+				BF7531001C6FAE6500CA923A /* FoalSurvivalScore.m */,
+			);
+			name = FoalSurvivalScoreModel;
 			sourceTree = "<group>";
 		};
 		BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */ = {
@@ -276,6 +305,8 @@
 		BFEF05D71C54006200EF60C5 /* foal score */ = {
 			isa = PBXGroup;
 			children = (
+				BF06B9481C5706B300700A6F /* InfoPageViewController */,
+				BF7531021C6FAE8B00CA923A /* FoalSurvivalScoreModel */,
 				BF3E6DBA1C6AE66400C07BED /* MGS */,
 				BFEF05D81C54006200EF60C5 /* Supporting Files */,
 				BFAF13EC1C62E45600126A5B /* FoalInfoModel */,
@@ -285,9 +316,9 @@
 				BFEF05DE1C54006300EF60C5 /* Assets.xcassets */,
 				BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */,
 				BFEF05E31C54006300EF60C5 /* Info.plist */,
+				BFF878191C6FDC75006B4FA7 /* ShowScoreViewController */,
 				BF06B93C1C5705CE00700A6F /* SurvivalScoreViewController */,
 				BF06B9421C57066300700A6F /* SpesisScoreViewController */,
-				BF06B9481C5706B300700A6F /* InfoPageViewController */,
 				BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */,
 				BFA5F9941C586E5F00DF6445 /* LoginViewController */,
 				BF7187011C5D802D00605426 /* DataManager */,
@@ -295,6 +326,7 @@
 				BFAF13E81C62E13F00126A5B /* MyFoalViewController */,
 				BFD1B81A1C63FF4D0023C8C6 /* AddNewFoalViewController */,
 				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
+				BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */,
 			);
 			path = "foal score";
 			sourceTree = "<group>";
@@ -323,6 +355,16 @@
 				BFEF05F91C54006300EF60C5 /* Info.plist */,
 			);
 			path = "foal scoreUITests";
+			sourceTree = "<group>";
+		};
+		BFF878191C6FDC75006B4FA7 /* ShowScoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFF878141C6FDC6E006B4FA7 /* ShowScoreViewController.h */,
+				BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */,
+				BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */,
+			);
+			name = ShowScoreViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,11 +470,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */,
 				BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */,
-				BF06B9411C57065E00700A6F /* SepsisScoreViewController.xib in Resources */,
 				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
 				BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */,
 				BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */,
+				BF69C0941C7C0B390020F678 /* SepsisScoreViewController.xib in Resources */,
 				BF3650C31C6BAECB00E09DC3 /* OneFoalInfoViewController.xib in Resources */,
 				BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */,
 				BFD1B8191C63FF460023C8C6 /* AddNewFoalViewController.xib in Resources */,
@@ -460,7 +503,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF06B9401C57065E00700A6F /* SepsisScoreViewController.m in Sources */,
+				BF7531011C6FAE6500CA923A /* FoalSurvivalScore.m in Sources */,
+				BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */,
+				BFF878171C6FDC6F006B4FA7 /* ShowScoreViewController.m in Sources */,
+				BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */,
 				BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */,
 				BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */,
 				BFAF13E71C62E13100126A5B /* MyFoalViewController.m in Sources */,

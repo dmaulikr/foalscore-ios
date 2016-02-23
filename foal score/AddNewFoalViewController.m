@@ -39,6 +39,8 @@
     self.scrollView.frame = self.view.frame;
     [self.view addSubview:self.scrollView];
     
+    self.navigationItem.title = @"Add New Foal";
+    
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideTheKeyBoard:)];
     gestureRecognizer.delegate = self;

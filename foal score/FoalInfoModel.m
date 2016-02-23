@@ -23,6 +23,7 @@
         self.dystocia = dystocia;
         self.survivalUntilDischarge = survival;
         self.addDate = date;
+        self.survivalScore = -1;
     }
     return self;
 }
@@ -38,5 +39,10 @@
     self.dystocia = dystocia;
     self.survivalUntilDischarge = survival;
     self.addDate = date;
+    self.survivalScore = -1;
+}
+
+- (void)attachSurvivalScore:(NSInteger)survivalScore{
+    self.survivalScore = survivalScore;
 }
 @end
