@@ -12,7 +12,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSDictionary* choicesForEachQ;
+@property (nonatomic, strong) NSMutableArray* Qs;
+@property (nonatomic, strong) NSMutableArray* As;
 
 @end
 
@@ -36,8 +37,8 @@
    
 }
 
-- (NSDictionary *)choicesForEachQ{
-    if(_choicesForEachQ == nil){
+- (NSMutableArray *)As{
+    if(_As == nil){
         NSMutableArray* choices1 = [[NSMutableArray alloc]init];
         NSMutableArray* choices2 = [[NSMutableArray alloc]init];
         NSMutableArray* choices3 = [[NSMutableArray alloc]init];
@@ -73,20 +74,28 @@
         [choices5 addObject:@"3"];
         [choices5 addObject:@"4"];
         [choices5 addObject:@"5"];
-        
-        
-        _choicesForEachQ = @{
-                             @"jdhksjf df sd f ds fnlvnl" : choices1,
-                             @"2" : choices2,
-                             @"3" : choices3,
-                             @"4" : choices4,
-                             @"5" : choices5,
-                             
-                             };
+        _As = [[NSMutableArray alloc]init];
+        [_As addObject:choices1];
+        [_As addObject:choices2];
+        [_As addObject:choices3];
+        [_As addObject:choices4];
+        [_As addObject:choices5];
     }
-    return _choicesForEachQ;
+    return _As;
 }
 
+- (NSMutableArray*)Qs{
+    if (_Qs == nil) {
+        _Qs = [[NSMutableArray alloc]init];
+        [_Qs addObject:@"1"];
+        [_Qs addObject:@"2"];
+        [_Qs addObject:@"3"];
+        [_Qs addObject:@"4"];
+        [_Qs addObject:@"5"];
+        
+    }
+    return _Qs;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell...
     
@@ -96,7 +105,7 @@
     if(cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSString* title = [[[self.choicesForEachQ allValues]objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+    NSString* title = [[self.As objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     [cell.textLabel setText:title];
     
     return cell;
@@ -104,11 +113,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return (int)[self.choicesForEachQ count];
+    return (int)[self.Qs count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (int)[[[self.choicesForEachQ allValues]objectAtIndex:section]count];
+    return (int)[self.As count];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
@@ -123,7 +132,7 @@
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [[self.choicesForEachQ allKeys]objectAtIndex:section];
+    return [self.Qs objectAtIndex:section];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
