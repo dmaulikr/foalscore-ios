@@ -27,6 +27,19 @@
     [self tableView];
     [self.tableView reloadData];
     NSLog(@"sss");
+    
+    // pr select
+    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
+    NSIndexPath *p2 = [NSIndexPath indexPathForItem:0 inSection:1];
+    NSIndexPath *p3 = [NSIndexPath indexPathForItem:0 inSection:2];
+    NSIndexPath *p4 = [NSIndexPath indexPathForItem:0 inSection:3];
+    NSIndexPath *p5 = [NSIndexPath indexPathForItem:0 inSection:4];
+    [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView selectRowAtIndexPath:p4 animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView selectRowAtIndexPath:p5 animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView selectRowAtIndexPath:p1 animated:YES scrollPosition:UITableViewScrollPositionNone];
+
 }
 
 
@@ -134,19 +147,19 @@
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [self.Qs objectAtIndex:section];
 }
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
-    NSIndexPath *p2 = [NSIndexPath indexPathForItem:0 inSection:1];
-    NSIndexPath *p3 = [NSIndexPath indexPathForItem:0 inSection:2];
-    NSIndexPath *p4 = [NSIndexPath indexPathForItem:0 inSection:3];
-    NSIndexPath *p5 = [NSIndexPath indexPathForItem:0 inSection:4];
-    [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionTop];
-    [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionTop];
-    [self.tableView selectRowAtIndexPath:p4 animated:YES scrollPosition:UITableViewScrollPositionTop];
-    [self.tableView selectRowAtIndexPath:p5 animated:YES scrollPosition:UITableViewScrollPositionTop];
-    [self.tableView selectRowAtIndexPath:p1 animated:YES scrollPosition:UITableViewScrollPositionTop];
-}
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
+//    NSIndexPath *p2 = [NSIndexPath indexPathForItem:0 inSection:1];
+//    NSIndexPath *p3 = [NSIndexPath indexPathForItem:0 inSection:2];
+//    NSIndexPath *p4 = [NSIndexPath indexPathForItem:0 inSection:3];
+//    NSIndexPath *p5 = [NSIndexPath indexPathForItem:0 inSection:4];
+//    [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionTop];
+//    [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionTop];
+//    [self.tableView selectRowAtIndexPath:p4 animated:YES scrollPosition:UITableViewScrollPositionTop];
+//    [self.tableView selectRowAtIndexPath:p5 animated:YES scrollPosition:UITableViewScrollPositionTop];
+//    [self.tableView selectRowAtIndexPath:p1 animated:YES scrollPosition:UITableViewScrollPositionTop];
+//}
 /*
 #pragma mark - Navigation
 
