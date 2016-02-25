@@ -147,6 +147,20 @@
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [self.Qs objectAtIndex:section];
 }
+
+
+
+- (IBAction)pressCalculateButton:(id)sender {
+    NSArray* selects = [self.tableView indexPathsForSelectedRows];
+    for (NSIndexPath* select in selects) {
+        NSInteger section = select.section;
+        NSInteger row = select.row;
+        NSString* choice = [[self.As objectAtIndex:section]objectAtIndex:row];
+        NSString* question = [[self.Qs objectAtIndex:section]objectAtIndex:row];
+        // TO DO
+    }
+}
+
 //- (void)viewDidAppear:(BOOL)animated{
 //    [super viewDidAppear:animated];
 //    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
