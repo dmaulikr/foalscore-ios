@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5605988D4AD6819B3E475985 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 016984577122FC205FFBA04A /* libPods.a */; };
+		638CA72A1C82248F00130397 /* FoalScoreAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 638CA7291C82248F00130397 /* FoalScoreAPIClient.m */; };
 		BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */; };
 		BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */; };
 		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
@@ -60,6 +61,8 @@
 /* Begin PBXFileReference section */
 		016984577122FC205FFBA04A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8B1658147B80DF76A1B7D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		638CA7291C82248F00130397 /* FoalScoreAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoalScoreAPIClient.m; sourceTree = "<group>"; };
+		638CA72B1C8224AE00130397 /* FoalScoreAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoalScoreAPIClient.h; sourceTree = "<group>"; };
 		BF06B9361C5705A100700A6F /* SurvivalScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalScoreViewController.h; sourceTree = "<group>"; };
 		BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalScoreViewController.m; sourceTree = "<group>"; };
 		BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurvivalScoreViewController.xib; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */,
 				BFEF05E31C54006300EF60C5 /* Info.plist */,
 				BF7187011C5D802D00605426 /* DataManager */,
+				638CA7291C82248F00130397 /* FoalScoreAPIClient.m */,
+				638CA72B1C8224AE00130397 /* FoalScoreAPIClient.h */,
 			);
 			name = foalScore;
 			path = "foal score";
@@ -605,6 +610,7 @@
 				BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */,
 				BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */,
 				BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */,
+				638CA72A1C82248F00130397 /* FoalScoreAPIClient.m in Sources */,
 				BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */,
 				BF3E6DB81C6AE64E00C07BED /* MGSwipeButton.m in Sources */,
 				BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */,
@@ -798,6 +804,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "foal scoreUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-scoreUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -810,6 +817,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "foal scoreUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-scoreUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
