@@ -120,7 +120,9 @@
     }
     NSString* title = [[self.As objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     [cell.textLabel setText:title];
-    
+    UIView* bv = [[UIView alloc]init];
+    bv.backgroundColor = [UIColor blueColor];
+    cell.selectedBackgroundView = bv;
     return cell;
 }
 #pragma mark - Table view data source

@@ -8,7 +8,7 @@
 
 #import "SurvivalScoreViewController.h"
 
-@interface SurvivalScoreViewController ()
+@interface SurvivalScoreViewController ()<UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *coldEx_seg;
@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *igG_lb;
 @property (weak, nonatomic) IBOutlet UILabel *glucose_lb;
 @property (weak, nonatomic) IBOutlet UILabel *wbc_lb;
+@property (strong, nonatomic) IBOutlet UIView *scrollContent;
 
 @end
 
@@ -31,10 +32,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.scrollView.delegate = self;
+
+    CGRect newFrame = self.scrollContent.frame;
+    newFrame.size.width = [UIScreen mainScreen].bounds.size.width;
+    [self.scrollContent setFrame:newFrame];
     
-    self.scrollView.contentSize = self.scrollView.frame.size;
     self.scrollView.frame = self.view.frame;
     [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.scrollContent];
+    self.scrollView.contentSize = self.scrollContent.frame.size;
     // read data
     // initialize a fss
     NSInteger ce = 0;
