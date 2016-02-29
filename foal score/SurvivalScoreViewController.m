@@ -38,7 +38,7 @@
     newFrame.size.width = [UIScreen mainScreen].bounds.size.width;
     [self.scrollContent setFrame:newFrame];
     
-    self.scrollView.frame = self.view.frame;
+    self.scrollView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.scrollContent];
     self.scrollView.contentSize = self.scrollContent.frame.size;

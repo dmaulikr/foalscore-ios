@@ -23,7 +23,9 @@
     
     [self tableView];
     [self.navigationItem setTitle:@"User Infomation"];
-    self.tableView.separatorColor = [UIColor clearColor];}
+    self.tableView.separatorColor = [UIColor clearColor];
+    [self.tableView setScrollEnabled:NO];
+}
 
 - (UITableView *)tableView{
     if(_tableView == nil){

@@ -27,7 +27,9 @@
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]initWithTitle:@"Info" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonAction)];
     self.navigationItem.leftBarButtonItem = newBackButton;
     [self tableView];
-    self.tableView.separatorColor = [UIColor clearColor];}
+    self.tableView.separatorColor = [UIColor clearColor];
+    [self.tableView setScrollEnabled:NO];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,7 +8,7 @@
 
 #import "OneFoalInfoViewController.h"
 
-@interface OneFoalInfoViewController ()
+@interface OneFoalInfoViewController ()<UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLable;
@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *survivalScoreLabel;
 
+@property (strong, nonatomic) IBOutlet UIView *scrollContent;
 
 @end
 
@@ -32,9 +33,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     // add scroll View
-    self.scrollView.contentSize = self.scrollView.frame.size;
-    self.scrollView.frame = self.view.frame;
+    CGRect newFrame = self.scrollContent.frame;
+    newFrame.size.width = [UIScreen mainScreen].bounds.size.width;
+    [self.scrollContent setFrame:newFrame];
+    self.scrollView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.scrollContent];
+    self.scrollView.contentSize = self.scrollContent.frame.size;
     FoalInfoModel* foalNeedToShow = [[DataManager foals] objectAtIndex:self.indexOfFoal];
     self.nameLable.text = foalNeedToShow.name;
     self.ageLable.text = [@(foalNeedToShow.age) stringValue];
