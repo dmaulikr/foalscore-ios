@@ -7,9 +7,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SurvivalScoreViewController">
             <connections>
+                <outlet property="coldEx_lb" destination="FNV-Vl-NaE" id="hGy-sw-FKx"/>
+                <outlet property="coldEx_seg" destination="Ok2-hL-eek" id="nU3-ag-41n"/>
+                <outlet property="glucose_lb" destination="Pvk-lb-pQ3" id="6Ex-RJ-tHE"/>
+                <outlet property="glucose_seg" destination="bum-Ne-xbG" id="hWW-rL-vGX"/>
+                <outlet property="igG_lb" destination="jLj-5Y-5bF" id="XMR-sG-YN5"/>
+                <outlet property="igG_seg" destination="ybX-xd-UMK" id="WgS-9C-8fb"/>
+                <outlet property="infection_lb" destination="ddh-nT-qcP" id="0T9-nJ-AIf"/>
+                <outlet property="infection_seg" destination="WyW-1c-05k" id="gw5-07-JZJ"/>
+                <outlet property="prematurity_lb" destination="cxk-wc-8hn" id="XeH-Yh-olP"/>
+                <outlet property="prematurity_seg" destination="zTv-vw-UdK" id="h2p-ah-41m"/>
                 <outlet property="scrollContent" destination="exT-R5-30T" id="yks-6y-Cax"/>
                 <outlet property="scrollView" destination="dQi-h6-jof" id="arc-pQ-oJK"/>
                 <outlet property="view" destination="PTl-gb-ocI" id="fRx-zB-3DV"/>
+                <outlet property="wbc_lb" destination="Hfs-3t-BSL" id="9ae-lT-BZw"/>
+                <outlet property="wbc_seg" destination="0PJ-de-IbS" id="jyX-zZ-CXz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -201,7 +213,7 @@
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Foal Survival Score Calculator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bl-kj-dRH">
-                    <rect key="frame" x="64" y="34" width="203" height="74"/>
+                    <rect key="frame" x="66" y="34" width="203" height="74"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
