@@ -140,15 +140,14 @@
     NSInteger totalScore = [fss calculateTotalScore];
     // To Do
     // send HTTP request
-    
     NSMutableDictionary* dict = self.buildingRequestDictionary;
     
-    
-    // Create new page
-    ShowScoreViewController* ss = [[ShowScoreViewController alloc]init];
-    ss.survivalScore = totalScore;
-    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
-    [self presentViewController:nv animated:YES completion:nil];
+    [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *params, NSError *error) {
+        ShowScoreViewController* ss = [[ShowScoreViewController alloc]init];
+        ss.survivalScore = totalScore;
+        UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+        [self presentViewController:nv animated:YES completion:nil];
+    }];
 }
 
 - (NSMutableDictionary*)buildingRequestDictionary{
