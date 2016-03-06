@@ -19,6 +19,7 @@
                 <outlet property="prematurity_seg" destination="zTv-vw-UdK" id="h2p-ah-41m"/>
                 <outlet property="scrollContent" destination="exT-R5-30T" id="yks-6y-Cax"/>
                 <outlet property="scrollView" destination="dQi-h6-jof" id="arc-pQ-oJK"/>
+                <outlet property="shareOrNot" destination="6Vv-Yd-8AN" id="9BN-Wh-Psb"/>
                 <outlet property="view" destination="PTl-gb-ocI" id="fRx-zB-3DV"/>
                 <outlet property="wbc_lb" destination="Hfs-3t-BSL" id="9ae-lT-BZw"/>
                 <outlet property="wbc_seg" destination="0PJ-de-IbS" id="jyX-zZ-CXz"/>
@@ -32,11 +33,11 @@
             <point key="canvasLocation" x="928" y="422"/>
         </scrollView>
         <view contentMode="scaleToFill" id="exT-R5-30T">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="844"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="934"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBv-n0-mPC">
-                    <rect key="frame" x="12" y="670" width="296" height="44"/>
+                    <rect key="frame" x="16" y="756" width="296" height="44"/>
                     <state key="normal" title="Calculate">
                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -218,10 +219,19 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share data with The Ohio State University" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I7-Ps-KOO">
+                    <rect key="frame" x="12" y="670" width="170" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Vv-Yd-8AN">
+                    <rect key="frame" x="232" y="678" width="51" height="31"/>
+                </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="727" y="484"/>
+            <point key="canvasLocation" x="727" y="529"/>
         </view>
         <view contentMode="scaleToFill" id="PTl-gb-ocI">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>

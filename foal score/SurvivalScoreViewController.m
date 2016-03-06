@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *glucose_lb;
 @property (weak, nonatomic) IBOutlet UILabel *wbc_lb;
 @property (strong, nonatomic) IBOutlet UIView *scrollContent;
+@property (weak, nonatomic) IBOutlet UISwitch *shareOrNot;
 
 @end
 
@@ -139,10 +140,31 @@
     NSInteger totalScore = [fss calculateTotalScore];
     // To Do
     // send HTTP request
+    
+    NSMutableDictionary* dict = self.buildingRequestDictionary;
+    
+    
+    // Create new page
     ShowScoreViewController* ss = [[ShowScoreViewController alloc]init];
     ss.survivalScore = totalScore;
     UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
     [self presentViewController:nv animated:YES completion:nil];
+}
+
+- (NSMutableDictionary*)buildingRequestDictionary{
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+    [dict setObject:@"123" forKey:@"userId"];
+    [dict setObject:self.coldEx_lb.text forKey:@"coldExtremities"];
+    [dict setObject:self.prematurity_lb.text forKey:@"prematurity"];
+    [dict setObject:self.glucose_lb.text forKey:@"GreaterThanEqualToTwoInfectionSites"];
+    [dict setObject:self.igG_lb.text forKey:@"igG"];
+    [dict setObject:self.glucose_lb.text forKey:@"wbc"];
+    if(self.shareOrNot.isOn == true){
+        [dict setObject:@"1" forKey:@"allowShare"];
+    }else{
+        [dict setObject:@"0" forKey:@"allowShare"];
+    }
+    return dict;
 }
 
 /*
