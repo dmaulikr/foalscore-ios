@@ -8,6 +8,11 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+typedef void(^AFAPIClientErrorCompletionBlock)(NSError *error);
+typedef void(^SurvivalScoreCompletionBlock)(NSDictionary *params, NSError *error);
+
 @interface FoalScoreAFAPIClient : AFHTTPSessionManager
 + (instancetype)sharedClient;
+- (void)calculateSurvivalScore:(NSDictionary *)params
+        withCompletitionBlock:(SurvivalScoreCompletionBlock)block;
 @end

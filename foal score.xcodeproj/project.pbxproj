@@ -152,7 +152,7 @@
 				BF06B9481C5706B300700A6F /* InfoPageViewController */,
 				BFF878191C6FDC75006B4FA7 /* ShowScoreViewController */,
 				BF06B93C1C5705CE00700A6F /* SurvivalScoreViewController */,
-				BF06B9421C57066300700A6F /* SpesisScoreViewController */,
+				BF06B9421C57066300700A6F /* SepsisScoreViewController */,
 				BFA5F98E1C57DD9C00DF6445 /* OverviewTableViewController */,
 				BFA5F9941C586E5F00DF6445 /* LoginViewController */,
 				BF7187071C5E946300605426 /* UserInfoViewController */,
@@ -184,14 +184,14 @@
 			name = SurvivalScoreViewController;
 			sourceTree = "<group>";
 		};
-		BF06B9421C57066300700A6F /* SpesisScoreViewController */ = {
+		BF06B9421C57066300700A6F /* SepsisScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
 				BF69C0901C7C0B390020F678 /* SepsisScoreViewController.h */,
 				BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */,
 				BF69C0921C7C0B390020F678 /* SepsisScoreViewController.xib */,
 			);
-			name = SpesisScoreViewController;
+			name = SepsisScoreViewController;
 			sourceTree = "<group>";
 		};
 		BF06B9481C5706B300700A6F /* InfoPageViewController */ = {

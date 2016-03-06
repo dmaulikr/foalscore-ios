@@ -12,17 +12,23 @@
 
 +(instancetype)sharedClient
 {
-    static FoalScoreAPIClient *_sharedClient = nil;
+    static FoalScoreAFAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         // Code to be run only once
         static NSString * const BaseURLString = @"foalscore.org.ohio-state.edu/foalscore/server/";
-        NSURL *baseURL = [NSURL URLWithString:BaseURLString]
-        _sharedClient = [[FoalScoreAPIClient alloc] initWithBaseURL:baseURL];
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        NSURL *baseURL = [NSURL URLWithString:BaseURLString];
+        _sharedClient = [[FoalScoreAFAPIClient alloc] initWithBaseURL:baseURL];
+        
     });
     
     return _sharedClient;
+}
+
+-(void)calculateSurvivalScore:(NSDictionary *)params withCompletitionBlock:(SurvivalScoreCompletionBlock)block
+{
+    // Mock Success
+    NSDictionary *response = @{@"score" : @"7", @"calculationId": @"25", @"scoreResultResponse" : @"The foal has 0% chance of survival"};
+    block(response, nil);
 }
 @end
