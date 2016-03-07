@@ -318,7 +318,7 @@
 		BFEF05CC1C54006200EF60C5 = {
 			isa = PBXGroup;
 			children = (
-				BFEF05D71C54006200EF60C5 /* foal score */,
+				BFEF05D71C54006200EF60C5 /* foalScore */,
 				BFEF05EB1C54006300EF60C5 /* foal scoreTests */,
 				BFEF05F61C54006300EF60C5 /* foal scoreUITests */,
 				BFEF05D61C54006200EF60C5 /* Products */,
@@ -337,7 +337,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BFEF05D71C54006200EF60C5 /* foal score */ = {
+		BFEF05D71C54006200EF60C5 /* foalScore */ = {
 			isa = PBXGroup;
 			children = (
 				632889C11C7D5F4800A30BCD /* ViewControllers */,
@@ -351,6 +351,7 @@
 				BFEF05E31C54006300EF60C5 /* Info.plist */,
 				BF7187011C5D802D00605426 /* DataManager */,
 			);
+			name = foalScore;
 			path = "foal score";
 			sourceTree = "<group>";
 		};
