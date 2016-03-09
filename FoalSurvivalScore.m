@@ -34,8 +34,36 @@
 
 -(NSInteger) calculateTotalScore{
     
-    return self.coldExtremities + self.prematurity + self.infection + self.igG + self.glucose + self.WBC;
-    
+    NSInteger sum = self.coldExtremities + self.prematurity + self.infection + self.igG + self.glucose + self.WBC;
+    NSInteger percent = 0;
+    switch (sum) {
+        case 0:
+            percent = 3;
+            break;
+        case 1:
+            percent = 8;
+            break;
+        case 2:
+            percent = 18;
+            break;
+        case 3:
+            percent = 38;
+            break;
+        case 4:
+            percent = 62;
+            break;
+        case 5:
+            percent = 82;
+            break;
+        case 6:
+            percent = 92;
+            break;
+        case 7:
+            percent = 97;
+            break;
+        default:
+            break;
+    }
+    return percent;
 }
-
 @end
