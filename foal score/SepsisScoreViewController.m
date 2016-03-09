@@ -88,77 +88,77 @@
         NSMutableArray* choices13 = [[NSMutableArray alloc]init];
         NSMutableArray* choices14 = [[NSMutableArray alloc]init];
 
-        [choices1 addObject:@"1"];
-        [choices1 addObject:@"2"];
-        [choices1 addObject:@"3"];
-        [choices1 addObject:@"4"];
-        [choices1 addObject:@"5"];
-        [choices1 addObject:@"6"];
+        [choices1 addObject:@"< 2.0 * 10^9"];
+        [choices1 addObject:@"2.0 - 4.0* 10^9"];
+        [choices1 addObject:@"8.0 - 12.0 * 10^9"];
+        [choices1 addObject:@"> 12.0 * 10^9"];
+        [choices1 addObject:@"Normal"];
+        [choices1 addObject:@"Not Available"];
         
-        [choices2 addObject:@"1"];
-        [choices2 addObject:@"2"];
-        [choices2 addObject:@"3"];
-        [choices2 addObject:@"4"];
+        [choices2 addObject:@"> 2.0 * 10^9"];
+        [choices2 addObject:@"0.05 - 0.20 * 10^9"];
+        [choices2 addObject:@"< 0.05 * 10^9"];
+        [choices2 addObject:@"Not Available"];
         
-        [choices3 addObject:@"1"];
-        [choices3 addObject:@"2"];
-        [choices3 addObject:@"3"];
-        [choices3 addObject:@"4"];
+        [choices3 addObject:@"Marked"];
+        [choices3 addObject:@"Moderate"];
+        [choices3 addObject:@"Slight"];
+        [choices3 addObject:@"None"];
         
         
-        [choices4 addObject:@"1"];
-        [choices4 addObject:@"2"];
-        [choices4 addObject:@"3"];
-        [choices4 addObject:@"4"];
+        [choices4 addObject:@"> 600"];
+        [choices4 addObject:@"410 - 600"];
+        [choices4 addObject:@"< 400"];
+        [choices4 addObject:@"Not Available"];
 
-        [choices5 addObject:@"1"];
-        [choices5 addObject:@"2"];
-        [choices5 addObject:@"3"];
-        [choices5 addObject:@"4"];
+        [choices5 addObject:@"< 49"];
+        [choices5 addObject:@"49 - 79"];
+        [choices5 addObject:@"> 79"];
+        [choices5 addObject:@"Not Available"];
         
-        [choices6 addObject:@"1"];
-        [choices6 addObject:@"2"];
-        [choices6 addObject:@"3"];
-        [choices6 addObject:@"4"];
-        [choices6 addObject:@"5"];
+        [choices6 addObject:@"< 200"];
+        [choices6 addObject:@"200 - 400"];
+        [choices6 addObject:@"400 - 800"];
+        [choices6 addObject:@"> 800"];
+        [choices6 addObject:@"Not Available"];
         
-        [choices7 addObject:@"1"];
-        [choices7 addObject:@"2"];
-        [choices7 addObject:@"3"];
-        [choices7 addObject:@"4"];
-        [choices7 addObject:@"5"];
+        [choices7 addObject:@"< 40 Torr"];
+        [choices7 addObject:@"40 - 50 Torr"];
+        [choices7 addObject:@"51 - 70 Torr"];
+        [choices7 addObject:@"> 70 Torr"];
+        [choices7 addObject:@"Not Available"];
         
-        [choices8 addObject:@"1"];
-        [choices8 addObject:@"2"];
-        [choices8 addObject:@"3"];
+        [choices8 addObject:@"Yes"];
+        [choices8 addObject:@"No"];
+        [choices8 addObject:@"Not Available"];
         
-        [choices9 addObject:@"1"];
-        [choices9 addObject:@"2"];
-        [choices9 addObject:@"3"];
-        [choices9 addObject:@"4"];
+        [choices9 addObject:@"Marked"];
+        [choices9 addObject:@"Moderate"];
+        [choices9 addObject:@"Mild"];
+        [choices9 addObject:@"None"];
         
-        [choices10 addObject:@"1"];
-        [choices10 addObject:@"2"];
-        [choices10 addObject:@"3"];
+        [choices10 addObject:@"> 102°F or > 38.8°C"];
+        [choices10 addObject:@"< 100°F or < 37.7°C"];
+        [choices10 addObject:@"Normal"];
         
-        [choices11 addObject:@"1"];
-        [choices11 addObject:@"2"];
-        [choices11 addObject:@"3"];
-        [choices11 addObject:@"4"];
+        [choices11 addObject:@"Marked"];
+        [choices11 addObject:@"Mild"];
+        [choices11 addObject:@"Normal"];
+        [choices11 addObject:@"Not Available"];
         
-        [choices12 addObject:@"1"];
-        [choices12 addObject:@"2"];
-        [choices12 addObject:@"3"];
+        [choices12 addObject:@"Yes"];
+        [choices12 addObject:@"No"];
+        [choices12 addObject:@"Not Available"];
         
-        [choices13 addObject:@"1"];
-        [choices13 addObject:@"2"];
-        [choices13 addObject:@"3"];
+        [choices13 addObject:@"Yes"];
+        [choices13 addObject:@"No"];
+        [choices13 addObject:@"Not Available"];
         
-        [choices14 addObject:@"1"];
-        [choices14 addObject:@"2"];
-        [choices14 addObject:@"3"];
-        [choices14 addObject:@"4"];
-        [choices14 addObject:@"5"];
+        [choices14 addObject:@"< 300 days"];
+        [choices14 addObject:@"300 - 310 days"];
+        [choices14 addObject:@"311 - 330 days"];
+        [choices14 addObject:@"> 330 days"];
+        [choices14 addObject:@"Not Available"];
 
         _As = [[NSMutableArray alloc]init];
         [_As addObject:choices1];
@@ -182,20 +182,20 @@
 - (NSMutableArray*)Qs{
     if (_Qs == nil) {
         _Qs = [[NSMutableArray alloc]init];
-        [_Qs addObject:@"1"];
-        [_Qs addObject:@"2"];
-        [_Qs addObject:@"3"];
-        [_Qs addObject:@"4"];
-        [_Qs addObject:@"5"];
-        [_Qs addObject:@"6"];
-        [_Qs addObject:@"7"];
-        [_Qs addObject:@"8"];
-        [_Qs addObject:@"9"];
-        [_Qs addObject:@"10"];
-        [_Qs addObject:@"11"];
-        [_Qs addObject:@"12"];
-        [_Qs addObject:@"13"];
-        [_Qs addObject:@"14"];
+        [_Qs addObject:@"Neutrophil Count"];
+        [_Qs addObject:@"Band Neutrophil Count"];
+        [_Qs addObject:@"Doehel bodies,toxic changes, granulation, or vacuolization in neutrophils"];
+        [_Qs addObject:@"Fibrinogen(mg/dL)"];
+        [_Qs addObject:@"Hypoglycemia(mg/dL)"];
+        [_Qs addObject:@"IgG(mg/dL)"];
+        [_Qs addObject:@"Aterial oxygen"];
+        [_Qs addObject:@"Metabolic acidosis"];
+        [_Qs addObject:@"Petechiation or scleral injection, no secondary to eye disease or trauma"];
+        [_Qs addObject:@"Fever"];
+        [_Qs addObject:@"Hypotonia, coma depression, convulsions"];
+        [_Qs addObject:@"Anterior uveitis, diarrhea, respiratory distress, swollen joints, open wounds"];
+        [_Qs addObject:@"Placentitis, vulvar discharge prior to delivery, dystocia, long transport of mare, mare sick, foal induced"];
+        [_Qs addObject:@"Prematurity"];
         
     }
     return _Qs;
@@ -212,7 +212,7 @@
     NSString* title = [[self.As objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     [cell.textLabel setText:title];
     UIView* bv = [[UIView alloc]init];
-    bv.backgroundColor = [UIColor blueColor];
+    bv.backgroundColor = [UIColor colorWithRed:(132/255.0) green:(207/255.0) blue:(250/255.0) alpha:1];
     cell.selectedBackgroundView = bv;
     return cell;
 }
