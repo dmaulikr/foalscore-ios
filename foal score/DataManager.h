@@ -14,4 +14,8 @@
 @property (nonatomic, strong) UserInfoModel* userInfo;
 + (UserInfoModel *)userInfo;
 + (NSMutableArray *)foals;
+
++ (NSString *)foalInfoArchivePath;
++ (NSString *)userInfoArchivePath;
++ (BOOL)saveChanges;
 @end

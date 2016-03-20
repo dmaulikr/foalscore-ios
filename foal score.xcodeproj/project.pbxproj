@@ -346,9 +346,9 @@
 				BFEF05D81C54006200EF60C5 /* Supporting Files */,
 				BFEF05DB1C54006200EF60C5 /* AppDelegate.h */,
 				BFEF05DC1C54006200EF60C5 /* AppDelegate.m */,
+				BFEF05E31C54006300EF60C5 /* Info.plist */,
 				BFEF05DE1C54006300EF60C5 /* Assets.xcassets */,
 				BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */,
-				BFEF05E31C54006300EF60C5 /* Info.plist */,
 				BF7187011C5D802D00605426 /* DataManager */,
 			);
 			name = foalScore;

@@ -18,39 +18,39 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-Ub-fd0">
-                    <rect key="frame" x="92" y="246" width="136" height="45"/>
+                    <rect key="frame" x="92" y="196" width="136" height="45"/>
                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-I6-pNu">
-                    <rect key="frame" x="20" y="166" width="280" height="40"/>
+                    <rect key="frame" x="20" y="121" width="280" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53o-b0-wPQ">
-                    <rect key="frame" x="20" y="317" width="280" height="40"/>
+                    <rect key="frame" x="20" y="274" width="280" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Kh-MCT">
-                    <rect key="frame" x="92" y="390" width="141" height="53"/>
+                    <rect key="frame" x="90" y="331" width="141" height="53"/>
                     <state key="normal" title="Change Password"/>
                     <connections>
                         <action selector="pressChangePassword:" destination="-1" eventType="touchUpInside" id="Q8V-qb-fL7"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh4-aa-cqz">
-                    <rect key="frame" x="129" y="451" width="66" height="53"/>
+                    <rect key="frame" x="127" y="380" width="66" height="53"/>
                     <state key="normal" title="Logout"/>
                     <connections>
                         <action selector="pressLogOut:" destination="-1" eventType="touchUpInside" id="o8G-yT-gSw"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3H-ja-448">
-                    <rect key="frame" x="92" y="95" width="136" height="45"/>
+                    <rect key="frame" x="92" y="60" width="136" height="45"/>
                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>

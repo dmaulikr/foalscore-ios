@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FoalInfoModel : NSObject
+@interface FoalInfoModel : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) NSInteger age;
@@ -21,6 +21,7 @@
 @property (nonatomic, assign) BOOL survivalUntilDischarge;
 @property (nonatomic, retain) NSDate* addDate;
 @property (nonatomic, assign) NSInteger survivalScore;
+
 
 - (instancetype) initWithName:(NSString *)name Age:(NSInteger)age Breed:(NSString *)breed Temperature:(NSInteger)temperature RespiratoryRate:(NSInteger)respiratoryRate HeartRate:(NSInteger)heartRate Sex:(NSString *)sex Dystocia:(BOOL)dystocia SurvivalUntilDischarge:(BOOL)survival Date:(NSDate *)date;
 
