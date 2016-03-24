@@ -10,6 +10,15 @@
 #import "DataManager.h"
 
 @implementation DataManager
++ (Boolean)loginOrNot{
+    UserInfoModel* user = [DataManager userInfo];
+    if (user!=nil && user.flag == true) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
 + (UserInfoModel *)userInfo{
     // nextline only run once if it is started with static
     static UserInfoModel* userInfo = nil;

@@ -20,6 +20,7 @@
     [aCoder encodeObject:self.userName forKey:@"userName"];
     [aCoder encodeObject:self.password forKey:@"password"];
     [aCoder encodeObject:self.email forKey:@"email"];
+    [aCoder encodeBool:self.flag forKey:@"flag"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
@@ -28,6 +29,7 @@
         [self setUserName:[aDecoder decodeObjectForKey:@"userName"]];
         [self setPassword:[aDecoder decodeObjectForKey:@"password"]];
         [self setEmail:[aDecoder decodeObjectForKey:@"email"]];
+        [self setFlag:[aDecoder decodeBoolForKey:@"flag"]];
          
     }
     return self;
@@ -37,6 +39,7 @@
         self.userName = name;
         self.password = password;
         self.email = email;
+        self.flag = true;
     }
     return self;
 }
@@ -47,14 +50,28 @@
         self.password = password;
         self.email = email;
         self.userId = userId;
+        self.flag = true;
     }
     return self;
 
+}
+-(instancetype)init{
+    if(self = [super init]){
+        self.flag = false;
+    }
+    return self;
 }
 -(void)modifyUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email{
     self.userName = name;
     self.password = password;
     self.email = email;
+    self.flag = true;
+}
+
+-(void)clearUserInfo{
+    [self modifyUserName:@"" AndPassword:@"" AndEmailID:@""];
+    self.userId = @"";
+    self.flag = false;
 }
 
 @end

@@ -96,8 +96,8 @@
         // login/user profile
         case 0:{
             NSLog(@"User info/Login");
-            UserInfoModel* userInfo1 = [DataManager userInfo];
-            if ([userInfo1.userName isEqual: @""] || [userInfo1.password isEqual: @""] || userInfo1.userName == nil || userInfo1.password == nil){
+            UserInfoModel* test = [DataManager userInfo];
+            if (![DataManager loginOrNot]){
                 LoginViewController *log = [[LoginViewController alloc]init];
                 [self presentViewController:log animated:YES completion:nil];
             }else{

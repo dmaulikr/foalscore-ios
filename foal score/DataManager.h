@@ -12,6 +12,7 @@
 @interface DataManager : NSObject
 
 @property (nonatomic, strong) UserInfoModel* userInfo;
++ (Boolean)loginOrNot;
 + (UserInfoModel *)userInfo;
 + (NSMutableArray *)foals;
 

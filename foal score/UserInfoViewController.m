@@ -36,7 +36,7 @@
 
 - (IBAction)pressLogOut:(id)sender {
     UserInfoModel* userInfo = [DataManager userInfo];
-    [userInfo modifyUserName:@"" AndPassword:@"" AndEmailID:@""];
+    [userInfo clearUserInfo];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
