@@ -41,6 +41,16 @@
     return self;
 }
 
+-(instancetype)initWithUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email AndUserId:(NSString *)userId{
+    if(self = [super init]){
+        self.userName = name;
+        self.password = password;
+        self.email = email;
+        self.userId = userId;
+    }
+    return self;
+
+}
 -(void)modifyUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email{
     self.userName = name;
     self.password = password;
