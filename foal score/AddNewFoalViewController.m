@@ -8,12 +8,14 @@
 
 #import "AddNewFoalViewController.h"
 
-@interface AddNewFoalViewController ()
+@interface AddNewFoalViewController ()<UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) NSInteger indexOfFoalThatNeedToModify;
 @property (nonatomic, assign) BOOL modify;
+
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 // some inclass variables
+@property (strong, nonatomic) IBOutlet UIView *scrollContent;
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *age;
@@ -35,9 +37,16 @@
     // Do any additional setup after loading the view from its nib.
     // load UiSrollViewController
     
-    self.scrollView.contentSize = self.scrollView.frame.size;
-    self.scrollView.frame = self.view.frame;
+    self.scrollView.delegate = self;
+    
+    CGRect newFrame = self.scrollContent.frame;
+    newFrame.size.width = [UIScreen mainScreen].bounds.size.width;
+    [self.scrollContent setFrame:newFrame];
+    
+    self.scrollView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.scrollContent];
+    self.scrollView.contentSize = self.scrollContent.frame.size;
     
     self.navigationItem.title = @"Add New Foal";
     
