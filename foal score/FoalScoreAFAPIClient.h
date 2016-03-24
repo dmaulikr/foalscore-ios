@@ -6,13 +6,18 @@
 //  Copyright © 2016 osu.edu. All rights reserved.
 //
 
-#import <AFNetworking/AFNetworking.h>
+#import "AFHTTPSessionManager.h"
 
 typedef void(^AFAPIClientErrorCompletionBlock)(NSError *error);
-typedef void(^SurvivalScoreCompletionBlock)(NSDictionary *params, NSError *error);
-
+typedef void(^SuccessOrFailureCompletionBlock)(NSDictionary *response, NSError *error);
 @interface FoalScoreAFAPIClient : AFHTTPSessionManager
 + (instancetype)sharedClient;
+- (void)registerNewUser:(NSDictionary *)params
+        withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)loginUser:(NSDictionary *)params
+  withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
 - (void)calculateSurvivalScore:(NSDictionary *)params
-        withCompletitionBlock:(SurvivalScoreCompletionBlock)block;
+        withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 @end

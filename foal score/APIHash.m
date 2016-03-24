@@ -6,6 +6,9 @@
 //  Copyright © 2016 osu.edu. All rights reserved.
 //
 
+
+// CURRENTLY USELESS!!!
+// This is not complete, not being used, and going to be abandone most likely.
 #import "APIHash.h"
 #import <CommonCrypto/CommonDigest.h>
 

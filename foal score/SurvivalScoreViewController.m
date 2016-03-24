@@ -136,17 +136,26 @@
 
 - (IBAction)pressCalculator:(id)sender {
     
+    // Calculate survival score locally
     FoalSurvivalScore* fss = [[FoalSurvivalScore alloc]initWithColdExtremities: [self.coldEx_lb.text integerValue] Prematurity:[self.prematurity_lb.text integerValue] Infection:[self.infection_lb.text integerValue] IgG:[self.igG_lb.text integerValue] Glucose:[self.glucose_lb.text integerValue] WBC:[self.wbc_lb.text integerValue]];
     NSInteger totalScore = [fss calculateTotalScore];
-    // To Do
+    
+    ShowScoreViewController* ss = [[ShowScoreViewController alloc]init];
+    
+    // Present local score result
+    ss.survivalScore = totalScore;
+    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+    [self presentViewController:nv animated:YES completion:nil];
+    
     // send HTTP request
     NSMutableDictionary* dict = self.buildingRequestDictionary;
     
-    [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *params, NSError *error) {
-        ShowScoreViewController* ss = [[ShowScoreViewController alloc]init];
-        ss.survivalScore = totalScore;
-        UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
-        [self presentViewController:nv animated:YES completion:nil];
+    [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+        if (response) {
+            NSLog(@"%@",response[@"scoreResultResponse"]);
+        } else {
+            NSLog(@"%@", error);
+        }
     }];
 }
 

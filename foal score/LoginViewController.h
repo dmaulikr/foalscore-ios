@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserInfoModel.h"
 #import "DataManager.h"
+#import "FoalScoreAFAPIClient.h"
 @interface LoginViewController : UIViewController
 
 @end

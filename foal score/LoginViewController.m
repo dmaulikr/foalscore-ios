@@ -55,7 +55,19 @@
     NSString *email = self.emailIDTextField.text;
     UserInfoModel* userInfo = [DataManager userInfo];
     [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // Send login info to server
+    NSDictionary *requestObj = @{@"email": email, @"password": password, @"token": @"TODO"};
+    [[FoalScoreAFAPIClient sharedClient] loginUser: requestObj
+                                   withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                                       if(response) {
+                                           NSLog(@"%@", response);
+                                       } else {
+                                           NSLog(@"%@", error);
+                                       }
+                                    }];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)textFieldDidChange_UserName{
