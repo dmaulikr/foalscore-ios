@@ -13,7 +13,9 @@
 @property (nonatomic, copy) NSString* userName;
 @property (nonatomic, copy) NSString* password;
 @property (nonatomic, copy) NSString* email;
+@property (nonatomic, copy) NSString* userId;
 
 - (instancetype)initWithUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email;
 - (void)modifyUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email;
+- (instancetype)initWithUserName:(NSString *)name AndPassword:(NSString *)password AndEmailID:(NSString *)email AndUserId:(NSString *)userId;
 @end
