@@ -61,15 +61,23 @@
     requestObj[@"email"] = email;
     requestObj[@"password"] = password;
     [[FoalScoreAFAPIClient sharedClient] loginUser: requestObj
-                                   withCompletitionBlock:^(NSDictionary *response, NSError *error) {
-                                       if(response) {
-                                           NSLog(@"%@", response);
-                                       } else {
-                                           NSLog(@"%@", error);
-                                       }
-                                    }];
+                             withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                                 if(response) {
+                                     if([response[@"status"] isEqual: @"success"]) {
+                                         
+                                         NSLog(@"%@ %@", @"ID:", response[@"userObj"][@"User"][@"id"]);
+                                         userInfo.userId = response[@"userObj"][@"User"][@"id"];
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                     } else {
+                                         //TODO - pop modal with error message from server
+                                         NSLog(@"%@ %@", @"Error", response[@"error"]);
+                                     }
+                                 } else {
+                                     //TODO - pop modal with error, probably no internet or something along those lines
+                                     NSLog(@"%@", error);
+                                 }
+                            }];
     
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)textFieldDidChange_UserName{
