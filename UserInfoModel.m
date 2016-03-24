@@ -20,6 +20,7 @@
     [aCoder encodeObject:self.userName forKey:@"userName"];
     [aCoder encodeObject:self.password forKey:@"password"];
     [aCoder encodeObject:self.email forKey:@"email"];
+    [aCoder encodeObject:self.userId forKey:@"userId"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
@@ -28,7 +29,9 @@
         [self setUserName:[aDecoder decodeObjectForKey:@"userName"]];
         [self setPassword:[aDecoder decodeObjectForKey:@"password"]];
         [self setEmail:[aDecoder decodeObjectForKey:@"email"]];
-         
+        [self setUserId:[aDecoder decodeObjectForKey:@"userId"]];
+
+        
     }
     return self;
 }
