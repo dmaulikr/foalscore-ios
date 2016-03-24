@@ -361,9 +361,9 @@
 				BFEF05D81C54006200EF60C5 /* Supporting Files */,
 				BFEF05DB1C54006200EF60C5 /* AppDelegate.h */,
 				BFEF05DC1C54006200EF60C5 /* AppDelegate.m */,
+				BFEF05E31C54006300EF60C5 /* Info.plist */,
 				BFEF05DE1C54006300EF60C5 /* Assets.xcassets */,
 				BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */,
-				BFEF05E31C54006300EF60C5 /* Info.plist */,
 				BF7187011C5D802D00605426 /* DataManager */,
 				CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */,
 				CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */,
@@ -496,6 +496,7 @@
 				TargetAttributes = {
 					BFEF05D41C54006200EF60C5 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = HBK65VEPN6;
 					};
 					BFEF05E71C54006300EF60C5 = {
 						CreatedOnToolsVersion = 7.2;
@@ -767,11 +768,14 @@
 			baseConfigurationReference = EFF5DABCDD5D5F950C0EEA7A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "foal score/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-score";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -780,11 +784,14 @@
 			baseConfigurationReference = 0B8B1658147B80DF76A1B7D5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "foal score/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "osu.edu.foal-score";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

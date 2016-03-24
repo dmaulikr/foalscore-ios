@@ -10,6 +10,39 @@
 
 @implementation FoalInfoModel
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeInteger:self.age forKey:@"age"];
+    [aCoder encodeObject:self.breed forKey:@"breed"];
+    [aCoder encodeInteger:self.temperature forKey:@"temperature"];
+    [aCoder encodeInteger:self.respiratoryRate forKey:@"respiratoryRate"];
+    [aCoder encodeInteger:self.heartRate forKey:@"heartRate"];
+    [aCoder encodeBool:self.dystocia forKey:@"dystocia"];
+    [aCoder encodeObject:self.sex forKey:@"sex"];
+    [aCoder encodeBool:self.survivalUntilDischarge forKey:@"survivalUntilDischarge"];
+    [aCoder encodeInteger:self.survivalScore forKey:@"survivalScore"];
+    [aCoder encodeObject:self.addDate forKey:@"addDate"];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    if (self) {
+        [self setName:[aDecoder decodeObjectForKey:@"name"]];
+        [self setAge:[aDecoder decodeIntegerForKey:@"age"]];
+        [self setBreed:[aDecoder decodeObjectForKey:@"bread"]];
+        [self setTemperature:[aDecoder decodeIntegerForKey:@"temperature"]];
+        [self setRespiratoryRate:[aDecoder decodeIntegerForKey:@"respiratoryRate"]];
+        [self setHeartRate:[aDecoder decodeIntegerForKey:@"heartRate"]];
+        [self setDystocia:[aDecoder decodeBoolForKey:@"dystocia"]];
+        [self setSex:[aDecoder decodeObjectForKey:@"sex"]];
+        [self setSurvivalUntilDischarge:[aDecoder decodeBoolForKey:@"survivalUntilDischarge"]];
+        [self setSurvivalScore:[aDecoder decodeIntegerForKey:@"survivalScore"]];
+        [self setAddDate:[aDecoder decodeObjectForKey:@"addDate"]];
+    }
+    return self;
+}
+
 - (instancetype) initWithName:(NSString *)name Age:(NSInteger)age Breed:(NSString *)breed Temperature:(NSInteger)temperature RespiratoryRate:(NSInteger)respiratoryRate HeartRate:(NSInteger)heartRate Sex:(NSString *)sex Dystocia:(BOOL)dystocia SurvivalUntilDischarge:(BOOL)survival Date:(NSDate *)date{
     
     if(self = [super init]){

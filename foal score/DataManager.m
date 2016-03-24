@@ -15,8 +15,11 @@
     static UserInfoModel* userInfo = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        userInfo = [[UserInfoModel alloc]init];
-        
+        NSString *path = [DataManager userInfoArchivePath];
+        userInfo = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if(!userInfo){
+            userInfo =  [[UserInfoModel alloc]init];
+        }
     });
     return userInfo;
 }
@@ -26,14 +29,38 @@
     static NSMutableArray* foals = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        foals = [[NSMutableArray alloc]init];
-        // Test---------------------------------------
-        FoalInfoModel* foal1 = [[FoalInfoModel alloc]initWithName:@"foal1" Age:1 Breed:@"haha" Temperature:12 RespiratoryRate:122 HeartRate:323 Sex:@"Colt" Dystocia:YES SurvivalUntilDischarge:YES Date:[NSDate date]];
-        FoalInfoModel* foal2 = [[FoalInfoModel alloc]initWithName:@"foal2" Age:1 Breed:@"haha" Temperature:12 RespiratoryRate:122 HeartRate:323 Sex:@"Filly" Dystocia:YES SurvivalUntilDischarge:YES Date:[NSDate date]];
-        [foals addObject:foal1];
-        [foals addObject:foal2];
+        NSString *path = [DataManager foalInfoArchivePath];
+        foals = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if(!foals){
+            foals = [[NSMutableArray alloc]init];
+        }
+//        // Test---------------------------------------
+//        FoalInfoModel* foal1 = [[FoalInfoModel alloc]initWithName:@"Seabiscuit" Age:1 Breed:@"Thoroughbred" Temperature:98.6 RespiratoryRate:45 HeartRate:55 Sex:@"Colt" Dystocia:NO SurvivalUntilDischarge:YES Date:[NSDate date]];
+//        FoalInfoModel* foal2 = [[FoalInfoModel alloc]initWithName:@"Mahubah" Age:2 Breed:@"Thoroughbred" Temperature:98.7 RespiratoryRate:64 HeartRate:70 Sex:@"Filly" Dystocia:YES SurvivalUntilDischarge:YES Date:[NSDate date]];
+//        [foals addObject:foal1];
+//        [foals addObject:foal2];
     });
     return foals;
+}
+
++ (NSString *)foalInfoArchivePath{
+    NSArray* documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentDirectory = [documentDirectories objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"foalInfo.archive"];
+}
+
++ (NSString *)userInfoArchivePath{
+    NSArray* documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentDirectory = [documentDirectories objectAtIndex:0];
+    return [documentDirectory stringByAppendingString:@"userInfo.archive"];
+}
+
++ (BOOL)saveChanges{
+    NSString *path_info = [DataManager foalInfoArchivePath];
+    NSString *path_user = [DataManager userInfoArchivePath];
+    BOOL flag1 = [NSKeyedArchiver archiveRootObject:[DataManager foals] toFile:path_info];
+    BOOL flag2 = [NSKeyedArchiver archiveRootObject:[DataManager userInfo] toFile:path_user];
+    return flag1&&flag2;
 }
 
 @end

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.scoreLabel.text = [@(self.survivalScore) stringValue];
+    self.scoreLabel.text = [[@(self.survivalScore) stringValue] stringByAppendingString:@"%"];
 }
 
 - (void)didReceiveMemoryWarning {
