@@ -24,8 +24,9 @@
     return _sharedClient;
 }
 
--(void)registerNewUser:(NSDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+-(void)registerNewUser:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
+    params[@"token"] = @"TODO";
     [self POST:@"users/add.json"
         parameters:params
         success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -35,8 +36,9 @@
         }];
 }
 
--(void)loginUser:(NSDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+-(void)loginUser:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
+    params[@"token"] = @"TODO";
     [self POST:@"users/login.json"
     parameters:params
        success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -46,8 +48,9 @@
        }];
 }
 
--(void)calculateSurvivalScore:(NSDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+-(void)calculateSurvivalScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
+    params[@"token"] = @"TODO";
     [self POST:@"survivalscores/add.json"
     parameters:params
     success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -59,8 +62,5 @@
         block(nil, error);
         
     }];
-    // Mock Success
-    NSDictionary *response = @{@"score" : @"7", @"calculationId": @"25", @"scoreResultResponse" : @"The foal has 0% chance of survival"};
-    block(response, nil);
 }
 @end

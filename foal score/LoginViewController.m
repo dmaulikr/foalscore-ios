@@ -57,7 +57,9 @@
     [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
     
     // Send login info to server
-    NSDictionary *requestObj = @{@"email": email, @"password": password, @"token": @"TODO"};
+    NSMutableDictionary *requestObj =  [[NSMutableDictionary alloc]init];
+    requestObj[@"email"] = email;
+    requestObj[@"password"] = password;
     [[FoalScoreAFAPIClient sharedClient] loginUser: requestObj
                                    withCompletitionBlock:^(NSDictionary *response, NSError *error) {
                                        if(response) {

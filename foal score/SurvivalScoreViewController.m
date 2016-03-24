@@ -150,9 +150,10 @@
     // send HTTP request
     NSMutableDictionary* dict = self.buildingRequestDictionary;
     
+    NSLog(@"%@", dict);
     [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
         if (response) {
-            NSLog(@"%@",response[@"scoreResultResponse"]);
+            NSLog(@"%@",response);
         } else {
             NSLog(@"%@", error);
         }
@@ -161,12 +162,14 @@
 
 - (NSMutableDictionary*)buildingRequestDictionary{
     NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
-    [dict setObject:@"123" forKey:@"userId"];
+    [dict setObject:@"" forKey:@"userId"];
     [dict setObject:self.coldEx_lb.text forKey:@"coldExtremities"];
     [dict setObject:self.prematurity_lb.text forKey:@"prematurity"];
-    [dict setObject:self.glucose_lb.text forKey:@"GreaterThanEqualToTwoInfectionSites"];
+    [dict setObject:self.infection_lb.text forKey:@"GreaterThanEqualToTwoInfectionSites"];
     [dict setObject:self.igG_lb.text forKey:@"igG"];
-    [dict setObject:self.glucose_lb.text forKey:@"wbc"];
+    [dict setObject:self.glucose_lb.text forKey:@"glucose"];
+    [dict setObject:self.wbc_lb.text forKey:@"wbc"];
+
     if(self.shareOrNot.isOn == true){
         [dict setObject:@"1" forKey:@"allowShare"];
     }else{
