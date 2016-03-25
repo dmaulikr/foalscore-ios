@@ -38,6 +38,8 @@
 		BFEF05F81C54006300EF60C5 /* foal_scoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */; };
 		BFF878171C6FDC6F006B4FA7 /* ShowScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */; };
 		BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */; };
+		BFFC48F71CA4B19A009C2D91 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFC48F51CA4B19A009C2D91 /* RegisterViewController.m */; };
+		BFFC48F81CA4B19A009C2D91 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFC48F61CA4B19A009C2D91 /* RegisterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,9 @@
 		BFF878141C6FDC6E006B4FA7 /* ShowScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowScoreViewController.h; sourceTree = "<group>"; };
 		BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowScoreViewController.m; sourceTree = "<group>"; };
 		BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowScoreViewController.xib; sourceTree = "<group>"; };
+		BFFC48F41CA4B19A009C2D91 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		BFFC48F51CA4B19A009C2D91 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		BFFC48F61CA4B19A009C2D91 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		EFF5DABCDD5D5F950C0EEA7A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +162,7 @@
 				BFD1B81A1C63FF4D0023C8C6 /* AddNewFoalViewController */,
 				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
 				BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */,
+				BFFC48F91CA4B1A0009C2D91 /* RegisterViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -391,6 +397,16 @@
 			name = ShowScoreViewController;
 			sourceTree = "<group>";
 		};
+		BFFC48F91CA4B1A0009C2D91 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFFC48F41CA4B19A009C2D91 /* RegisterViewController.h */,
+				BFFC48F51CA4B19A009C2D91 /* RegisterViewController.m */,
+				BFFC48F61CA4B19A009C2D91 /* RegisterViewController.xib */,
+			);
+			name = RegisterViewController;
+			sourceTree = "<group>";
+		};
 		D4A787243DC23E7FE8F6885D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */,
+				BFFC48F81CA4B19A009C2D91 /* RegisterViewController.xib in Resources */,
 				BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */,
 				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
 				BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */,
@@ -611,6 +628,7 @@
 				BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */,
 				BFEF05DA1C54006200EF60C5 /* main.m in Sources */,
 				BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */,
+				BFFC48F71CA4B19A009C2D91 /* RegisterViewController.m in Sources */,
 				BFAF13EB1C62E45000126A5B /* FoalInfoModel.m in Sources */,
 				BFD1B8181C63FF460023C8C6 /* AddNewFoalViewController.m in Sources */,
 				BF7187001C5D802700605426 /* DataManager.m in Sources */,

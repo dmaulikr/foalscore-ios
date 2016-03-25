@@ -1,15 +1,14 @@
 //
-//  LoginViewController.h
+//  RegisterViewController.h
 //  foal score
 //
-//  Created by Jun on 1/26/16.
+//  Created by Jun on 3/24/16.
 //  Copyright © 2016 osu.edu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "UserInfoModel.h"
 #import "DataManager.h"
-#import "RegisterViewController.h"
-@interface LoginViewController : UIViewController
+@interface RegisterViewController : UIViewController
 
 @end

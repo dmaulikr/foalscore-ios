@@ -1,14 +1,14 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  foal score
 //
-//  Created by Jun on 1/26/16.
+//  Created by Jun on 3/24/16.
 //  Copyright © 2016 osu.edu. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "RegisterViewController.h"
 
-@interface LoginViewController ()
+@interface RegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation LoginViewController
+@implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,9 +53,8 @@
     NSString *userName = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *email = self.emailIDTextField.text;
-    UserInfoModel* userInfo = [DataManager userInfo];
-    [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //TO DO
 }
 
 - (void)textFieldDidChange_UserName{
@@ -72,7 +71,7 @@
     }else{
         self.doneButton.enabled = NO;
     }
-
+    
 }
 
 - (void)textFieldDidChange_emailID{
@@ -108,22 +107,17 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [UIView commitAnimations];
-
-}
-- (IBAction)pressNewUserButton:(id)sender {
-    NSLog(@"mama");
-    RegisterViewController* rg = [[RegisterViewController alloc]init];
-    [self presentViewController:rg animated:YES completion:nil];
+    
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
