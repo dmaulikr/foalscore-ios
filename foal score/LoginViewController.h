@@ -10,6 +10,7 @@
 #import "UserInfoModel.h"
 #import "DataManager.h"
 #import "FoalScoreAFAPIClient.h"
+#import "RegisterViewController.h"
 @interface LoginViewController : UIViewController
 
 @end
