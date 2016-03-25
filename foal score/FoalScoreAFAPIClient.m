@@ -29,6 +29,7 @@
     params[@"token"] = @"TODO";
     [self POST:@"users/add.json"
         parameters:params
+        progress:nil
         success:^(NSURLSessionDataTask *task, id responseObject) {
             block(responseObject, nil);
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -40,8 +41,9 @@
 {
     params[@"token"] = @"TODO";
     [self POST:@"users/login.json"
-    parameters:params
-       success:^(NSURLSessionDataTask *task, id responseObject) {
+        parameters:params
+        progress:nil
+        success:^(NSURLSessionDataTask *task, id responseObject) {
            block(responseObject, nil);
        } failure:^(NSURLSessionDataTask *task, NSError *error) {
            block(nil, error);
@@ -52,8 +54,9 @@
 {
     params[@"token"] = @"TODO";
     [self POST:@"survivalscores/add.json"
-    parameters:params
-    success:^(NSURLSessionDataTask *task, id responseObject) {
+        parameters:params
+        progress:nil
+        success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"%@",@"APIClient - success");
         block(responseObject, nil);
         

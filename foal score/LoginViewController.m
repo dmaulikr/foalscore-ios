@@ -53,8 +53,7 @@
     NSString *userName = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *email = self.emailIDTextField.text;
-    UserInfoModel* userInfo = [DataManager userInfo];
-    [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
+    
     
     // Send login info to server
     NSMutableDictionary *requestObj =  [[NSMutableDictionary alloc]init];
@@ -66,6 +65,10 @@
                                      if([response[@"status"] isEqual: @"success"]) {
                                          
                                          NSLog(@"%@ %@", @"ID:", response[@"userObj"][@"User"][@"id"]);
+                                         
+                                         //Save user login status
+                                         UserInfoModel* userInfo = [DataManager userInfo];
+                                         [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
                                          userInfo.userId = response[@"userObj"][@"User"][@"id"];
                                          [self dismissViewControllerAnimated:YES completion:nil];
                                      } else {

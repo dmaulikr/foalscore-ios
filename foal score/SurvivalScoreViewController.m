@@ -162,6 +162,7 @@
 
 - (NSMutableDictionary*)buildingRequestDictionary{
     NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+    // TODO get current user's userID
     [dict setObject:@"" forKey:@"userId"];
     [dict setObject:self.coldEx_lb.text forKey:@"coldExtremities"];
     [dict setObject:self.prematurity_lb.text forKey:@"prematurity"];
