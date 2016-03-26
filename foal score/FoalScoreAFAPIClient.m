@@ -50,6 +50,60 @@
        }];
 }
 
+
+-(void)forgotPassword:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"users/forgotpassword.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+-(void)changePassword:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"users/changepassword.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+-(void)referUser:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"users/referuser.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+
+-(void)userFeedback:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"users/feedback.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
 -(void)calculateSurvivalScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
     params[@"token"] = @"TODO";

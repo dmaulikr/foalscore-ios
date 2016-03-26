@@ -18,11 +18,22 @@ typedef void(^SuccessOrFailureCompletionBlock)(NSDictionary *response, NSError *
 - (void)loginUser:(NSDictionary *)params
   withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
+- (void)changePassword:(NSDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)forgotPassword:(NSDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)referUser:(NSDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)userFeedback:(NSDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
 - (void)calculateSurvivalScore:(NSDictionary *)params
          withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
 - (void)getOverview: (SuccessOrFailureCompletionBlock)block;
-
 
 - (void)getSepsisInfo: (SuccessOrFailureCompletionBlock)block;
 
