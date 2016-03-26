@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray* Qs;
 @property (nonatomic, strong) NSMutableArray* As;
+@property (nonatomic, strong) NSMutableArray* scores;
 
 @end
 
@@ -69,6 +70,88 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
    
+}
+
+- (NSMutableArray *)scores{
+    if(_scores == nil){
+        _scores = [[NSMutableArray alloc]init];
+        for(int i = 0;i<14;i++){
+            NSMutableArray* scoreArray = [[NSMutableArray alloc]init];
+            [_scores addObject:scoreArray];
+        }
+        // q1
+        [_scores[0] addObject:@"3"];
+        [_scores[0] addObject:@"2"];
+        [_scores[0] addObject:@"1"];
+        [_scores[0] addObject:@"2"];
+        [_scores[0] addObject:@"0"];
+        [_scores[0] addObject:@"0"];
+        // q2
+        [_scores[1] addObject:@"3"];
+        [_scores[1] addObject:@"2"];
+        [_scores[1] addObject:@"0"];
+        [_scores[1] addObject:@"0"];
+        //q3
+        [_scores[2] addObject:@"4"];
+        [_scores[2] addObject:@"3"];
+        [_scores[2] addObject:@"2"];
+        [_scores[2] addObject:@"0"];
+        //q4
+        [_scores[3] addObject:@"2"];
+        [_scores[3] addObject:@"1"];
+        [_scores[3] addObject:@"0"];
+        [_scores[3] addObject:@"0"];
+        //q5
+        [_scores[4] addObject:@"2"];
+        [_scores[4] addObject:@"1"];
+        [_scores[4] addObject:@"0"];
+        [_scores[4] addObject:@"0"];
+        //q6
+        [_scores[5] addObject:@"4"];
+        [_scores[5] addObject:@"3"];
+        [_scores[5] addObject:@"2"];
+        [_scores[5] addObject:@"0"];
+        [_scores[5] addObject:@"0"];
+        //q7
+        [_scores[6] addObject:@"3"];
+        [_scores[6] addObject:@"2"];
+        [_scores[6] addObject:@"1"];
+        [_scores[6] addObject:@"0"];
+        [_scores[6] addObject:@"0"];
+        //q8
+        [_scores[7] addObject:@"1"];
+        [_scores[7] addObject:@"0"];
+        [_scores[7] addObject:@"0"];
+        //q9
+        [_scores[8] addObject:@"3"];
+        [_scores[8] addObject:@"2"];
+        [_scores[8] addObject:@"1"];
+        [_scores[8] addObject:@"0"];
+        //q10
+        [_scores[9] addObject:@"2"];
+        [_scores[9] addObject:@"1"];
+        [_scores[9] addObject:@"0"];
+        //q11
+        [_scores[10] addObject:@"2"];
+        [_scores[10] addObject:@"1"];
+        [_scores[10] addObject:@"0"];
+        [_scores[10] addObject:@"0"];
+        //q12
+        [_scores[11] addObject:@"3"];
+        [_scores[11] addObject:@"0"];
+        [_scores[11] addObject:@"0"];
+        //q13
+        [_scores[12] addObject:@"3"];
+        [_scores[12] addObject:@"0"];
+        [_scores[12] addObject:@"0"];
+        //q14
+        [_scores[13] addObject:@"3"];
+        [_scores[13] addObject:@"2"];
+        [_scores[13] addObject:@"1"];
+        [_scores[13] addObject:@"0"];
+        [_scores[13] addObject:@"0"];
+    }
+    return _scores;
 }
 
 - (NSMutableArray *)As{
@@ -245,13 +328,43 @@
 
 - (IBAction)pressCalculateButton:(id)sender {
     NSArray* selects = [self.tableView indexPathsForSelectedRows];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+    // right now just user 123 change later!!!!
+    [dict setObject:@"123" forKey:@"userId"];
     for (NSIndexPath* select in selects) {
         NSInteger section = select.section;
         NSInteger row = select.row;
-        NSString* choice = [[self.As objectAtIndex:section]objectAtIndex:row];
-        NSString* question = [[self.Qs objectAtIndex:section]objectAtIndex:row];
-        // TO DO
+        if(section == 0){
+            [dict setObject:self.scores[0][row] forKey:@"CBC_neutrophilCount"];
+        }else if (section == 1){
+            [dict setObject:self.scores[1][row] forKey:@"CBC_bandNeutrophilCount"];
+        }else if (section == 2){
+            [dict setObject:self.scores[2][row] forKey:@"CBC_otherNeutrophilCount"];
+        }else if (section == 3){
+            [dict setObject:self.scores[3][row] forKey:@"CBC_fibrinogen"];
+        }else if (section == 4){
+            [dict setObject:self.scores[4][row] forKey:@"otherLabData_hypoglycemia"];
+        }else if (section == 5){
+            [dict setObject:self.scores[5][row] forKey:@"otherLabData_igG"];
+        }else if (section == 6){
+            [dict setObject:self.scores[6][row] forKey:@"otherLabData_aterialOxygen"];
+        }else if (section == 7){
+            [dict setObject:self.scores[7][row] forKey:@"otherLabData_metabolicAcidosis"];
+        }else if (section == 8){
+            [dict setObject:self.scores[8][row] forKey:@"clinicExam_injection"];
+        }else if (section == 9){
+            [dict setObject:self.scores[9][row] forKey:@"clinicExam_fever"];
+        }else if (section == 10){
+            [dict setObject:self.scores[10][row] forKey:@"clinicExam_hypotoniaComa"];
+        }else if (section == 11){
+            [dict setObject:self.scores[11][row] forKey:@"clinicExam_anteriorUveitisDiarrhea"];
+        }else if (section == 12){
+            [dict setObject:self.scores[12][row] forKey:@"histData_placentitisVulvar"];
+        }else{
+            [dict setObject:self.scores[13][row] forKey:@"histData_prematurity"];
+        }
     }
+    // HTTP req
 }
 
 //- (void)viewDidAppear:(BOOL)animated{
