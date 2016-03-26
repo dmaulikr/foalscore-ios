@@ -19,5 +19,17 @@ typedef void(^SuccessOrFailureCompletionBlock)(NSDictionary *response, NSError *
   withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
 - (void)calculateSurvivalScore:(NSDictionary *)params
-        withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+         withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)getOverview: (SuccessOrFailureCompletionBlock)block;
+
+
+- (void)getSepsisInfo: (SuccessOrFailureCompletionBlock)block;
+
+- (void)getSurvivalInfo: (SuccessOrFailureCompletionBlock)block;
+
+- (void)getTerminology: (SuccessOrFailureCompletionBlock)block;
+
+- (void)getReferences: (SuccessOrFailureCompletionBlock)block;
+
 @end
