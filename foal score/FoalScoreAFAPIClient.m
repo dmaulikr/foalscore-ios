@@ -65,5 +65,102 @@
         block(nil, error);
         
     }];
+    
+}-(void)calculateSepsisScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"sepsisscores/add.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSLog(@"%@",@"APIClient - success");
+           block(responseObject, nil);
+           
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"%@",@"APIClient - error");
+           block(nil, error);
+           
+       }];
+}
+
+-(void)getOverview: (SuccessOrFailureCompletionBlock)block
+//Important Information button in app
+{
+
+    [self GET:@"contents/overview.json"
+        parameters:nil
+        progress:nil
+        success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSLog(@"%@",@"APIClient - success");
+           block(responseObject, nil);
+           
+       }failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"%@",@"APIClient - error");
+           block(nil, error);
+           
+       }];
+}
+-(void)getSepsisInfo: (SuccessOrFailureCompletionBlock)block
+{
+    
+    [self GET:@"contents/sepsisscore.json"
+   parameters:nil
+     progress:nil
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+          NSLog(@"%@",@"APIClient - success");
+          block(responseObject, nil);
+          
+      }failure:^(NSURLSessionDataTask *task, NSError *error) {
+          NSLog(@"%@",@"APIClient - error");
+          block(nil, error);
+          
+      }];
+}
+-(void)getSurvivalInfo: (SuccessOrFailureCompletionBlock)block
+{
+    
+    [self GET:@"contents/survivalscore.json"
+   parameters:nil
+     progress:nil
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+          NSLog(@"%@",@"APIClient - success");
+          block(responseObject, nil);
+          
+      }failure:^(NSURLSessionDataTask *task, NSError *error) {
+          NSLog(@"%@",@"APIClient - error");
+          block(nil, error);
+          
+      }];
+}
+-(void)getTerminology: (SuccessOrFailureCompletionBlock)block {
+    
+    [self GET:@"contents/terminology.json"
+   parameters:nil
+     progress:nil
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+          NSLog(@"%@",@"APIClient - success");
+          block(responseObject, nil);
+          
+      }failure:^(NSURLSessionDataTask *task, NSError *error) {
+          NSLog(@"%@",@"APIClient - error");
+          block(nil, error);
+          
+      }];
+}
+-(void)getReferences: (SuccessOrFailureCompletionBlock)block {
+    
+    [self GET:@"contents/references.json"
+   parameters:nil
+     progress:nil
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+          NSLog(@"%@",@"APIClient - success");
+          block(responseObject, nil);
+          
+      }failure:^(NSURLSessionDataTask *task, NSError *error) {
+          NSLog(@"%@",@"APIClient - error");
+          block(nil, error);
+          
+      }];
+>>>>>>> 46ee32304ed4a5f590a46d46f1d5c3d15d0ea5d0
 }
 @end
