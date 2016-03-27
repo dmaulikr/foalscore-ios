@@ -12,25 +12,40 @@ typedef void(^AFAPIClientErrorCompletionBlock)(NSError *error);
 typedef void(^SuccessOrFailureCompletionBlock)(NSDictionary *response, NSError *error);
 @interface FoalScoreAFAPIClient : AFHTTPSessionManager
 + (instancetype)sharedClient;
-- (void)registerNewUser:(NSDictionary *)params
+- (void)registerNewUser:(NSMutableDictionary *)params
         withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
-- (void)loginUser:(NSDictionary *)params
+- (void)loginUser:(NSMutableDictionary *)params
   withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
-- (void)changePassword:(NSDictionary *)params
+- (void)changePassword:(NSMutableDictionary *)params
 withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
-- (void)forgotPassword:(NSDictionary *)params
+- (void)forgotPassword:(NSMutableDictionary *)params
 withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
-- (void)referUser:(NSDictionary *)params
+- (void)referUser:(NSMutableDictionary *)params
 withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
-- (void)userFeedback:(NSDictionary *)params
+- (void)userFeedback:(NSMutableDictionary *)params
 withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
-- (void)calculateSurvivalScore:(NSDictionary *)params
+- (void)addFoal:(NSMutableDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)editFoal:(NSMutableDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)allFoals:(NSMutableDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)exportFoals:(NSMutableDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)foalScores:(NSMutableDictionary *)params
+withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)calculateSurvivalScore:(NSMutableDictionary *)params
          withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
 - (void)getOverview: (SuccessOrFailureCompletionBlock)block;

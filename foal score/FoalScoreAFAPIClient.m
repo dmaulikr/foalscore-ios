@@ -104,6 +104,71 @@
        }];
 }
 
+-(void)addFoal:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"foals/add.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+-(void)editFoal:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"foals/edit.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+-(void)allFoals:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"foals/all.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+-(void)exportFoals:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"foals/export.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
+-(void)foalScores:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"foals/foalcalculations.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           block(responseObject, nil);
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           block(nil, error);
+       }];
+}
+
 -(void)calculateSurvivalScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
     params[@"token"] = @"TODO";
