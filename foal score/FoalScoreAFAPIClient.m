@@ -185,10 +185,46 @@
         
     }];
     
-}-(void)calculateSepsisScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+}
+
+-(void)calculateSepsisScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
     params[@"token"] = @"TODO";
     [self POST:@"sepsisscores/add.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSLog(@"%@",@"APIClient - success");
+           block(responseObject, nil);
+           
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"%@",@"APIClient - error");
+           block(nil, error);
+           
+       }];
+}
+
+-(void)foalSurvivalScoreLink:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"survivalscores/foalsurvivalcalculatorlink.json"
+    parameters:params
+      progress:nil
+       success:^(NSURLSessionDataTask *task, id responseObject) {
+           NSLog(@"%@",@"APIClient - success");
+           block(responseObject, nil);
+           
+       } failure:^(NSURLSessionDataTask *task, NSError *error) {
+           NSLog(@"%@",@"APIClient - error");
+           block(nil, error);
+           
+       }];
+}
+
+-(void)foalSepsisScoreLink:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
+{
+    params[@"token"] = @"TODO";
+    [self POST:@"sepsisscores/foalsepsiscalculatorlink.json"
     parameters:params
       progress:nil
        success:^(NSURLSessionDataTask *task, id responseObject) {

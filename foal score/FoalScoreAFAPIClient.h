@@ -48,6 +48,15 @@ withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 - (void)calculateSurvivalScore:(NSMutableDictionary *)params
          withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
 
+- (void)calculateSepsisScore:(NSMutableDictionary *)params
+         withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)foalSurvivalScoreLink:(NSMutableDictionary *)params
+         withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
+- (void)foalSepsisScoreLink:(NSMutableDictionary *)params
+         withCompletitionBlock:(SuccessOrFailureCompletionBlock)block;
+
 - (void)getOverview: (SuccessOrFailureCompletionBlock)block;
 
 - (void)getSepsisInfo: (SuccessOrFailureCompletionBlock)block;
