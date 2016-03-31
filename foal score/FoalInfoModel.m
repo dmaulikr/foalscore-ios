@@ -22,6 +22,7 @@
     [aCoder encodeBool:self.survivalUntilDischarge forKey:@"survivalUntilDischarge"];
     [aCoder encodeInteger:self.survivalScore forKey:@"survivalScore"];
     [aCoder encodeObject:self.addDate forKey:@"addDate"];
+    [aCoder encodeObject:self.foalId forKey:@"foalId"];
     
 }
 
@@ -39,6 +40,7 @@
         [self setSurvivalUntilDischarge:[aDecoder decodeBoolForKey:@"survivalUntilDischarge"]];
         [self setSurvivalScore:[aDecoder decodeIntegerForKey:@"survivalScore"]];
         [self setAddDate:[aDecoder decodeObjectForKey:@"addDate"]];
+        [self setFoalId:[aDecoder decodeObjectForKey:@"foalId"]];
     }
     return self;
 }
@@ -57,6 +59,7 @@
         self.survivalUntilDischarge = survival;
         self.addDate = date;
         self.survivalScore = -1;
+        self.foalId = nil;
     }
     return self;
 }
