@@ -74,9 +74,16 @@
                                      } else {
                                          //TODO - pop modal with error message from server
                                          NSLog(@"%@ %@", @"Error", response[@"error"]);
+                                         UIAlertController *errorDialog = [UIAlertController alertControllerWithTitle:@"Error" message:response[@"error"] preferredStyle:UIAlertControllerStyleAlert];
+                                         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                             [errorDialog dismissViewControllerAnimated:YES completion:nil];
+                                         }];
+                                         [errorDialog addAction:defaultAction];
+                                         [self presentViewController:errorDialog animated:YES completion:nil];
                                      }
                                  } else {
                                      //TODO - pop modal with error, probably no internet or something along those lines
+                                     UIAlertController *errorMessage = [UIAlertController alertControllerWithTitle:@"Error" message:response[@"error"] preferredStyle:UIAlertControllerStyleAlert];
                                      NSLog(@"%@", error);
                                  }
                             }];
