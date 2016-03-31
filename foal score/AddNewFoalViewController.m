@@ -108,9 +108,113 @@
         newFoal.sex = @"Filly";
     }
     NSMutableArray* foals = [DataManager foals];
-    [foals addObject:newFoal];
+    if (!(self.share.isOn && !self.modify)) {
+        [foals addObject:newFoal];
+    }
     if (self.modify) {
+        if(self.share.isOn){
+            FoalInfoModel* foal = [DataManager foals][self.indexOfFoalThatNeedToModify];
+            if([foal foalId]){
+                if([DataManager loginOrNot]){
+                    NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+                    [dict setObject:self.name.text forKey:@"name"];
+                    [dict setObject:self.age.text forKey:@"ageMonths"];
+                    if (self.sex.selectedSegmentIndex == 0) {
+                        [dict setObject:@"Colt" forKey:@"gender"];
+                    }else{
+                        [dict setObject:@"Filly" forKey:@"gender"];
+                    }
+                    
+                    [dict setObject:self.breed.text forKey:@"breed"];
+                    [dict setObject:self.temp.text forKey:@"temperature"];
+                    [dict setObject:self.rRate.text forKey:@"respiratoryRate"];
+                    [dict setObject:self.hRate.text forKey:@"heartRate"];
+                    
+                    if (self.dystocia.isOn) {
+                        [dict setObject:@"Yes" forKey:@"dystocia"];
+                    }else{
+                        [dict setObject:@"No" forKey:@"dystocia"];
+                    }
+                    if(self.survived.isOn){
+                        [dict setObject:@"Yes" forKey:@"survivedUntilHospitalDischarge"];
+                    }else{
+                        [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
+                    }
+                    [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+                    [dict setObject:@"1" forKey:@"allowShare"];
+                    [dict setObject:[foal foalId] forKey:@"foalid"];
+                    // send request
+                    FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
+                    [client editFoal:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                        if(response) {
+                            if([response[@"status"] isEqual: @"success"]) {
+                                NSString* foalId = response[@"foalid"];
+                                [newFoal setFoalId:foalId];
+                            } else {
+                                NSLog(@"%@ %@", @"Error", response[@"error"]);
+                                [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+                            }
+                        } else {
+                            [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+                        }
+                    }];
+                    
+                }else{
+                    [UiModal showModalWithTitle:@"ERROR" message:@"Please log in first!" buttonTitle:@"OK" viewController:self];
+                }
+
+            }else{
+                [UiModal showModalWithTitle:@"Error" message:@"This foal wasn't previously shared with The Ohio State University" buttonTitle:@"OK" viewController:self];
+            }
+        }
         [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
+    }
+    
+    // build dictionary
+    if(self.share.isOn && !self.modify){
+        if([DataManager loginOrNot]){
+            NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+            [dict setObject:self.name.text forKey:@"name"];
+            [dict setObject:self.age.text forKey:@"ageMonths"];
+            [dict setObject:newFoal.sex forKey:@"gender"];
+            [dict setObject:self.breed.text forKey:@"breed"];
+            [dict setObject:self.temp.text forKey:@"temperature"];
+            [dict setObject:self.rRate.text forKey:@"respiratoryRate"];
+            [dict setObject:self.hRate.text forKey:@"heartRate"];
+            
+            if (self.dystocia.isOn) {
+                [dict setObject:@"Yes" forKey:@"dystocia"];
+            }else{
+                [dict setObject:@"No" forKey:@"dystocia"];
+            }
+            if(self.survived.isOn){
+                [dict setObject:@"Yes" forKey:@"survivedUntilHospitalDischarge"];
+            }else{
+                [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
+            }
+            [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+            [dict setObject:@"1" forKey:@"allowShare"];
+            // add foal locally
+            [foals addObject:newFoal];
+            // send request
+            FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
+            [client addFoal:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                if(response) {
+                    if([response[@"status"] isEqual: @"success"]) {
+                        NSString* foalId = response[@"foalid"];
+                        [newFoal setFoalId:foalId];
+                    } else {
+                        NSLog(@"%@ %@", @"Error", response[@"error"]);
+                        [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+                    }
+                } else {
+                    [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+                }
+            }];
+            
+        }else{
+            [UiModal showModalWithTitle:@"ERROR" message:@"Please log in first!" buttonTitle:@"OK" viewController:self];
+        }
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
