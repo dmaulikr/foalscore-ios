@@ -16,7 +16,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         // Code to be run only once
-        static NSString * const BaseURLString = @"https://foalscore.org.ohio-state.edu/foalscore/server/";
+        static NSString * const BaseURLString = @"http://foalscore.org.ohio-state.edu/foalscore/server/";
         NSURL *baseURL = [NSURL URLWithString:BaseURLString];
         _sharedClient = [[FoalScoreAFAPIClient alloc] initWithBaseURL:baseURL];
     });
