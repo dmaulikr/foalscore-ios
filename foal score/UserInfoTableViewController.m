@@ -95,8 +95,6 @@
     switch (indexPath.row) {
         // login/user profile
         case 0:{
-            NSLog(@"User info/Login");
-            UserInfoModel* test = [DataManager userInfo];
             if (![DataManager loginOrNot]){
                 LoginViewController *log = [[LoginViewController alloc]init];
                 [self presentViewController:log animated:YES completion:nil];

@@ -74,11 +74,13 @@
                                      } else {
                                          //TODO - pop modal with error message from server
                                          NSLog(@"%@ %@", @"Error", response[@"error"]);
-                                         [UiModal showModalWithTitle:@"ERROR" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+                                         [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
                                          
                                      }
                                  } else {
                                      //TODO - pop modal with error, probably no internet or something along those lines
+                                     [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+
                                      NSLog(@"%@", error);
                                  }
                             }];

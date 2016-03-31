@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UiModal.h"
 
 @interface OverviewTableViewController : UIViewController
 

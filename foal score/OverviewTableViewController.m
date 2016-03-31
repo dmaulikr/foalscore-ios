@@ -109,16 +109,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    // go here
-    // indexPath.row will return a Nsinteger
-    NSInteger a = indexPath.row;
-    // change massage
-    UIAlertController *contentInfo = [UIAlertController alertControllerWithTitle:[self.choices objectAtIndex:indexPath.row] message:[self.contents objectAtIndex:indexPath.row] preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [contentInfo dismissViewControllerAnimated:YES completion:nil];
-    }];
-    [contentInfo addAction:defaultAction];
-    [self presentViewController:contentInfo animated:YES completion:nil];
+    // change message
+    [UiModal showModalWithTitle:[self.choices objectAtIndex:indexPath.row] message:[self.contents objectAtIndex:indexPath.row]buttonTitle:@"OK" viewController:self];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
