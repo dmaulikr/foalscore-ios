@@ -155,6 +155,9 @@
 }
 
 - (NSMutableArray *)As{
+    NSInteger number = 10;
+    NSString *cubedSymbol = @"\u2079";
+    NSString *tenSymbol = [NSString stringWithFormat:@"%d%@",number,cubedSymbol];
     if(_As == nil){
         NSMutableArray* choices1 = [[NSMutableArray alloc]init];
         NSMutableArray* choices2 = [[NSMutableArray alloc]init];
@@ -171,16 +174,31 @@
         NSMutableArray* choices13 = [[NSMutableArray alloc]init];
         NSMutableArray* choices14 = [[NSMutableArray alloc]init];
 
-        [choices1 addObject:@"< 2.0 * 10^9"];
-        [choices1 addObject:@"2.0 - 4.0* 10^9"];
-        [choices1 addObject:@"8.0 - 12.0 * 10^9"];
-        [choices1 addObject:@"> 12.0 * 10^9"];
+        NSString *c11 = [NSString stringWithFormat:@"%@%@",@"< 2.0 * ",tenSymbol];
+        
+        NSString *c12 = [NSString stringWithFormat:@"%@%@",@"2.0 - 4.0* ",tenSymbol];
+        
+        NSString *c13 = [NSString stringWithFormat:@"%@%@",@"8.0 - 12.0 * ",tenSymbol];
+        
+        NSString *c14 = [NSString stringWithFormat:@"%@%@",@"> 12.0 * ",tenSymbol];
+        
+        
+        [choices1 addObject:c11];
+        [choices1 addObject:c12];
+        [choices1 addObject:c13];
+        [choices1 addObject:c14];
         [choices1 addObject:@"Normal"];
         [choices1 addObject:@"Not Available"];
         
-        [choices2 addObject:@"> 2.0 * 10^9"];
-        [choices2 addObject:@"0.05 - 0.20 * 10^9"];
-        [choices2 addObject:@"< 0.05 * 10^9"];
+        NSString *c21 = [NSString stringWithFormat:@"%@%@",@"> 2.0 * ",tenSymbol];
+        
+        NSString *c22 = [NSString stringWithFormat:@"%@%@",@"0.05 - 0.20 * ",tenSymbol];
+        
+        NSString *c23 = [NSString stringWithFormat:@"%@%@",@"< 0.05 * ",tenSymbol];
+        
+        [choices2 addObject:c21];
+        [choices2 addObject:c22];
+        [choices2 addObject:c23];
         [choices2 addObject:@"Not Available"];
         
         [choices3 addObject:@"Marked"];
@@ -266,11 +284,12 @@
     if (_Qs == nil) {
         _Qs = [[NSMutableArray alloc]init];
         [_Qs addObject:@"Neutrophil Count"];
+        
         [_Qs addObject:@"Band Neutrophil Count"];
-        [_Qs addObject:@"Doehel bodies,toxic changes, granulation, or vacuolization in neutrophils"];
-        [_Qs addObject:@"Fibrinogen(mg/dL)"];
-        [_Qs addObject:@"Hypoglycemia(mg/dL)"];
-        [_Qs addObject:@"IgG(mg/dL)"];
+        [_Qs addObject:@"Doehle bodies,toxic changes, granulation, or vacuolization in neutrophils"];
+        [_Qs addObject:@"Fibrinogen (mg/dL)"];
+        [_Qs addObject:@"Hypoglycemia (mg/dL)"];
+        [_Qs addObject:@"IgG (mg/dL)"];
         [_Qs addObject:@"Aterial oxygen"];
         [_Qs addObject:@"Metabolic acidosis"];
         [_Qs addObject:@"Petechiation or scleral injection, no secondary to eye disease or trauma"];
@@ -283,6 +302,73 @@
     }
     return _Qs;
 }
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    header.textLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+    switch (section) {
+            
+            
+            
+            
+        case 0:
+            header.textLabel.text = @"Neutrophil Count";
+            
+        
+            break;
+        case 1:
+            
+            header.textLabel.text = @"Band Neutrophil Count";
+            break;
+        case 2:
+            
+            header.textLabel.text = @"Doehle bodies,toxic changes, granulation, or vacuolization in neutrophils";
+            break;
+        case 3:
+            
+            header.textLabel.text = @"Fibrinogen (mg/dL)";
+            break;
+        case 4:
+            header.textLabel.text=@"Hypoglycemia (mg/dL)";
+            break;
+        case 5:
+            header.textLabel.text=@"IgG (mg/dL)";
+            break;
+        case 6:
+            header.textLabel.text=@"Aterial oxygen";
+            break;
+        case 7:
+            header.textLabel.text=@"Metabolic acidosis";
+        case 8:
+            header.textLabel.text=@"Petechiation or scleral injection, no secondary to eye disease or trauma";
+            break;
+        case 9 :
+            header.textLabel.text=@"Fever";
+            break;
+        case 10:
+            header.textLabel.text=@"Hypotonia, coma depression, convulsions";
+            break;
+            
+        case 11:
+            header.textLabel.text=@"Anterior uveitis, diarrhea, respiratory distress, swollen joints, open wounds";
+            break;
+            
+        case 12:
+            header.textLabel.text=@"Placentitis, vulvar discharge prior to delivery, dystocia, long transport of mare, mare sick, foal induced";
+            break;
+        case 13:
+            header.textLabel.text=@"Prematurity";
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    //header.textLabel.textColor = [UIColor orangeColor];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell...
     
