@@ -283,21 +283,21 @@
 - (NSMutableArray*)Qs{
     if (_Qs == nil) {
         _Qs = [[NSMutableArray alloc]init];
-        [_Qs addObject:@"Neutrophil Count"];
         
-        [_Qs addObject:@"Band Neutrophil Count"];
-        [_Qs addObject:@"Doehle bodies,toxic changes, granulation, or vacuolization in neutrophils"];
-        [_Qs addObject:@"Fibrinogen (mg/dL)"];
-        [_Qs addObject:@"Hypoglycemia (mg/dL)"];
-        [_Qs addObject:@"IgG (mg/dL)"];
-        [_Qs addObject:@"Aterial oxygen"];
-        [_Qs addObject:@"Metabolic acidosis"];
+        [_Qs addObject:@"1"];
+        [_Qs addObject:@"2"];
+        [_Qs addObject:@"Doehle bodies, toxic changes, granulation, or vacuolization in neutrophils"];
+        [_Qs addObject:@"4"];
+        [_Qs addObject:@"5"];
+        [_Qs addObject:@"6"];
+        [_Qs addObject:@"7"];
+        [_Qs addObject:@"8"];
         [_Qs addObject:@"Petechiation or scleral injection, no secondary to eye disease or trauma"];
-        [_Qs addObject:@"Fever"];
-        [_Qs addObject:@"Hypotonia, coma depression, convulsions"];
+        [_Qs addObject:@"10"];
+        [_Qs addObject:@"11"];
         [_Qs addObject:@"Anterior uveitis, diarrhea, respiratory distress, swollen joints, open wounds"];
         [_Qs addObject:@"Placentitis, vulvar discharge prior to delivery, dystocia, long transport of mare, mare sick, foal induced"];
-        [_Qs addObject:@"Prematurity"];
+        [_Qs addObject:@"14"];
         
     }
     return _Qs;
@@ -313,17 +313,17 @@
             
             
         case 0:
-            header.textLabel.text = @"Neutrophil Count";
+            header.textLabel.text = @"Neutrophil count";
             
         
             break;
         case 1:
             
-            header.textLabel.text = @"Band Neutrophil Count";
+            header.textLabel.text = @"Band neutrophil count";
             break;
         case 2:
             
-            header.textLabel.text = @"Doehle bodies,toxic changes, granulation, or vacuolization in neutrophils";
+            header.textLabel.text = @"Doehle bodies, toxic changes, granulation, or vacuolization in neutrophils";
             break;
         case 3:
             
@@ -336,10 +336,11 @@
             header.textLabel.text=@"IgG (mg/dL)";
             break;
         case 6:
-            header.textLabel.text=@"Aterial oxygen";
+            header.textLabel.text=@"Aterial oxygen (Torr)";
             break;
         case 7:
             header.textLabel.text=@"Metabolic acidosis";
+            break;
         case 8:
             header.textLabel.text=@"Petechiation or scleral injection, no secondary to eye disease or trauma";
             break;
