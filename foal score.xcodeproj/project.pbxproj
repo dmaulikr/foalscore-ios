@@ -16,6 +16,7 @@
 		BF3650C31C6BAECB00E09DC3 /* OneFoalInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3650C11C6BAECB00E09DC3 /* OneFoalInfoViewController.xib */; };
 		BF3E6DB81C6AE64E00C07BED /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */; };
 		BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */; };
+		BF4F81151CACAB680021AD1F /* UiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4F81141CACAB680021AD1F /* UiModal.m */; };
 		BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */; };
 		BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */; };
 		BF69C0941C7C0B390020F678 /* SepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF69C0921C7C0B390020F678 /* SepsisScoreViewController.xib */; };
@@ -41,8 +42,7 @@
 		BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */; };
 		BFFC48F71CA4B19A009C2D91 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFC48F51CA4B19A009C2D91 /* RegisterViewController.m */; };
 		BFFC48F81CA4B19A009C2D91 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFC48F61CA4B19A009C2D91 /* RegisterViewController.xib */; };
-        CF1EEAE41C875EBF001269C1 /* FoalScoreAFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */; };
-
+		CF1EEAE41C875EBF001269C1 /* FoalScoreAFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +79,8 @@
 		BF3E6DB51C6AE64E00C07BED /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = "foal score/MGSwipeButton.m"; sourceTree = "<group>"; };
 		BF3E6DB61C6AE64E00C07BED /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = "foal score/MGSwipeTableCell.h"; sourceTree = "<group>"; };
 		BF3E6DB71C6AE64E00C07BED /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = "foal score/MGSwipeTableCell.m"; sourceTree = "<group>"; };
+		BF4F81131CACAB680021AD1F /* UiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UiModal.h; sourceTree = "<group>"; };
+		BF4F81141CACAB680021AD1F /* UiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UiModal.m; sourceTree = "<group>"; };
 		BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfFoalsChoosingToAttachedViewController.h; sourceTree = "<group>"; };
 		BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfFoalsChoosingToAttachedViewController.m; sourceTree = "<group>"; };
 		BF69C0901C7C0B390020F678 /* SepsisScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SepsisScoreViewController.h; sourceTree = "<group>"; };
@@ -121,12 +123,12 @@
 		BFF878141C6FDC6E006B4FA7 /* ShowScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowScoreViewController.h; sourceTree = "<group>"; };
 		BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowScoreViewController.m; sourceTree = "<group>"; };
 		BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowScoreViewController.xib; sourceTree = "<group>"; };
-				BFFC48F41CA4B19A009C2D91 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		BFFC48F41CA4B19A009C2D91 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		BFFC48F51CA4B19A009C2D91 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BFFC48F61CA4B19A009C2D91 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-        CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoalScoreAFAPIClient.h; sourceTree = "<group>"; };
-        CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoalScoreAFAPIClient.m; sourceTree = "<group>"; };
-        EFF5DABCDD5D5F950C0EEA7A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoalScoreAFAPIClient.h; sourceTree = "<group>"; };
+		CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoalScoreAFAPIClient.m; sourceTree = "<group>"; };
+		EFF5DABCDD5D5F950C0EEA7A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,15 @@
 			);
 			name = MGS;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		BF4F81171CACAB760021AD1F /* UiComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F81131CACAB680021AD1F /* UiModal.h */,
+				BF4F81141CACAB680021AD1F /* UiModal.m */,
+			);
+			name = UiComponents;
 			sourceTree = "<group>";
 		};
 		BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */ = {
@@ -375,6 +386,7 @@
 				CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */,
 				CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */,
 				63B3DCC11C8D505D00421235 /* Utilities */,
+				BF4F81171CACAB760021AD1F /* UiComponents */,
 			);
 			name = foalScore;
 			path = "foal score";
@@ -638,6 +650,7 @@
 				BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */,
 				BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */,
 				BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */,
+				BF4F81151CACAB680021AD1F /* UiModal.m in Sources */,
 				BFAF13E71C62E13100126A5B /* MyFoalViewController.m in Sources */,
 				BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */,
 				BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */,
