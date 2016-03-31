@@ -72,12 +72,11 @@
                                          userInfo.userId = response[@"userObj"][@"User"][@"id"];
                                          [self dismissViewControllerAnimated:YES completion:nil];
                                      } else {
-                                         //TODO - pop modal with error message from server
                                          NSLog(@"%@ %@", @"Error", response[@"error"]);
+                                         [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
                                      }
                                  } else {
-                                     //TODO - pop modal with error, probably no internet or something along those lines
-                                     NSLog(@"%@", error);
+                                     [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
                                  }
                             }];
     

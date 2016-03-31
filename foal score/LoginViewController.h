@@ -11,6 +11,7 @@
 #import "DataManager.h"
 #import "FoalScoreAFAPIClient.h"
 #import "RegisterViewController.h"
+#import "UiModal.h"
 @interface LoginViewController : UIViewController
 
 @end

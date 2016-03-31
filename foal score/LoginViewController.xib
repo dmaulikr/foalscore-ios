@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
@@ -21,6 +21,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-Lo-pDy">
                     <rect key="frame" x="96" y="67" width="129" height="63"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="129" id="BIA-eK-Ywu"/>
                         <constraint firstAttribute="height" constant="63" id="M07-rl-j0D"/>
@@ -31,6 +32,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3W-aJ-NGx">
                     <rect key="frame" x="28" y="187" width="133" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="133" id="DhE-6D-cao"/>
                         <constraint firstAttribute="height" constant="21" id="XNX-pl-LeC"/>
@@ -41,6 +43,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc9-Ks-FCm">
                     <rect key="frame" x="28" y="288" width="133" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="133" id="4vG-CX-pq7"/>
                         <constraint firstAttribute="height" constant="21" id="g8a-yo-hdN"/>
@@ -51,6 +54,7 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpc-dw-mrN">
                     <rect key="frame" x="180" y="185" width="113" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="VIG-2Z-Qkb"/>
                         <constraint firstAttribute="height" constant="30" id="n5t-hB-pHn"/>
@@ -60,6 +64,7 @@
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9C-Zo-Bb3">
                     <rect key="frame" x="180" y="284" width="113" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="kxa-dI-uns"/>
                         <constraint firstAttribute="height" constant="30" id="xoJ-f8-Xye"/>
@@ -69,6 +74,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xr-Yg-qEl">
                     <rect key="frame" x="202" y="379" width="68" height="49"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="68" id="7UQ-qV-GTE"/>
                         <constraint firstAttribute="height" constant="49" id="VMZ-pe-pf5"/>
@@ -81,6 +87,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua4-JC-Fo1">
                     <rect key="frame" x="28" y="240" width="133" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="133" id="ibH-1q-IFv"/>
                         <constraint firstAttribute="height" constant="21" id="oYB-MI-qfL"/>
@@ -91,6 +98,7 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-m9-ERK">
                     <rect key="frame" x="180" y="231" width="113" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="9x1-n4-Nar"/>
                         <constraint firstAttribute="width" constant="113" id="FHo-y8-WWQ"/>
@@ -100,6 +108,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBw-ZP-B2j">
                     <rect key="frame" x="179" y="424" width="91" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="91" id="WPb-G2-Wcb"/>
                         <constraint firstAttribute="height" constant="30" id="Xts-Fy-Lig"/>
@@ -111,6 +120,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huQ-bC-noG">
                     <rect key="frame" x="74" y="379" width="68" height="49"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="68" id="aLl-hh-EPo"/>
                         <constraint firstAttribute="height" constant="49" id="uAo-jH-lpf"/>
@@ -122,6 +132,7 @@
                     </connections>
                 </button>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Ua4-JC-Fo1" firstAttribute="top" secondItem="I3W-aJ-NGx" secondAttribute="bottom" constant="32" id="2R9-u3-LZ7"/>
