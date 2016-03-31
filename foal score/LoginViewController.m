@@ -70,6 +70,9 @@
                                          UserInfoModel* userInfo = [DataManager userInfo];
                                          [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
                                          userInfo.userId = response[@"userObj"][@"User"][@"id"];
+                                         
+                                         //UserInfoViewController* userInfoVC = [[UserInfoViewController alloc] init];
+                                         //[self.navigationController pushViewController:userInfoVC animated:YES];
                                          [self dismissViewControllerAnimated:YES completion:nil];
                                      } else {
                                          NSLog(@"%@ %@", @"Error", response[@"error"]);
@@ -77,6 +80,8 @@
                                      }
                                  } else {
                                      [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+                                     NSLog(@"%@ %@", @"Error", [error localizedDescription]);
+
                                  }
                             }];
     

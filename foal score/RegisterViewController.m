@@ -10,7 +10,7 @@
 
 @interface RegisterViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailIDTextField;
@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.doneButton.enabled = NO;
-    [self.userNameTextField addTarget:self action:@selector(textFieldDidChange_UserName) forControlEvents:UIControlEventEditingDidEnd];
+    [self.nameTextField addTarget:self action:@selector(textFieldDidChange_Name) forControlEvents:UIControlEventEditingDidEnd];
     [self.passwordTextField addTarget:self action:@selector(textFieldDidChange_Password) forControlEvents:UIControlEventEditingDidEnd];
     [self.emailIDTextField addTarget:self action:@selector(textFieldDidChange_emailID) forControlEvents:UIControlEventEditingDidEnd];
     // Listen for keyboard appearances and disappearances
@@ -50,15 +50,40 @@
 }
 
 - (IBAction)doneButtonPress:(id)sender {
-    NSString *userName = self.userNameTextField.text;
+    NSString *name = self.nameTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *email = self.emailIDTextField.text;
     
-    //TO DO
+    NSMutableDictionary *registrationInfo = [[NSMutableDictionary alloc] init];
+    registrationInfo[@"email"] = email;
+    registrationInfo[@"name"] = name;
+    registrationInfo[@"password"] = password;
+    
+    [[FoalScoreAFAPIClient sharedClient] registerNewUser:registrationInfo withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+        if (response) {
+            if ([response[@"status"] isEqual: @"success"]) {
+                NSLog(@"%@ %@", @"ID:", response[@"userObj"][@"User"][@"id"]);
+                
+                //Save user login status
+                UserInfoModel* userInfo = [DataManager userInfo];
+                [userInfo modifyUserName:name AndPassword:password AndEmailID:email];
+                userInfo.userId = response[@"userObj"][@"User"][@"id"];
+                
+                //UserInfoViewController* userInfoVC = [[UserInfoViewController alloc] init];
+                //[self.navigationController pushViewController:userInfoVC animated:YES];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+            }
+        } else {
+            [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            NSLog(@"%@ %@", @"Error", [error localizedDescription]);
+        }
+    }];
 }
 
-- (void)textFieldDidChange_UserName{
-    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
+- (void)textFieldDidChange_Name{
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.nameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
         self.doneButton.enabled = YES;
     }else{
         self.doneButton.enabled = NO;
@@ -66,7 +91,7 @@
 }
 
 - (void)textFieldDidChange_Password{
-    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.nameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
         self.doneButton.enabled = YES;
     }else{
         self.doneButton.enabled = NO;
@@ -75,7 +100,7 @@
 }
 
 - (void)textFieldDidChange_emailID{
-    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.nameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
         self.doneButton.enabled = YES;
     }else{
         self.doneButton.enabled = NO;

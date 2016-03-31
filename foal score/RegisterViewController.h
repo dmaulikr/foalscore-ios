@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "UserInfoModel.h"
 #import "DataManager.h"
+#import "FoalScoreAFAPIClient.h"
+#import "UiModal.h"
+#import "UserInfoViewController.h"
+
 @interface RegisterViewController : UIViewController
 
 @end
