@@ -61,14 +61,14 @@
 + (NSString *)userInfoArchivePath{
     NSArray* documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentDirectory = [documentDirectories objectAtIndex:0];
-    return [documentDirectory stringByAppendingString:@"userInfo.archive"];
+    return [documentDirectory stringByAppendingPathComponent:@"userInfo.archive"];
 }
 
 + (BOOL)saveChanges{
-    NSString *path_info = [DataManager foalInfoArchivePath];
     NSString *path_user = [DataManager userInfoArchivePath];
-    BOOL flag1 = [NSKeyedArchiver archiveRootObject:[DataManager foals] toFile:path_info];
+    NSString *path_info = [DataManager foalInfoArchivePath];
     BOOL flag2 = [NSKeyedArchiver archiveRootObject:[DataManager userInfo] toFile:path_user];
+    BOOL flag1 = [NSKeyedArchiver archiveRootObject:[DataManager foals] toFile:path_info];
     return flag1&&flag2;
 }
 
