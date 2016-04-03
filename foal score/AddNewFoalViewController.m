@@ -108,11 +108,7 @@
         newFoal.sex = @"Filly";
     }
     NSMutableArray* foals = [DataManager foals];
-    if (!(self.share.isOn && !self.modify)) {
-        [foals addObject:newFoal];
-    }
     if (self.modify) {
-        if(self.share.isOn){
             FoalInfoModel* foal = [DataManager foals][self.indexOfFoalThatNeedToModify];
             if([foal foalId]){
                 if([DataManager loginOrNot]){
@@ -163,15 +159,13 @@
                     [UiModal showModalWithTitle:@"ERROR" message:@"Please log in first!" buttonTitle:@"OK" viewController:self];
                 }
 
-            }else{
-                [UiModal showModalWithTitle:@"Error" message:@"This foal wasn't previously shared with The Ohio State University" buttonTitle:@"OK" viewController:self];
-            }
         }
+        [[DataManager foals] addObject:foal];
         [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
     }
     
     // build dictionary
-    if(self.share.isOn && !self.modify){
+    if(!self.modify){
         if([DataManager loginOrNot]){
             NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
             [dict setObject:self.name.text forKey:@"name"];
@@ -203,6 +197,7 @@
                     if([response[@"status"] isEqual: @"success"]) {
                         NSString* foalId = response[@"foalid"];
                         [newFoal setFoalId:foalId];
+                        [foals addObject:newFoal];
                     } else {
                         NSLog(@"%@ %@", @"Error", response[@"error"]);
                         [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
