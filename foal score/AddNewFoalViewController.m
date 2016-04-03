@@ -8,7 +8,7 @@
 
 #import "AddNewFoalViewController.h"
 
-@interface AddNewFoalViewController ()<UIScrollViewDelegate, UIGestureRecognizerDelegate>
+@interface AddNewFoalViewController ()<UIScrollViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, assign) NSInteger indexOfFoalThatNeedToModify;
 @property (nonatomic, assign) BOOL modify;
@@ -137,7 +137,11 @@
                         [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
                     }
                     [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
-                    [dict setObject:@"1" forKey:@"allowShare"];
+                    if (self.share.enabled) {
+                        [dict setObject:@"Yes" forKey:@"allowShare"];
+                    } else {
+                        [dict setObject:@"No" forKey:@"allowShare"];
+                    }
                     [dict setObject:[foal foalId] forKey:@"foalid"];
                     // send request
                     FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
@@ -146,6 +150,9 @@
                             if([response[@"status"] isEqual: @"success"]) {
                                 NSString* foalId = response[@"foalid"];
                                 [newFoal setFoalId:foalId];
+                                [[DataManager foals] addObject:foal];
+                                [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
+                                [self.navigationController popViewControllerAnimated:YES];
                             } else {
                                 NSLog(@"%@ %@", @"Error", response[@"error"]);
                                 [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
@@ -160,8 +167,6 @@
                 }
 
         }
-        [[DataManager foals] addObject:foal];
-        [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
     }
     
     // build dictionary
@@ -187,9 +192,11 @@
                 [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
             }
             [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
-            [dict setObject:@"1" forKey:@"allowShare"];
-            // add foal locally
-            [foals addObject:newFoal];
+            if (self.share.enabled) {
+                [dict setObject:@"Yes" forKey:@"allowShare"];
+            } else {
+                [dict setObject:@"No" forKey:@"allowShare"];
+            }
             // send request
             FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
             [client addFoal:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
@@ -198,6 +205,8 @@
                         NSString* foalId = response[@"foalid"];
                         [newFoal setFoalId:foalId];
                         [foals addObject:newFoal];
+                        
+                        [self.navigationController popViewControllerAnimated:YES];
                     } else {
                         NSLog(@"%@ %@", @"Error", response[@"error"]);
                         [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
@@ -211,7 +220,7 @@
             [UiModal showModalWithTitle:@"ERROR" message:@"Please log in first!" buttonTitle:@"OK" viewController:self];
         }
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    //
 }
 
 
@@ -241,6 +250,11 @@
     [self.view endEditing:YES];
 }
 
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 /*
 #pragma mark - Navigation
