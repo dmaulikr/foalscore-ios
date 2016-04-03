@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *choices;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *contents;
+//@property (nonatomic, strong) NSString *content;
 
 @end
 
@@ -55,7 +55,7 @@
     if(_choices == nil){
         _choices = [[NSMutableArray alloc]initWithCapacity:5];
         [_choices addObject:@"Sepsis Score"];
-        [_choices addObject:@"Foul Survival Score"];
+        [_choices addObject:@"Foal Survival Score"];
         [_choices addObject:@"References"];
         [_choices addObject:@"Terminology"];
         [_choices addObject:@"Important Info"];
@@ -63,17 +63,17 @@
     return _choices;
 }
 
-- (NSMutableArray *)contents{
-    if(_contents == nil){
-        _contents = [[NSMutableArray alloc]initWithCapacity:5];
-        [_contents addObject:@"111111111111111"];
-        [_contents addObject:@"222222222222222"];
-        [_contents addObject:@"333333333333333"];
-        [_contents addObject:@"444444444444444"];
-        [_contents addObject:@"Cities Recover After Winter Storm Jonas Posted: Jan 26 2016 10:45 AM ES Updated: Jan 26 2016 05:00 PM EST Meteorologist Domenica Davis gives an overview of the impacts and travel conditions followi...read more Cities Recover After Winter Storm Jonas weather.com Posted: Jan 26 2016 10:45 AM EST Updated: Jan 26 2016 05:00 PM ESTMeteorologist Domenica Davis gives an overview of the impacts and travel conditions following Winter Storm Jonas."];
-    }
-    return _contents;
-}
+//- (NSMutableArray *)contents{
+//    if(_contents == nil){
+//        _contents = [[NSMutableArray alloc]initWithCapacity:5];
+//        [_contents addObject:@"111111111111111"];
+//        [_contents addObject:@"222222222222222"];
+//        [_contents addObject:@"333333333333333"];
+//        [_contents addObject:@"444444444444444"];
+//        [_contents addObject:@"Cities Recover After Winter Storm Jonas Posted: Jan 26 2016 10:45 AM ES Updated: Jan 26 2016 05:00 PM EST Meteorologist Domenica Davis gives an overview of the impacts and travel conditions followi...read more Cities Recover After Winter Storm Jonas weather.com Posted: Jan 26 2016 10:45 AM EST Updated: Jan 26 2016 05:00 PM ESTMeteorologist Domenica Davis gives an overview of the impacts and travel conditions following Winter Storm Jonas."];
+//    }
+//    return _contents;
+//}
 
 #pragma mark - Table view data source
 
@@ -109,8 +109,79 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    // change message
-    [UiModal showModalWithTitle:[self.choices objectAtIndex:indexPath.row] message:[self.contents objectAtIndex:indexPath.row]buttonTitle:@"OK" viewController:self];
+    if(indexPath.row == 0){
+        FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [api getSepsisInfo:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                NSString* text_html = [response valueForKey:@"text"];
+                NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
+                [UiModal showModalWithTitle:self.choices[0] message:text buttonTitle:@"Yes" viewController:self];
+            } else {
+                [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }
+
+        }];
+    }else if (indexPath.row ==1){
+        FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [api getSurvivalInfo:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                NSString* text_html = [response valueForKey:@"text"];
+                NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
+                [UiModal showModalWithTitle:self.choices[1] message:text buttonTitle:@"Yes" viewController:self];
+            } else {
+                [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }
+            
+        }];
+
+    }else if (indexPath.row ==4){
+        FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [api getOverview:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                NSString* text_html = [response valueForKey:@"text"];
+                NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
+                [UiModal showModalWithTitle:self.choices[4] message:text buttonTitle:@"Yes" viewController:self];
+            } else {
+                [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }
+            
+        }];
+        
+    }else if (indexPath.row == 2){
+        FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [api getReferences:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                NSString* text_html = [response valueForKey:@"text"];
+                OverviewPage* op = [[OverviewPage alloc]init];
+                op.text = text_html;
+                op.NVtitle = @"References";
+                [self.navigationController pushViewController:op animated:YES];
+                
+            } else {
+                [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }
+            
+        }];
+
+    }else{
+        FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [api getTerminology:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                NSString* text_html = [response valueForKey:@"text"];
+                OverviewPage* op = [[OverviewPage alloc]init];
+                op.text = text_html;
+                op.NVtitle = @"Terminology";
+                [self.navigationController pushViewController:op animated:YES];
+                
+            } else {
+                [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }
+            
+        }];
+
+    }
+
+    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
