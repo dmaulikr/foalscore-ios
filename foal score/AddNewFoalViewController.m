@@ -137,10 +137,10 @@
                         [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
                     }
                     [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
-                    if (self.share.enabled) {
-                        [dict setObject:@"Yes" forKey:@"allowShare"];
+                    if (self.share.isOn==YES) {
+                        [dict setObject:@(1) forKey:@"allowShare"];
                     } else {
-                        [dict setObject:@"No" forKey:@"allowShare"];
+                        [dict setObject:@(0) forKey:@"allowShare"];
                     }
                     [dict setObject:[foal foalId] forKey:@"foalid"];
                     // send request
@@ -150,7 +150,7 @@
                             if([response[@"status"] isEqual: @"success"]) {
                                 NSString* foalId = response[@"foalid"];
                                 [newFoal setFoalId:foalId];
-                                [[DataManager foals] addObject:foal];
+                                [[DataManager foals] addObject:newFoal];
                                 [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
                                 [self.navigationController popViewControllerAnimated:YES];
                             } else {
@@ -192,10 +192,10 @@
                 [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
             }
             [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
-            if (self.share.enabled) {
-                [dict setObject:@"Yes" forKey:@"allowShare"];
+            if (self.share.isOn==YES) {
+                [dict setObject:@(1) forKey:@"allowShare"];
             } else {
-                [dict setObject:@"No" forKey:@"allowShare"];
+                [dict setObject:@(0) forKey:@"allowShare"];
             }
             // send request
             FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
@@ -220,7 +220,6 @@
             [UiModal showModalWithTitle:@"ERROR" message:@"Please log in first!" buttonTitle:@"OK" viewController:self];
         }
     }
-    //
 }
 
 
@@ -252,7 +251,7 @@
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if(buttonIndex == 0) {
-        [self.navigationController popViewControllerAnimated:YES];
+        //[self.navigationController popViewControllerAnimated:YES];
     }
 }
 
