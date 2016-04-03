@@ -77,6 +77,13 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     [cell.textLabel setText:[self.choices objectAtIndex:indexPath.row]];
+    UIImageView *yourImageView = [[UIImageView alloc] initWithFrame:CGRectMake(45,45,30,30)];
+    
+    [yourImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"icon%d.png",indexPath.row]]]; //You can have an Array with the name of
+    
+    [cell.contentView addSubview:yourImageView];
+    //cell.imageView.image = [UIImage imageNamed:
+    //                        [NSString stringWithFormat:@"icon%d.png",indexPath.row]];
     
     return cell;
 }

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 #import "FoalInfoModel.h"
+#import "UiModal.h"
+#import "FoalScoreAFAPIClient.h"
 
 @interface AddNewFoalViewController : UIViewController
 

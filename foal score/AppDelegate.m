@@ -35,9 +35,12 @@
     [localViewControllersArray addObject:tab2];
     [localViewControllersArray addObject:nv];
     // add icons
-    tab1.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Survival Score" image:nil selectedImage:nil];
-    tab2.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Spesis Score" image:nil selectedImage:nil];
-    nv.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"User Info" image:nil selectedImage:nil];
+    UIImage *tab_sur = [UIImage imageNamed:@"hearts.png"];
+    UIImage *tab_spes =[UIImage imageNamed:@"foal.png"];
+    UIImage *menu = [UIImage imageNamed:@"menu.png"];
+    tab1.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Survival Score" image:tab_sur selectedImage:nil];
+    tab2.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Spesis Score" image:tab_spes selectedImage:nil];
+    nv.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"User Info" image:menu selectedImage:nil];
     // lanch 3 pages on tabViewController
     tabBars.viewControllers = localViewControllersArray;
     tabBars.view.autoresizingMask = (UIViewAutoresizingFlexibleHeight);
