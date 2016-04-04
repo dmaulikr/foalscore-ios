@@ -28,13 +28,34 @@
     // add new foal button
     UIBarButtonItem *newAddingButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addingButtonAction)];
     self.navigationItem.rightBarButtonItem = newAddingButton;
+
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"HIHI");	
+    if([DataManager loginOrNot]){
+        NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
+        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+        [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if(response){
+                if([response[@"status"] isEqual:@"success"]){
+                    [self parseFoalsFromServer: response];
+                } else {
+                    [UiModal showModalWithTitle:@"Error" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+                }
+            } else{
+                [UiModal showModalWithTitle:@"Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }}];
+        
+    }else{
+        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
+    }
     [super viewWillAppear:YES];
     [self.tableView reloadData];
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -120,6 +141,47 @@
     OneFoalInfoViewController* ofvc = [[OneFoalInfoViewController alloc]init];
     ofvc.indexOfFoal =indexPath.row;
     [self.navigationController pushViewController:ofvc animated:YES];			
+}
+
+- (void) parseFoalsFromServer:(NSDictionary*)response {
+    NSMutableArray* foals =response[@"foals"];
+    NSMutableArray* foals_local = [DataManager foals];
+    [foals_local removeAllObjects];
+    for (NSDictionary* d in foals) {
+        BOOL dystocia = false;
+        if ([d[@"dystocia"]isEqual:@"Yes"]) {
+            dystocia = true;
+        }
+        BOOL survivalUntilDischarge = false;
+        if([d[@"survivedUntilHospitalDischarge"] isEqual: @"Yes"]){
+            survivalUntilDischarge = true;
+        }
+        NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"yyyy'-'MM'-'dd' 'HH':'mm':'ss"];
+        NSDate* date = [formatter dateFromString:d[@"addedDate"]];
+        NSInteger age = -1;
+        NSInteger heartRate = -1;
+        NSInteger respiratoryRate = -1;
+        NSInteger temperature = -1;
+        if(d[@"ageMonths"]!=(id)[NSNull null]){
+            age =[d[@"ageMonths"] integerValue];
+        }
+        if(d[@"temperature"]!=(id)[NSNull null]){
+            temperature = [d[@"temperature"]integerValue];
+        }
+        if(d[@"respiratoryRate"]!=(id)[NSNull null]){
+            respiratoryRate = [d[@"respiratoryRate"]integerValue];
+        }
+        if(d[@"heartRate"]!=(id)[NSNull null]){
+            heartRate = [d[@"heartRate"]integerValue];
+        }
+        
+        
+        FoalInfoModel* foal = [[FoalInfoModel alloc]initWithName:d[@"name"] Age:age Breed:d[@"breed"] Temperature:temperature RespiratoryRate:respiratoryRate HeartRate:heartRate Sex:d[@"gender"] Dystocia:dystocia SurvivalUntilDischarge:survivalUntilDischarge Date:date];
+        foal.foalId = d[@"id"];
+        [foals_local addObject:foal];
+    }
+    [self.tableView reloadData];
 }
 
 /*

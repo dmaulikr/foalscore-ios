@@ -12,7 +12,7 @@
 #import "AddNewFoalViewController.h"
 #import "MGSwipeTableCell.h"
 #import "OneFoalInfoViewController.h"
-
+#import "FoalScoreAFAPIClient.h"
 @interface MyFoalViewController : UIViewController
 
 @end
