@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UiModal.h"
+#import "FoalScoreAFAPIClient.h"
+#import "HtmlStriper.h"
+#import "OverviewPage.h"
 
 @interface OverviewTableViewController : UIViewController
 

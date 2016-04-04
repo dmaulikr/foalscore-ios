@@ -31,7 +31,7 @@
     if (self) {
         [self setName:[aDecoder decodeObjectForKey:@"name"]];
         [self setAge:[aDecoder decodeIntegerForKey:@"age"]];
-        [self setBreed:[aDecoder decodeObjectForKey:@"bread"]];
+        [self setBreed:[aDecoder decodeObjectForKey:@"breed"]];
         [self setTemperature:[aDecoder decodeIntegerForKey:@"temperature"]];
         [self setRespiratoryRate:[aDecoder decodeIntegerForKey:@"respiratoryRate"]];
         [self setHeartRate:[aDecoder decodeIntegerForKey:@"heartRate"]];

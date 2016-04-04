@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray* Qs;
 @property (nonatomic, strong) NSMutableArray* As;
 @property (nonatomic, strong) NSMutableArray* scores;
+@property (weak, nonatomic) IBOutlet UILabel *totalScore;
 
 @end
 
@@ -30,20 +31,21 @@
     NSLog(@"sss");
     
     // pr select
-    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
-    NSIndexPath *p2 = [NSIndexPath indexPathForItem:0 inSection:1];
-    NSIndexPath *p3 = [NSIndexPath indexPathForItem:0 inSection:2];
-    NSIndexPath *p4 = [NSIndexPath indexPathForItem:0 inSection:3];
-    NSIndexPath *p5 = [NSIndexPath indexPathForItem:0 inSection:4];
-    NSIndexPath *p6 = [NSIndexPath indexPathForItem:0 inSection:5];
-    NSIndexPath *p7 = [NSIndexPath indexPathForItem:0 inSection:6];
-    NSIndexPath *p8 = [NSIndexPath indexPathForItem:0 inSection:7];
-    NSIndexPath *p9 = [NSIndexPath indexPathForItem:0 inSection:8];
-    NSIndexPath *p10 = [NSIndexPath indexPathForItem:0 inSection:9];
-    NSIndexPath *p11 = [NSIndexPath indexPathForItem:0 inSection:10];
-    NSIndexPath *p12 = [NSIndexPath indexPathForItem:0 inSection:11];
-    NSIndexPath *p13 = [NSIndexPath indexPathForItem:0 inSection:12];
-    NSIndexPath *p14 = [NSIndexPath indexPathForItem:0 inSection:13];
+    NSIndexPath *p1 = [NSIndexPath indexPathForItem:5 inSection:0];
+    NSIndexPath *p2 = [NSIndexPath indexPathForItem:3 inSection:1];
+    NSIndexPath *p3 = [NSIndexPath indexPathForItem:3 inSection:2];
+    NSIndexPath *p4 = [NSIndexPath indexPathForItem:3 inSection:3];
+    NSIndexPath *p5 = [NSIndexPath indexPathForItem:3 inSection:4];
+    NSIndexPath *p6 = [NSIndexPath indexPathForItem:4 inSection:5];
+    NSIndexPath *p7 = [NSIndexPath indexPathForItem:4 inSection:6];
+    NSIndexPath *p8 = [NSIndexPath indexPathForItem:2 inSection:7];
+    NSIndexPath *p9 = [NSIndexPath indexPathForItem:3 inSection:8];
+    NSIndexPath *p10 = [NSIndexPath indexPathForItem:2 inSection:9];
+    NSIndexPath *p11 = [NSIndexPath indexPathForItem:3 inSection:10];
+    NSIndexPath *p12 = [NSIndexPath indexPathForItem:2 inSection:11];
+    NSIndexPath *p13 = [NSIndexPath indexPathForItem:2 inSection:12];
+    NSIndexPath *p14 = [NSIndexPath indexPathForItem:4 inSection:13];
+ 
     
     [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionNone];
@@ -59,6 +61,9 @@
     [self.tableView selectRowAtIndexPath:p12 animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.tableView selectRowAtIndexPath:p13 animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.tableView selectRowAtIndexPath:p14 animated:YES scrollPosition:UITableViewScrollPositionNone];
+    NSInteger score = [self calculateTotalScore];
+    NSString *score_string = [@(score) stringValue];
+    self.totalScore.text = score_string;
 }
 
 
@@ -150,7 +155,6 @@
     }
     return _scores;
 }
-
 - (NSMutableArray *)As{
     NSInteger number = 10;
     NSString *cubedSymbol = @"\u2079";
@@ -395,10 +399,16 @@
     return indexPath ;
 }
 
+
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [self.Qs objectAtIndex:section];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger score = [self calculateTotalScore];
+    NSString *score_string = [@(score) stringValue];
+    self.totalScore.text = score_string;
+}
 
 
 - (IBAction)pressCalculateButton:(id)sender {
@@ -442,27 +452,15 @@
     // HTTP req
 }
 
-//- (void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
-//    NSIndexPath *p2 = [NSIndexPath indexPathForItem:0 inSection:1];
-//    NSIndexPath *p3 = [NSIndexPath indexPathForItem:0 inSection:2];
-//    NSIndexPath *p4 = [NSIndexPath indexPathForItem:0 inSection:3];
-//    NSIndexPath *p5 = [NSIndexPath indexPathForItem:0 inSection:4];
-//    [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p4 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p5 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p1 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)calculateTotalScore{
+    NSInteger totalScore = 0;
+    NSArray* selects = [self.tableView indexPathsForSelectedRows];
+    for (NSIndexPath* select in selects) {
+        NSString* subscore_string = self.scores[select.section][select.row];
+        NSInteger subscore = [subscore_string integerValue];
+        totalScore += subscore;
+    }
+    return totalScore;
 }
-*/
 
 @end
