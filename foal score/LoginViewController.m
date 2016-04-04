@@ -142,6 +142,7 @@
 - (IBAction)pressNewUserButton:(id)sender {
     NSLog(@"mama");
     RegisterViewController* rg = [[RegisterViewController alloc]init];
+    rg.parent = self;
     [self presentViewController:rg animated:YES completion:nil];
 }
 

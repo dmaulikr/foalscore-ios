@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailIDTextField;
 @property (nonatomic, copy) UserInfoModel* userInfo;
 
+
 @end
 
 @implementation RegisterViewController
@@ -69,9 +70,11 @@
                 [userInfo modifyUserName:name AndPassword:password AndEmailID:email];
                 userInfo.userId = response[@"userObj"][@"User"][@"id"];
                 
-                //UserInfoViewController* userInfoVC = [[UserInfoViewController alloc] init];
-                //[self.navigationController pushViewController:userInfoVC animated:YES];
-                [self dismissViewControllerAnimated:YES completion:nil];
+
+                [self dismissViewControllerAnimated:YES completion:^{
+                    [self.parent dismissViewControllerAnimated:NO completion:nil];
+                }];
+                
             } else {
                 [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
             }
