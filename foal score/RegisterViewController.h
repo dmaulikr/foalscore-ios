@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "UserInfoModel.h"
 #import "DataManager.h"
+#import "FoalScoreAFAPIClient.h"
+#import "UiModal.h"
+#import "UserInfoViewController.h"
+#import "LoginViewController.h"
+
 @interface RegisterViewController : UIViewController
+@property (nonatomic, strong) UIViewController* parent;
 
 @end

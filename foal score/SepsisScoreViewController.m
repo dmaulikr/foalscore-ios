@@ -47,8 +47,6 @@
     NSIndexPath *p14 = [NSIndexPath indexPathForItem:4 inSection:13];
  
     
-    
-    
     [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.tableView selectRowAtIndexPath:p4 animated:YES scrollPosition:UITableViewScrollPositionNone];
@@ -287,7 +285,8 @@
     if (_Qs == nil) {
         _Qs = [[NSMutableArray alloc]init];
         
-        
+        // create space in section headers for nonAttributed text that is added after creation.
+        // TODO - find a a more succient / cleaner solution to headView changing the casing of input text.
         [_Qs addObject:@"1"];
         [_Qs addObject:@"2"];
         [_Qs addObject:@"Doehle bodies, toxic changes, granulation, or vacuolization in neutrophils"];
@@ -312,25 +311,16 @@
     
     header.textLabel.font = [UIFont boldSystemFontOfSize:15.0f];
     switch (section) {
-            
-            
-            
-            
         case 0:
             header.textLabel.text = @"Neutrophil count";
-            
-        
             break;
         case 1:
-            
             header.textLabel.text = @"Band neutrophil count";
             break;
         case 2:
-            
             header.textLabel.text = @"Doehle bodies, toxic changes, granulation, or vacuolization in neutrophils";
             break;
         case 3:
-            
             header.textLabel.text = @"Fibrinogen (mg/dL)";
             break;
         case 4:
@@ -354,11 +344,9 @@
         case 10:
             header.textLabel.text=@"Hypotonia, coma depression, convulsions";
             break;
-            
         case 11:
             header.textLabel.text=@"Anterior uveitis, diarrhea, respiratory distress, swollen joints, open wounds";
             break;
-            
         case 12:
             header.textLabel.text=@"Placentitis, vulvar discharge prior to delivery, dystocia, long transport of mare, mare sick, foal induced";
             break;
@@ -474,27 +462,5 @@
     }
     return totalScore;
 }
-//- (void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    NSIndexPath *p1 = [NSIndexPath indexPathForItem:0 inSection:0];
-//    NSIndexPath *p2 = [NSIndexPath indexPathForItem:0 inSection:1];
-//    NSIndexPath *p3 = [NSIndexPath indexPathForItem:0 inSection:2];
-//    NSIndexPath *p4 = [NSIndexPath indexPathForItem:0 inSection:3];
-//    NSIndexPath *p5 = [NSIndexPath indexPathForItem:0 inSection:4];
-//    [self.tableView selectRowAtIndexPath:p2 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p3 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p4 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p5 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//    [self.tableView selectRowAtIndexPath:p1 animated:YES scrollPosition:UITableViewScrollPositionTop];
-//}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
