@@ -14,50 +14,88 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-Ub-fd0">
-                    <rect key="frame" x="92" y="196" width="136" height="45"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-Ub-fd0">
+                    <rect key="frame" x="92" y="233" width="136" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="mCY-Ke-9gl"/>
+                        <constraint firstAttribute="height" constant="45" id="sxu-D0-KTm"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-I6-pNu">
-                    <rect key="frame" x="20" y="121" width="280" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-I6-pNu">
+                    <rect key="frame" x="20" y="158" width="280" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CYD-9m-6rl"/>
+                        <constraint firstAttribute="width" constant="280" id="KkQ-dj-HFx"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53o-b0-wPQ">
-                    <rect key="frame" x="20" y="274" width="280" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53o-b0-wPQ">
+                    <rect key="frame" x="20" y="311" width="280" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="GZ4-tr-ck0"/>
+                        <constraint firstAttribute="width" constant="280" id="elf-nH-uhD"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Kh-MCT">
-                    <rect key="frame" x="90" y="331" width="141" height="53"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Kh-MCT">
+                    <rect key="frame" x="90" y="368" width="141" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="53" id="5ck-Mv-R34"/>
+                        <constraint firstAttribute="width" constant="141" id="NEA-ZQ-BKC"/>
+                    </constraints>
                     <state key="normal" title="Change Password"/>
                     <connections>
                         <action selector="pressChangePassword:" destination="-1" eventType="touchUpInside" id="Q8V-qb-fL7"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh4-aa-cqz">
-                    <rect key="frame" x="127" y="380" width="66" height="53"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh4-aa-cqz">
+                    <rect key="frame" x="127" y="417" width="66" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="IFK-9s-SOF"/>
+                        <constraint firstAttribute="height" constant="53" id="eiz-j9-z6K"/>
+                    </constraints>
                     <state key="normal" title="Logout"/>
                     <connections>
                         <action selector="pressLogOut:" destination="-1" eventType="touchUpInside" id="o8G-yT-gSw"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3H-ja-448">
-                    <rect key="frame" x="92" y="60" width="136" height="45"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3H-ja-448">
+                    <rect key="frame" x="92" y="97" width="136" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="1Q4-YP-u1n"/>
+                        <constraint firstAttribute="width" constant="136" id="IuW-MV-lxl"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <constraints>
+                <constraint firstItem="qi9-Kh-MCT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3PH-LX-CB8"/>
+                <constraint firstItem="53o-b0-wPQ" firstAttribute="top" secondItem="0dd-Ub-fd0" secondAttribute="bottom" constant="33" id="B49-XW-fvc"/>
+                <constraint firstItem="hh4-aa-cqz" firstAttribute="top" secondItem="53o-b0-wPQ" secondAttribute="bottom" constant="66" id="G9Q-ja-dAo"/>
+                <constraint firstItem="l3H-ja-448" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JVm-lG-Kd0"/>
+                <constraint firstItem="hh4-aa-cqz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KBH-7J-530"/>
+                <constraint firstItem="53o-b0-wPQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OdZ-p5-UOd"/>
+                <constraint firstItem="3Oj-I6-pNu" firstAttribute="top" secondItem="l3H-ja-448" secondAttribute="bottom" constant="16" id="PnB-vZ-6Zf"/>
+                <constraint firstItem="0dd-Ub-fd0" firstAttribute="top" secondItem="3Oj-I6-pNu" secondAttribute="bottom" constant="35" id="SIQ-xy-o5C"/>
+                <constraint firstItem="3Oj-I6-pNu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SYs-9b-jZq"/>
+                <constraint firstItem="qi9-Kh-MCT" firstAttribute="top" secondItem="53o-b0-wPQ" secondAttribute="bottom" constant="17" id="VQs-fo-Wcn"/>
+                <constraint firstItem="0dd-Ub-fd0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f46-oK-Vcp"/>
+                <constraint firstItem="l3H-ja-448" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="97" id="z7N-8e-ruS"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
 </document>
