@@ -10,6 +10,7 @@
 #import "FoalSurvivalScore.h"
 #import "ShowScoreViewController.h"
 #import "FoalScoreAFAPIClient.h"
+#import "UiModal.h"
 @interface SurvivalScoreViewController : UIViewController
 
 @end

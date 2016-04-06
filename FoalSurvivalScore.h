@@ -21,6 +21,6 @@
 
 -(void) modifyColdExtremities:(NSInteger)coldExtremities Prematurity:(NSInteger)prematurity Infection:(NSInteger)infection IgG:(NSInteger)igG Glucose:(NSInteger)glucose WBC:(NSInteger)wbc;
 
--(NSInteger) calculateTotalScore;
+-(NSInteger) calculateSurvivalPercentage;
 
 @end

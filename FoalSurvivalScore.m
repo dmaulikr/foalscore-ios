@@ -32,7 +32,7 @@
     self.WBC = wbc;
 }
 
--(NSInteger) calculateTotalScore{
+-(NSInteger) calculateSurvivalPercentage{
     
     NSInteger sum = self.coldExtremities + self.prematurity + self.infection + self.igG + self.glucose + self.WBC;
     NSInteger percent = 0;

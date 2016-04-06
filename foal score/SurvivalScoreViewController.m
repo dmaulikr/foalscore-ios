@@ -138,32 +138,53 @@
     
     // Calculate survival score locally
     FoalSurvivalScore* fss = [[FoalSurvivalScore alloc]initWithColdExtremities: [self.coldEx_lb.text integerValue] Prematurity:[self.prematurity_lb.text integerValue] Infection:[self.infection_lb.text integerValue] IgG:[self.igG_lb.text integerValue] Glucose:[self.glucose_lb.text integerValue] WBC:[self.wbc_lb.text integerValue]];
-    NSInteger totalScore = [fss calculateTotalScore];
+    NSInteger totalScore = [fss calculateSurvivalPercentage];
     
     ShowScoreViewController* ss = [[ShowScoreViewController alloc]init];
-    
-    // Present local score result
-    ss.survivalScore = totalScore;
-    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
-    [self presentViewController:nv animated:YES completion:nil];
-    
-    // send HTTP request
-    NSMutableDictionary* dict = self.buildingRequestDictionary;
-    
-    NSLog(@"%@", dict);
-    [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
-        if (response) {
-            NSLog(@"%@",response);
-        } else {
-            NSLog(@"%@", error);
-        }
-    }];
+    if ([DataManager loginOrNot]) {
+        // send HTTP request
+        NSMutableDictionary* dict = self.buildingRequestDictionary;
+        NSLog(@"%@", dict);
+        [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                if ([response[@"status"] isEqual:@"success"]) {
+                    ss.scoreID = response[@"calculationId"];
+                    ss.survivalScore = totalScore;
+                    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+                    [self presentViewController:nv animated:YES completion:nil];
+                }else{
+                    
+                    // Present local score result
+                    ss.networkError = true;//network error
+                    ss.scoreID = nil;
+                    ss.survivalScore = totalScore;
+                    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+                    [self presentViewController:nv animated:YES completion:nil];
+                }
+                
+            } else {
+                ss.networkError = true;
+                // Present local score result
+                ss.scoreID = nil;
+                ss.survivalScore = totalScore;
+                UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+                [self presentViewController:nv animated:YES completion:nil];
+            }
+        }];
+    }else{
+        ss.networkError = false;
+        ss.scoreID = nil;
+        ss.survivalScore = totalScore;
+        UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+        [self presentViewController:nv animated:YES completion:nil];
+    }
 }
 
 - (NSMutableDictionary*)buildingRequestDictionary{
     NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
-    // TODO get current user's userID
-    [dict setObject:@"" forKey:@"userId"];
+    if ([DataManager loginOrNot]) {
+        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+    }
     [dict setObject:self.coldEx_lb.text forKey:@"coldExtremities"];
     [dict setObject:self.prematurity_lb.text forKey:@"prematurity"];
     [dict setObject:self.infection_lb.text forKey:@"GreaterThanEqualToTwoInfectionSites"];

@@ -25,9 +25,20 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)pressAddToAFoalButton:(id)sender {
-    ListOfFoalsChoosingToAttachedViewController* foalsToAttachedVC = [[ListOfFoalsChoosingToAttachedViewController alloc]init];
-    foalsToAttachedVC.survivalScore = self.survivalScore;
-    [self.navigationController pushViewController:foalsToAttachedVC animated:YES];
+    if(self.scoreID != nil){
+        ListOfFoalsChoosingToAttachedViewController* foalsToAttachedVC = [[ListOfFoalsChoosingToAttachedViewController alloc]init];
+        foalsToAttachedVC.survivalScore = self.survivalScore;
+        [self.navigationController pushViewController:foalsToAttachedVC animated:YES];
+
+    }else{
+        if(self.networkError){
+            [UiModal showModalWithTitle:@"Error" message:@"Network error, cannot add a foal." buttonTitle:@"OK" viewController:self];
+        }else{
+            // TODO:maybe link to login page.
+            [UiModal showModalWithTitle:@"Sorry" message:@"Please log in to add a foal." buttonTitle:@"OK" viewController:self];
+        }
+        
+    }
 }
 - (IBAction)pressCancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

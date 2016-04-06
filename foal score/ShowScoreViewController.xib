@@ -38,18 +38,6 @@
                         <action selector="pressCancelButton:" destination="-1" eventType="touchUpInside" id="EMJ-NS-aeB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57f-pV-Gsz">
-                    <rect key="frame" x="101" y="371" width="119" height="56"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="119" id="C9c-vO-8Eq"/>
-                        <constraint firstAttribute="height" constant="56" id="XkL-so-kMT"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="Add To A Foal"/>
-                    <connections>
-                        <action selector="pressAddToAFoalButton:" destination="-1" eventType="touchUpInside" id="MyN-gb-IVR"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The foal's chance of survival:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRa-NY-oVJ">
                     <rect key="frame" x="43" y="81" width="235" height="115"/>
                     <constraints>
@@ -60,6 +48,18 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57f-pV-Gsz">
+                    <rect key="frame" x="101" y="371" width="119" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="119" id="C9c-vO-8Eq"/>
+                        <constraint firstAttribute="height" constant="56" id="XkL-so-kMT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Add A Foal"/>
+                    <connections>
+                        <action selector="pressAddToAFoalButton:" destination="-1" eventType="touchUpInside" id="MyN-gb-IVR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.41444578766822815" blue="0.41444578766822815" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
