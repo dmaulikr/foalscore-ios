@@ -41,6 +41,7 @@
 		BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */; };
 		BFEF05ED1C54006300EF60C5 /* foal_scoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05EC1C54006300EF60C5 /* foal_scoreTests.m */; };
 		BFEF05F81C54006300EF60C5 /* foal_scoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */; };
+		BFF6301B1CB499140082C4EA /* CalculationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF6301A1CB499140082C4EA /* CalculationModel.m */; };
 		BFF878171C6FDC6F006B4FA7 /* ShowScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */; };
 		BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */; };
 		BFFC48F71CA4B19A009C2D91 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFC48F51CA4B19A009C2D91 /* RegisterViewController.m */; };
@@ -128,6 +129,8 @@
 		BFEF05F31C54006300EF60C5 /* foal scoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foal scoreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEF05F71C54006300EF60C5 /* foal_scoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foal_scoreUITests.m; sourceTree = "<group>"; };
 		BFEF05F91C54006300EF60C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFF630191CB499140082C4EA /* CalculationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculationModel.h; sourceTree = "<group>"; };
+		BFF6301A1CB499140082C4EA /* CalculationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculationModel.m; sourceTree = "<group>"; };
 		BFF878141C6FDC6E006B4FA7 /* ShowScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowScoreViewController.h; sourceTree = "<group>"; };
 		BFF878151C6FDC6F006B4FA7 /* ShowScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowScoreViewController.m; sourceTree = "<group>"; };
 		BFF878161C6FDC6F006B4FA7 /* ShowScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowScoreViewController.xib; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 				BF7531021C6FAE8B00CA923A /* FoalSurvivalScoreModel */,
 				BFAF13EC1C62E45600126A5B /* FoalInfoModel */,
 				BF7186F91C5B0A0200605426 /* UserInfoModel */,
+				BFF6301C1CB4991A0082C4EA /* CalculationModel */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -439,6 +443,15 @@
 			path = "foal scoreUITests";
 			sourceTree = "<group>";
 		};
+		BFF6301C1CB4991A0082C4EA /* CalculationModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFF630191CB499140082C4EA /* CalculationModel.h */,
+				BFF6301A1CB499140082C4EA /* CalculationModel.m */,
+			);
+			name = CalculationModel;
+			sourceTree = "<group>";
+		};
 		BFF878191C6FDC75006B4FA7 /* ShowScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +690,7 @@
 				BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */,
 				BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */,
 				BFEF05DD1C54006200EF60C5 /* AppDelegate.m in Sources */,
+				BFF6301B1CB499140082C4EA /* CalculationModel.m in Sources */,
 				BFA5F9921C586E5A00DF6445 /* LoginViewController.m in Sources */,
 				BF3E6DB81C6AE64E00C07BED /* MGSwipeButton.m in Sources */,
 				BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */,

@@ -21,7 +21,56 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"Choosing A Foal"];
+    //
+    if([DataManager loginOrNot]){
+        NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
+        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+        [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if(response){
+                if([response[@"status"] isEqual:@"success"]){
+                    [self parseFoalsFromServer: response];
+                } else {
+                    [UiModal showModalWithTitle:@"Error" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+                }
+            } else{
+                [UiModal showModalWithTitle:@"Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }}];
+        
+    }else{
+        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
+    }
+
+    //
     [self tableView];
+}
+-(NSMutableArray*)foals{
+    if(_foals == nil){
+        _foals = [[NSMutableArray alloc]init];
+    }
+    return _foals;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    if([DataManager loginOrNot]){
+        NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
+        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+        [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if(response){
+                if([response[@"status"] isEqual:@"success"]){
+                    [self parseFoalsFromServer: response];
+                } else {
+                    [UiModal showModalWithTitle:@"Error" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+                }
+            } else{
+                [UiModal showModalWithTitle:@"Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+            }}];
+        
+    }else{
+        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
+    }
+
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,12 +89,7 @@
     return  _tableView;
 }
 
--(NSMutableArray*)foals{
-    if(_foals == nil){
-        _foals = [DataManager foals];
-    }
-    return _foals;
-}
+
 
 #pragma mark - Table view data source
 
@@ -76,12 +120,67 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSMutableArray* foals = [DataManager foals];
-    FoalInfoModel* foal = [foals objectAtIndex:indexPath.row];
-    [foal attachSurvivalScore:self.survivalScore];
+    
+    FoalInfoModel* foal = self.foals[indexPath.row];
+    if (self.isSurvivalScore) {
+        NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+        [dict setObject:self.scoreID forKey:@"calculationId"];
+        NSLog(@"%@", foal.foalId);
+        [dict setObject:foal.foalId forKey:@"foalId"];
+        [[FoalScoreAFAPIClient sharedClient]foalSurvivalScoreLink:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                if (![response[@"status"]isEqual:@"success"]) {
+                    [UiModal showModalWithTitle:@"Error" message:response[error] buttonTitle:@"OK" viewController:self];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
+
+            } else {
+                [UiModal showModalWithTitle:@"Error" message:error.localizedDescription buttonTitle:@"OK" viewController:self];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        }];
+    }
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
+- (void) parseFoalsFromServer:(NSDictionary*)response {
+    NSMutableArray* foals =response[@"foals"];
+    for (NSDictionary* d in foals) {
+        BOOL dystocia = false;
+        if ([d[@"dystocia"]isEqual:@"Yes"]) {
+            dystocia = true;
+        }
+        BOOL survivalUntilDischarge = false;
+        if([d[@"survivedUntilHospitalDischarge"] isEqual: @"Yes"]){
+            survivalUntilDischarge = true;
+        }
+        NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"yyyy'-'MM'-'dd' 'HH':'mm':'ss"];
+        NSDate* date = [formatter dateFromString:d[@"addedDate"]];
+        NSInteger age = -1;
+        NSInteger heartRate = -1;
+        NSInteger respiratoryRate = -1;
+        NSInteger temperature = -1;
+        if(d[@"ageMonths"]!=(id)[NSNull null]){
+            age =[d[@"ageMonths"] integerValue];
+        }
+        if(d[@"temperature"]!=(id)[NSNull null]){
+            temperature = [d[@"temperature"]integerValue];
+        }
+        if(d[@"respiratoryRate"]!=(id)[NSNull null]){
+            respiratoryRate = [d[@"respiratoryRate"]integerValue];
+        }
+        if(d[@"heartRate"]!=(id)[NSNull null]){
+            heartRate = [d[@"heartRate"]integerValue];
+        }
+        
+        
+        FoalInfoModel* foal = [[FoalInfoModel alloc]initWithName:d[@"name"] Age:age Breed:d[@"breed"] Temperature:temperature RespiratoryRate:respiratoryRate HeartRate:heartRate Sex:d[@"gender"] Dystocia:dystocia SurvivalUntilDischarge:survivalUntilDischarge Date:date];
+        
+        [foal setFoalId:d[@"id"]];
+        [self.foals addObject:foal];
+    }
+    [self.tableView reloadData];
+}
 
 
 

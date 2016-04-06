@@ -34,6 +34,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     if([DataManager loginOrNot]){
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
         [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
@@ -51,7 +52,7 @@
     }else{
         [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
     }
-    [super viewWillAppear:YES];
+    
     [self.tableView reloadData];
 }
 

@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 #import "FoalInfoModel.h"
-
+#import "CalculationModel.h"
+#import "FoalScoreAFAPIClient.h"
+#import "UiModal.h"
 @interface ListOfFoalsChoosingToAttachedViewController : UIViewController
 
-@property (nonatomic, assign) NSInteger survivalScore;
+@property (nonatomic, assign)BOOL isSurvivalScore;
+@property (nonatomic, copy) NSString* scoreID;
+
 
 @end

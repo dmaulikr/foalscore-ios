@@ -78,7 +78,4 @@
     self.survivalScore = -1;
 }
 
-- (void)attachSurvivalScore:(NSInteger)survivalScore{
-    self.survivalScore = survivalScore;
-}
 @end

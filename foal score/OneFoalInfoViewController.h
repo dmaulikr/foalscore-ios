@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "FoalInfoModel.h"
 #import "DataManager.h"
-
-
+#import "CalculationModel.h"
+#import "UiModal.h"
+#import "FoalScoreAFAPIClient.h"
 @interface OneFoalInfoViewController : UIViewController
 // foal data
 @property (nonatomic, assign) NSInteger indexOfFoal;
+
 @end

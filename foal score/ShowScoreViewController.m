@@ -27,7 +27,9 @@
 - (IBAction)pressAddToAFoalButton:(id)sender {
     if(self.scoreID != nil){
         ListOfFoalsChoosingToAttachedViewController* foalsToAttachedVC = [[ListOfFoalsChoosingToAttachedViewController alloc]init];
-        foalsToAttachedVC.survivalScore = self.survivalScore;
+        
+        foalsToAttachedVC.scoreID = self.scoreID;
+        foalsToAttachedVC.isSurvivalScore = true;
         [self.navigationController pushViewController:foalsToAttachedVC animated:YES];
 
     }else{
