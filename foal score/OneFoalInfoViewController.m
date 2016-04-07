@@ -98,10 +98,9 @@
                         flag = true;
                     }
                     CalculationModel* calc = [[CalculationModel alloc]initWithScore:score Message:message IsSurvivalScore:flag Date:date CalculationID:nil];
-                    // test
-                    if(flag){
-                        [self.calculations addObject:calc];
-                    }
+
+                    [self.calculations addObject:calc];
+        
                 }
                 NSLog(@"%@",@"RELOADING");
                 
@@ -138,8 +137,10 @@
     }
     CalculationModel* cal  = self.calculations[indexPath.row];
     if(cal.isSurvivalScore){
+        cell.textLabel.textColor = [UIColor colorWithRed:(252/255.0) green:(81/255.0) blue:(87/255.0) alpha:1.0];
         cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
     }else{
+        cell.textLabel.textColor = [UIColor colorWithRed:(184/255.0) green:(206/255.0) blue:(255/255.0) alpha:1.0];
         cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
     }
     cell.detailTextLabel.text = cal.message;

@@ -38,8 +38,8 @@
     CGRect newFrame = self.scrollContent.frame;
     newFrame.size.width = [UIScreen mainScreen].bounds.size.width;
     [self.scrollContent setFrame:newFrame];
-    
-    self.scrollView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    CGRect heightOfStatusBar = [UIApplication sharedApplication].statusBarFrame;
+    self.scrollView.frame = CGRectMake(0, heightOfStatusBar.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-heightOfStatusBar.size.height);
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.scrollContent];
     self.scrollView.contentSize = self.scrollContent.frame.size;

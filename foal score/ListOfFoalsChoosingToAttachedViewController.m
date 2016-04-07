@@ -139,6 +139,23 @@
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }
         }];
+    }else{
+        NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+        [dict setObject:self.scoreID forKey:@"calculationId"];
+        NSLog(@"%@", foal.foalId);
+        [dict setObject:foal.foalId forKey:@"foalId"];
+        [[FoalScoreAFAPIClient sharedClient]foalSepsisScoreLink:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                if (![response[@"status"]isEqual:@"success"]) {
+                    [UiModal showModalWithTitle:@"Error" message:response[error] buttonTitle:@"OK" viewController:self];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
+                
+            } else {
+                [UiModal showModalWithTitle:@"Error" message:error.localizedDescription buttonTitle:@"OK" viewController:self];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        }];
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

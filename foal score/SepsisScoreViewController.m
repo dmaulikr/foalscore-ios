@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray* As;
 @property (nonatomic, strong) NSMutableArray* scores;
 @property (weak, nonatomic) IBOutlet UILabel *totalScore;
+@property (weak, nonatomic) IBOutlet UISwitch *shareOrNot;
 
 @end
 
@@ -158,7 +159,7 @@
 - (NSMutableArray *)As{
     NSInteger number = 10;
     NSString *cubedSymbol = @"\u2079";
-    NSString *tenSymbol = [NSString stringWithFormat:@"%d%@",number,cubedSymbol];
+    NSString *tenSymbol = [NSString stringWithFormat:@"%ld%@",(long)number,cubedSymbol];
     if(_As == nil){
         NSMutableArray* choices1 = [[NSMutableArray alloc]init];
         NSMutableArray* choices2 = [[NSMutableArray alloc]init];
@@ -413,45 +414,95 @@
 
 - (IBAction)pressCalculateButton:(id)sender {
     NSArray* selects = [self.tableView indexPathsForSelectedRows];
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    // right now just user 123 change later!!!!
-    [dict setObject:@"123" forKey:@"userId"];
-    for (NSIndexPath* select in selects) {
-        NSInteger section = select.section;
-        NSInteger row = select.row;
-        if(section == 0){
-            [dict setObject:self.scores[0][row] forKey:@"CBC_neutrophilCount"];
-        }else if (section == 1){
-            [dict setObject:self.scores[1][row] forKey:@"CBC_bandNeutrophilCount"];
-        }else if (section == 2){
-            [dict setObject:self.scores[2][row] forKey:@"CBC_otherNeutrophilCount"];
-        }else if (section == 3){
-            [dict setObject:self.scores[3][row] forKey:@"CBC_fibrinogen"];
-        }else if (section == 4){
-            [dict setObject:self.scores[4][row] forKey:@"otherLabData_hypoglycemia"];
-        }else if (section == 5){
-            [dict setObject:self.scores[5][row] forKey:@"otherLabData_igG"];
-        }else if (section == 6){
-            [dict setObject:self.scores[6][row] forKey:@"otherLabData_aterialOxygen"];
-        }else if (section == 7){
-            [dict setObject:self.scores[7][row] forKey:@"otherLabData_metabolicAcidosis"];
-        }else if (section == 8){
-            [dict setObject:self.scores[8][row] forKey:@"clinicExam_injection"];
-        }else if (section == 9){
-            [dict setObject:self.scores[9][row] forKey:@"clinicExam_fever"];
-        }else if (section == 10){
-            [dict setObject:self.scores[10][row] forKey:@"clinicExam_hypotoniaComa"];
-        }else if (section == 11){
-            [dict setObject:self.scores[11][row] forKey:@"clinicExam_anteriorUveitisDiarrhea"];
-        }else if (section == 12){
-            [dict setObject:self.scores[12][row] forKey:@"histData_placentitisVulvar"];
-        }else{
-            [dict setObject:self.scores[13][row] forKey:@"histData_prematurity"];
+    ShowSepsisScoreViewController* showSepsisScore = [[ShowSepsisScoreViewController alloc]init];
+    NSInteger totalScore = [self calculateTotalScore];
+    NSString* result = [self decideSepsis:totalScore];
+    if([DataManager loginOrNot]){
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+        for (NSIndexPath* select in selects) {
+            NSInteger section = select.section;
+            NSInteger row = select.row;
+            if(section == 0){
+                [dict setObject:self.scores[0][row] forKey:@"CBC_neutrophilCount"];
+            }else if (section == 1){
+                [dict setObject:self.scores[1][row] forKey:@"CBC_bandNeutrophilCount"];
+            }else if (section == 2){
+                [dict setObject:self.scores[2][row] forKey:@"CBC_otherNeutrophilCount"];
+            }else if (section == 3){
+                [dict setObject:self.scores[3][row] forKey:@"CBC_fibrinogen"];
+            }else if (section == 4){
+                [dict setObject:self.scores[4][row] forKey:@"otherLabData_hypoglycemia"];
+            }else if (section == 5){
+                [dict setObject:self.scores[5][row] forKey:@"otherLabData_igG"];
+            }else if (section == 6){
+                [dict setObject:self.scores[6][row] forKey:@"otherLabData_aterialOxygen"];
+            }else if (section == 7){
+                [dict setObject:self.scores[7][row] forKey:@"otherLabData_metabolicAcidosis"];
+            }else if (section == 8){
+                [dict setObject:self.scores[8][row] forKey:@"clinicExam_injection"];
+            }else if (section == 9){
+                [dict setObject:self.scores[9][row] forKey:@"clinicExam_fever"];
+            }else if (section == 10){
+                [dict setObject:self.scores[10][row] forKey:@"clinicExam_hypotoniaComa"];
+            }else if (section == 11){
+                [dict setObject:self.scores[11][row] forKey:@"clinicExam_anteriorUveitisDiarrhea"];
+            }else if (section == 12){
+                [dict setObject:self.scores[12][row] forKey:@"histData_placentitisVulvar"];
+            }else{
+                [dict setObject:self.scores[13][row] forKey:@"histData_prematurity"];
+            }
         }
+        if(self.shareOrNot.isOn == true){
+            [dict setObject:@"1" forKey:@"allowShare"];
+        }else{
+            [dict setObject:@"0" forKey:@"allowShare"];
+        }
+        // HTTP req
+        [[FoalScoreAFAPIClient sharedClient]calculateSepsisScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            if (response) {
+                if([response[@"status"] isEqual:@"success"]){
+                    showSepsisScore.scoreID = response[@"calculationId"];
+                    showSepsisScore.message = result;
+                    showSepsisScore.sepsisScore = totalScore;
+                    UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
+                    [self presentViewController:nv animated:YES completion:nil];
+                }else{
+                    showSepsisScore.networkError = true;
+                    showSepsisScore.scoreID = nil;
+                    showSepsisScore.message = result;
+                    showSepsisScore.sepsisScore = totalScore;
+                    UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
+                    [self presentViewController:nv animated:YES completion:nil];
+                }
+            }else{
+                showSepsisScore.networkError = true;
+                showSepsisScore.scoreID = nil;
+                showSepsisScore.message = result;
+                showSepsisScore.sepsisScore = totalScore;
+                UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
+                [self presentViewController:nv animated:YES completion:nil];
+            }
+        }];
+
+        
+    }else{
+        showSepsisScore.networkError = false;
+        showSepsisScore.scoreID = nil;
+        showSepsisScore.message = result;
+        showSepsisScore.sepsisScore = totalScore;
+        UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
+        [self presentViewController:nv animated:YES completion:nil];
     }
-    // HTTP req
 }
 
+- (NSString*)decideSepsis:(NSInteger)totalScore{
+    if(totalScore < 12){
+        return @"The foal is predicted to not have Sepsis with 88% accuracy.";
+    }else{
+        return @"The foal is predicted to have Sepsis with 93% accuracy.";
+    }
+}
 - (NSInteger)calculateTotalScore{
     NSInteger totalScore = 0;
     NSArray* selects = [self.tableView indexPathsForSelectedRows];

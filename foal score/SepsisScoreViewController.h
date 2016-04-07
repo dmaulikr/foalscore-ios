@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FoalScoreAFAPIClient.h"
+#import "UiModal.h"
+#import "DataManager.h"
+#import "ShowSepsisScoreViewController.h"
 @interface SepsisScoreViewController : UIViewController
 
 @end

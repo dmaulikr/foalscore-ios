@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowSepsisScoreViewController">
+            <connections>
+                <outlet property="resultLabel" destination="GgT-xt-6Sw" id="0yp-3Y-Igk"/>
+                <outlet property="scoreValueLabel" destination="0bj-jx-kUP" id="wEI-Ui-IdH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bj-jx-kUP">
+                    <rect key="frame" x="183" y="83" width="99" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="HeX-iA-eoU"/>
+                        <constraint firstAttribute="width" constant="99" id="YrD-f1-2pq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-xC-6N8">
+                    <rect key="frame" x="118" y="406" width="84" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="emV-5j-Wqd"/>
+                        <constraint firstAttribute="height" constant="56" id="xp9-sO-NFk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="pressCancelButton:" destination="-1" eventType="touchUpInside" id="Jsz-Rl-sup"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Um-2u-mic">
+                    <rect key="frame" x="101" y="342" width="119" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="Csf-cU-62x"/>
+                        <constraint firstAttribute="width" constant="119" id="lX9-MD-BOq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Add A Foal"/>
+                    <connections>
+                        <action selector="pressAddAFoalButton:" destination="-1" eventType="touchUpInside" id="Lcm-kC-J6B"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-Rs-HGU">
+                    <rect key="frame" x="42" y="57" width="160" height="115"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="115" id="1wj-qS-f16"/>
+                        <constraint firstAttribute="width" constant="160" id="3OY-iU-0e8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgT-xt-6Sw">
+                    <rect key="frame" x="18" y="192" width="284" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="dR2-0o-KdD"/>
+                        <constraint firstAttribute="width" constant="284" id="dwY-0W-lvw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.7713205645767266" green="0.84770277684080053" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="1Um-2u-mic" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8V9-1U-vkf"/>
+                <constraint firstItem="GgT-xt-6Sw" firstAttribute="top" secondItem="JRB-Rs-HGU" secondAttribute="bottom" constant="20" id="9Mb-Xn-Vto"/>
+                <constraint firstItem="0bj-jx-kUP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="CNA-SK-fzY"/>
+                <constraint firstItem="JRB-Rs-HGU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="57" id="LTA-8b-Rhp"/>
+                <constraint firstItem="lgJ-xC-6N8" firstAttribute="top" secondItem="1Um-2u-mic" secondAttribute="bottom" constant="8" id="NQK-S9-iyj"/>
+                <constraint firstItem="GgT-xt-6Sw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ww3-tg-llS"/>
+                <constraint firstAttribute="trailing" secondItem="0bj-jx-kUP" secondAttribute="trailing" constant="38" id="Xv2-uz-r5w"/>
+                <constraint firstItem="lgJ-xC-6N8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aYz-uF-gep"/>
+                <constraint firstItem="1Um-2u-mic" firstAttribute="top" secondItem="GgT-xt-6Sw" secondAttribute="bottom" constant="87" id="xMa-n5-Flj"/>
+                <constraint firstItem="JRB-Rs-HGU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="42" id="yok-DF-ox4"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
