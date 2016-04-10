@@ -111,7 +111,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     if(indexPath.row == 0){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [api getSepsisInfo:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];

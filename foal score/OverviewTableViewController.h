@@ -11,7 +11,7 @@
 #import "FoalScoreAFAPIClient.h"
 #import "HtmlStriper.h"
 #import "OverviewPage.h"
-
+#import "MBProgressHUD.h"
 @interface OverviewTableViewController : UIViewController
 
 @end

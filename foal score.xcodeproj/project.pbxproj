@@ -29,6 +29,7 @@
 		BF624A1B1CBAF9B80057B6BF /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */; };
 		BF624A201CBB00C50057B6BF /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A1E1CBB00C50057B6BF /* ChangePasswordViewController.m */; };
 		BF624A211CBB00C50057B6BF /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A1F1CBB00C50057B6BF /* ChangePasswordViewController.xib */; };
+		BF624A251CBB19960057B6BF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A241CBB19960057B6BF /* MBProgressHUD.m */; };
 		BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */; };
 		BF68A80F1CB6E7E2000A9B37 /* MiscellaneousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68A80E1CB6E7E1000A9B37 /* MiscellaneousViewController.m */; };
 		BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */; };
@@ -116,6 +117,8 @@
 		BF624A1D1CBB00C50057B6BF /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		BF624A1E1CBB00C50057B6BF /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		BF624A1F1CBB00C50057B6BF /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		BF624A231CBB19960057B6BF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		BF624A241CBB19960057B6BF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfFoalsChoosingToAttachedViewController.h; sourceTree = "<group>"; };
 		BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfFoalsChoosingToAttachedViewController.m; sourceTree = "<group>"; };
 		BF68A80D1CB6E7E1000A9B37 /* MiscellaneousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiscellaneousViewController.h; sourceTree = "<group>"; };
@@ -369,6 +372,15 @@
 			name = ChangePasswordController;
 			sourceTree = "<group>";
 		};
+		BF624A261CBB19A80057B6BF /* MBP */ = {
+			isa = PBXGroup;
+			children = (
+				BF624A231CBB19960057B6BF /* MBProgressHUD.h */,
+				BF624A241CBB19960057B6BF /* MBProgressHUD.m */,
+			);
+			name = MBP;
+			sourceTree = "<group>";
+		};
 		BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +531,7 @@
 				BF7187011C5D802D00605426 /* DataManager */,
 				CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */,
 				CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */,
+				BF624A261CBB19A80057B6BF /* MBP */,
 				63B3DCC11C8D505D00421235 /* Utilities */,
 				BF4F81171CACAB760021AD1F /* UiComponents */,
 			);
@@ -801,6 +814,7 @@
 				BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */,
 				BFA5F98D1C57DD9600DF6445 /* OverviewTableViewController.m in Sources */,
 				BF4F81151CACAB680021AD1F /* UiModal.m in Sources */,
+				BF624A251CBB19960057B6BF /* MBProgressHUD.m in Sources */,
 				BFAF13E71C62E13100126A5B /* MyFoalViewController.m in Sources */,
 				BF3E6DB91C6AE64E00C07BED /* MGSwipeTableCell.m in Sources */,
 				BF3650C21C6BAECB00E09DC3 /* OneFoalInfoViewController.m in Sources */,
