@@ -74,6 +74,9 @@
     }else if (indexPath.row == 1){
         ReferViewController* rvc = [[ReferViewController alloc]init];
         [self.navigationController pushViewController:rvc animated:YES];
+    }else{
+        FeedBackViewController* fvc = [[FeedBackViewController alloc]init];
+        [self.navigationController pushViewController:fvc animated:YES];
     }
 }
 - (void)viewDidLoad {

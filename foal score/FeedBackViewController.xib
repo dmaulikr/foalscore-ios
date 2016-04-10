@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedBackViewController">
+            <connections>
+                <outlet property="feedBackTextField" destination="QI7-F4-3LY" id="kKv-IF-nz4"/>
+                <outlet property="submitButton" destination="Xd0-8n-T5g" id="jKf-qr-tgH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Feedback" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QI7-F4-3LY">
+                    <rect key="frame" x="18" y="183" width="285" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="IKt-Rf-1HR"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="hxo-4a-m1e"/>
+                        <constraint firstAttribute="width" constant="285" id="k4o-i4-P3j"/>
+                        <constraint firstAttribute="height" constant="30" id="tS9-E7-KNF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-8n-T5g">
+                    <rect key="frame" x="63" y="251" width="194" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="194" id="IOW-Tt-kXV"/>
+                        <constraint firstAttribute="height" constant="30" id="rYm-KB-GWR"/>
+                    </constraints>
+                    <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="pressSubmit:" destination="-1" eventType="touchUpInside" id="H3M-Iw-aUV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Xd0-8n-T5g" secondAttribute="bottom" constant="199" id="Kjq-Wy-6qo"/>
+                <constraint firstItem="QI7-F4-3LY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zla-Fj-rtc"/>
+                <constraint firstItem="QI7-F4-3LY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="183" id="ibS-tp-ayd"/>
+                <constraint firstItem="Xd0-8n-T5g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="md6-0M-nJe"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

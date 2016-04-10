@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ExportDataViewController.h"
 #import "ReferViewController.h"
-
+#import "FeedBackViewController.h"
 @interface MiscellaneousViewController : UIViewController
 
 @end
