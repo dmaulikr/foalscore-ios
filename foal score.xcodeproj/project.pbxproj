@@ -27,6 +27,8 @@
 		BF624A151CBADF380057B6BF /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A131CBADF380057B6BF /* FeedBackViewController.xib */; };
 		BF624A1A1CBAF9B80057B6BF /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A181CBAF9B80057B6BF /* ForgotPasswordViewController.m */; };
 		BF624A1B1CBAF9B80057B6BF /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */; };
+		BF624A201CBB00C50057B6BF /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A1E1CBB00C50057B6BF /* ChangePasswordViewController.m */; };
+		BF624A211CBB00C50057B6BF /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A1F1CBB00C50057B6BF /* ChangePasswordViewController.xib */; };
 		BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */; };
 		BF68A80F1CB6E7E2000A9B37 /* MiscellaneousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68A80E1CB6E7E1000A9B37 /* MiscellaneousViewController.m */; };
 		BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */; };
@@ -111,6 +113,9 @@
 		BF624A171CBAF9B80057B6BF /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		BF624A181CBAF9B80057B6BF /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		BF624A1D1CBB00C50057B6BF /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		BF624A1E1CBB00C50057B6BF /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		BF624A1F1CBB00C50057B6BF /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfFoalsChoosingToAttachedViewController.h; sourceTree = "<group>"; };
 		BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfFoalsChoosingToAttachedViewController.m; sourceTree = "<group>"; };
 		BF68A80D1CB6E7E1000A9B37 /* MiscellaneousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiscellaneousViewController.h; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 				BF624A101CBADA9D0057B6BF /* ReferViewController */,
 				BF624A161CBADF3E0057B6BF /* FeedBackViewController */,
 				BF624A1C1CBAF9BD0057B6BF /* ForgotPasswordViewController */,
+				BF624A221CBB00CA0057B6BF /* ChangePasswordController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -351,6 +357,16 @@
 				BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */,
 			);
 			name = ForgotPasswordViewController;
+			sourceTree = "<group>";
+		};
+		BF624A221CBB00CA0057B6BF /* ChangePasswordController */ = {
+			isa = PBXGroup;
+			children = (
+				BF624A1D1CBB00C50057B6BF /* ChangePasswordViewController.h */,
+				BF624A1E1CBB00C50057B6BF /* ChangePasswordViewController.m */,
+				BF624A1F1CBB00C50057B6BF /* ChangePasswordViewController.xib */,
+			);
+			name = ChangePasswordController;
 			sourceTree = "<group>";
 		};
 		BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */ = {
@@ -690,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF878181C6FDC6F006B4FA7 /* ShowScoreViewController.xib in Resources */,
+				BF624A211CBB00C50057B6BF /* ChangePasswordViewController.xib in Resources */,
 				BF7379CD1CB19870005452FF /* OverviewPage.xib in Resources */,
 				BF624A151CBADF380057B6BF /* FeedBackViewController.xib in Resources */,
 				BFFC48F81CA4B19A009C2D91 /* RegisterViewController.xib in Resources */,
@@ -796,6 +813,7 @@
 				BF7187051C5E945E00605426 /* UserInfoViewController.m in Sources */,
 				BF7379C81CB18ECE005452FF /* HtmlStriper.m in Sources */,
 				BFEF05DA1C54006200EF60C5 /* main.m in Sources */,
+				BF624A201CBB00C50057B6BF /* ChangePasswordViewController.m in Sources */,
 				BF7186F81C5B09CD00605426 /* UserInfoModel.m in Sources */,
 				BF624A141CBADF380057B6BF /* FeedBackViewController.m in Sources */,
 				BFFC48F71CA4B19A009C2D91 /* RegisterViewController.m in Sources */,

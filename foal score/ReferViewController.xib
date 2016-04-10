@@ -37,6 +37,16 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-M4-Mde">
+                    <rect key="frame" x="111" y="126" width="99" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="XBi-Li-D96"/>
+                        <constraint firstAttribute="width" constant="99" id="Y7S-mK-4xj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -44,6 +54,8 @@
                 <constraint firstItem="L7q-09-64v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="173" id="CSg-w8-Hc9"/>
                 <constraint firstAttribute="bottom" secondItem="onp-BQ-Xki" secondAttribute="bottom" constant="209" id="OLl-JV-Hp3"/>
                 <constraint firstItem="L7q-09-64v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bvk-Z4-9HC"/>
+                <constraint firstItem="jAp-M4-Mde" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="126" id="fZY-Fj-EhF"/>
+                <constraint firstItem="jAp-M4-Mde" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gqh-yV-Zn1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

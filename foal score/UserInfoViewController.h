@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserInfoModel.h"
 #import "DataManager.h"
-
+#import "ChangePasswordViewController.h"
 @interface UserInfoViewController : UIViewController
 
 @end

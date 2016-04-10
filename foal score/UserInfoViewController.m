@@ -31,7 +31,8 @@
 }
 
 - (IBAction)pressChangePassword:(id)sender {
-    // TODO
+    ChangePasswordViewController* cvc = [[ChangePasswordViewController alloc]init];
+    [self presentViewController:cvc animated:YES completion:nil];
 }
 
 - (IBAction)pressLogOut:(id)sender {
