@@ -134,6 +134,7 @@
     if(cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+
     if([self.calculations count]!=0){
         CalculationModel* cal  = self.calculations[indexPath.row];
         if(cal.isSurvivalScore){
@@ -160,6 +161,78 @@
         return 1;
     }
     return [self.calculations count];
+}
+
+-(NSString*)RightDateString:(NSString*)data{
+    NSString *returnString=@"";
+    NSArray *arr = [data componentsSeparatedByCharactersInSet:
+                    [NSCharacterSet characterSetWithCharactersInString:@"^~ -:"]];
+    NSString *month ;
+    if([arr[1]isEqualToString:@"01"])
+    {
+        month = @"Jan ";
+    }
+    else if([arr[1]isEqualToString:@"02"])
+    {
+        month =@"Feb ";
+    }
+    else if([arr[1]isEqualToString:@"03"])
+    {
+        month = @"Mar ";
+    }else if([arr[1]isEqualToString:@"04"])
+    {
+        month= @"Apr ";
+    }
+    else if([arr[1]isEqualToString:@"05"])
+    {
+        month =@"May ";
+    }
+    else if([arr[1]isEqualToString:@"06"])
+    {
+        month=@"June ";
+    }
+    else if([arr[1]isEqualToString:@"07"])
+    {
+        month =@"July ";
+    }
+    else if([arr[1]isEqualToString:@"08"])
+    {
+        month = @"Aug ";
+    }
+    else if( [arr[1]isEqualToString:@"09"])
+    {
+        month = @"Sept ";
+        
+    }else if([arr[1]isEqualToString:@"10"])
+    {
+        month = @"Oct ";
+    }else if([arr[1]isEqualToString:@"11"])
+    {
+        month = @"Nov ";
+    }
+    else if([arr[1]isEqualToString:@"12"])
+        
+    {
+        month =@"Dec ";
+    }
+    else {
+        month = @" ";
+    }
+    
+    NSString *day = arr[2];
+    NSString *year = arr[0];
+    NSString *space =@" ";
+    returnString = [returnString stringByAppendingString:month];
+    
+    returnString = [returnString stringByAppendingString:day];
+    returnString = [returnString stringByAppendingString:space];
+    
+    returnString = [returnString stringByAppendingString:year];
+ 
+
+    
+    
+    return returnString;
 }
 
 
