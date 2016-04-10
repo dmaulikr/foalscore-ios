@@ -33,14 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.scrollView.delegate = self;
-
     CGRect newFrame = self.scrollContent.frame;
     newFrame.size.width = [UIScreen mainScreen].bounds.size.width;
     [self.scrollContent setFrame:newFrame];
     CGRect heightOfStatusBar = [UIApplication sharedApplication].statusBarFrame;
-    self.scrollView.frame = CGRectMake(0, heightOfStatusBar.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-heightOfStatusBar.size.height);
-    [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.scrollContent];
     self.scrollView.contentSize = self.scrollContent.frame.size;
     // read data
