@@ -12,6 +12,7 @@
 #import "FoalScoreAFAPIClient.h"
 #import "RegisterViewController.h"
 #import "UiModal.h"
+#import "ForgotPasswordViewController.h"
 @interface LoginViewController : UIViewController
 
 @end

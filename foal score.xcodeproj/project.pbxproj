@@ -25,6 +25,8 @@
 		BF624A0F1CBADA910057B6BF /* ReferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A0D1CBADA910057B6BF /* ReferViewController.xib */; };
 		BF624A141CBADF380057B6BF /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A121CBADF380057B6BF /* FeedBackViewController.m */; };
 		BF624A151CBADF380057B6BF /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A131CBADF380057B6BF /* FeedBackViewController.xib */; };
+		BF624A1A1CBAF9B80057B6BF /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A181CBAF9B80057B6BF /* ForgotPasswordViewController.m */; };
+		BF624A1B1CBAF9B80057B6BF /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */; };
 		BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */; };
 		BF68A80F1CB6E7E2000A9B37 /* MiscellaneousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68A80E1CB6E7E1000A9B37 /* MiscellaneousViewController.m */; };
 		BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */; };
@@ -106,6 +108,9 @@
 		BF624A111CBADF380057B6BF /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		BF624A121CBADF380057B6BF /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		BF624A131CBADF380057B6BF /* FeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
+		BF624A171CBAF9B80057B6BF /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		BF624A181CBAF9B80057B6BF /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfFoalsChoosingToAttachedViewController.h; sourceTree = "<group>"; };
 		BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfFoalsChoosingToAttachedViewController.m; sourceTree = "<group>"; };
 		BF68A80D1CB6E7E1000A9B37 /* MiscellaneousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiscellaneousViewController.h; sourceTree = "<group>"; };
@@ -203,7 +208,6 @@
 				BF7187071C5E946300605426 /* UserInfoViewController */,
 				BFAF13E81C62E13F00126A5B /* MyFoalViewController */,
 				BFD1B81A1C63FF4D0023C8C6 /* AddNewFoalViewController */,
-				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
 				BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */,
 				BFFC48F91CA4B1A0009C2D91 /* RegisterViewController */,
 				BF7379CE1CB19875005452FF /* OverviewPageViewController */,
@@ -212,6 +216,7 @@
 				BF624A0A1CBAC3100057B6BF /* ExportDataViewController */,
 				BF624A101CBADA9D0057B6BF /* ReferViewController */,
 				BF624A161CBADF3E0057B6BF /* FeedBackViewController */,
+				BF624A1C1CBAF9BD0057B6BF /* ForgotPasswordViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -338,6 +343,16 @@
 			name = FeedBackViewController;
 			sourceTree = "<group>";
 		};
+		BF624A1C1CBAF9BD0057B6BF /* ForgotPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF624A171CBAF9B80057B6BF /* ForgotPasswordViewController.h */,
+				BF624A181CBAF9B80057B6BF /* ForgotPasswordViewController.m */,
+				BF624A191CBAF9B80057B6BF /* ForgotPasswordViewController.xib */,
+			);
+			name = ForgotPasswordViewController;
+			sourceTree = "<group>";
+		};
 		BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +458,7 @@
 		BFD1B81A1C63FF4D0023C8C6 /* AddNewFoalViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
 				BFD1B8151C63FF460023C8C6 /* AddNewFoalViewController.h */,
 				BFD1B8161C63FF460023C8C6 /* AddNewFoalViewController.m */,
 				BFD1B8171C63FF460023C8C6 /* AddNewFoalViewController.xib */,
@@ -681,6 +697,7 @@
 				BF624A091CBAC30C0057B6BF /* ExportDataViewController.xib in Resources */,
 				BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */,
 				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
+				BF624A1B1CBAF9B80057B6BF /* ForgotPasswordViewController.xib in Resources */,
 				BF624A0F1CBADA910057B6BF /* ReferViewController.xib in Resources */,
 				BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */,
 				BFEF05E21C54006300EF60C5 /* LaunchScreen.storyboard in Resources */,
@@ -788,6 +805,7 @@
 				CF1EEAE41C875EBF001269C1 /* FoalScoreAFAPIClient.m in Sources */,
 				BFD1B8181C63FF460023C8C6 /* AddNewFoalViewController.m in Sources */,
 				BF624A081CBAC30C0057B6BF /* ExportDataViewController.m in Sources */,
+				BF624A1A1CBAF9B80057B6BF /* ForgotPasswordViewController.m in Sources */,
 				BF7187001C5D802700605426 /* DataManager.m in Sources */,
 				BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */,
 				BF68A80F1CB6E7E2000A9B37 /* MiscellaneousViewController.m in Sources */,

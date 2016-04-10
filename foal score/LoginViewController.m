@@ -142,6 +142,9 @@
     rg.parent = self;
     [self presentViewController:rg animated:YES completion:nil];
 }
+- (IBAction)pressForgotPassword:(id)sender {
+    ForgotPasswordViewController* fvc = [[ForgotPasswordViewController alloc]init];
+    [self presentViewController:fvc animated:YES completion:nil];}
 
 /*
 #pragma mark - Navigation

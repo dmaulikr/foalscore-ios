@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-I6-pNu">
-                    <rect key="frame" x="20" y="158" width="280" height="40"/>
+                    <rect key="frame" x="20" y="114" width="280" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="CYD-9m-6rl"/>
                         <constraint firstAttribute="width" constant="280" id="KkQ-dj-HFx"/>
@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53o-b0-wPQ">
-                    <rect key="frame" x="20" y="311" width="280" height="40"/>
+                    <rect key="frame" x="20" y="267" width="280" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="GZ4-tr-ck0"/>
                         <constraint firstAttribute="width" constant="280" id="elf-nH-uhD"/>
@@ -38,7 +38,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-Kh-MCT">
-                    <rect key="frame" x="90" y="368" width="141" height="53"/>
+                    <rect key="frame" x="90" y="324" width="141" height="53"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="53" id="5ck-Mv-R34"/>
                         <constraint firstAttribute="width" constant="141" id="NEA-ZQ-BKC"/>
@@ -49,7 +49,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh4-aa-cqz">
-                    <rect key="frame" x="127" y="417" width="66" height="53"/>
+                    <rect key="frame" x="127" y="373" width="66" height="53"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="66" id="IFK-9s-SOF"/>
                         <constraint firstAttribute="height" constant="53" id="eiz-j9-z6K"/>
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-Ub-fd0">
-                    <rect key="frame" x="92" y="233" width="136" height="45"/>
+                    <rect key="frame" x="92" y="189" width="136" height="45"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="136" id="mCY-Ke-9gl"/>
                         <constraint firstAttribute="height" constant="45" id="sxu-D0-KTm"/>
@@ -70,7 +70,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3H-ja-448">
-                    <rect key="frame" x="92" y="97" width="136" height="45"/>
+                    <rect key="frame" x="92" y="53" width="136" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="1Q4-YP-u1n"/>
                         <constraint firstAttribute="width" constant="136" id="IuW-MV-lxl"/>
@@ -93,8 +93,9 @@
                 <constraint firstItem="3Oj-I6-pNu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SYs-9b-jZq"/>
                 <constraint firstItem="qi9-Kh-MCT" firstAttribute="top" secondItem="53o-b0-wPQ" secondAttribute="bottom" constant="17" id="VQs-fo-Wcn"/>
                 <constraint firstItem="0dd-Ub-fd0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f46-oK-Vcp"/>
-                <constraint firstItem="l3H-ja-448" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="97" id="z7N-8e-ruS"/>
+                <constraint firstItem="l3H-ja-448" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="53" id="z7N-8e-ruS"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
