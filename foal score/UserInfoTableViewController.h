@@ -13,5 +13,6 @@
 #import "UserInfoModel.h"
 #import "UserInfoViewController.h"
 #import "MyFoalViewController.h"
+#import "MiscellaneousViewController.h"
 @interface UserInfoTableViewController: UIViewController
 @end
