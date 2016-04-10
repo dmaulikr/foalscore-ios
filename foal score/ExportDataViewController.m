@@ -153,7 +153,7 @@
     [[FoalScoreAFAPIClient sharedClient]exportFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
         if(response){
             if([response[@"status"] isEqual:@"success"]){
-                [UiModal showModalWithTitle:@"Note" message:@"Email has been sent" buttonTitle:@"Yes" viewController:self];
+                [UiModal showModalWithTitle:@"Note" message:@"Email has been sent" buttonTitle:@"OK" viewController:self];
             } else {
                 [UiModal showModalWithTitle:@"Error" message:response[@"error"] buttonTitle:@"OK" viewController:self];
             }
