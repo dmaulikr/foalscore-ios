@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExportDataViewController.h"
 
 @interface MiscellaneousViewController : UIViewController
 

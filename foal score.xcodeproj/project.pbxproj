@@ -19,6 +19,8 @@
 		BF4AB35E1CB5DBDB00B1D5EF /* ShowSepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AB35C1CB5DBDB00B1D5EF /* ShowSepsisScoreViewController.m */; };
 		BF4AB35F1CB5DBDB00B1D5EF /* ShowSepsisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4AB35D1CB5DBDB00B1D5EF /* ShowSepsisScoreViewController.xib */; };
 		BF4F81151CACAB680021AD1F /* UiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4F81141CACAB680021AD1F /* UiModal.m */; };
+		BF624A081CBAC30C0057B6BF /* ExportDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF624A061CBAC30C0057B6BF /* ExportDataViewController.m */; };
+		BF624A091CBAC30C0057B6BF /* ExportDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF624A071CBAC30C0057B6BF /* ExportDataViewController.xib */; };
 		BF6493C71C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */; };
 		BF68A80F1CB6E7E2000A9B37 /* MiscellaneousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68A80E1CB6E7E1000A9B37 /* MiscellaneousViewController.m */; };
 		BF69C0931C7C0B390020F678 /* SepsisScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69C0911C7C0B390020F678 /* SepsisScoreViewController.m */; };
@@ -91,6 +93,9 @@
 		BF4AB35D1CB5DBDB00B1D5EF /* ShowSepsisScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowSepsisScoreViewController.xib; sourceTree = "<group>"; };
 		BF4F81131CACAB680021AD1F /* UiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UiModal.h; sourceTree = "<group>"; };
 		BF4F81141CACAB680021AD1F /* UiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UiModal.m; sourceTree = "<group>"; };
+		BF624A051CBAC30C0057B6BF /* ExportDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportDataViewController.h; sourceTree = "<group>"; };
+		BF624A061CBAC30C0057B6BF /* ExportDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportDataViewController.m; sourceTree = "<group>"; };
+		BF624A071CBAC30C0057B6BF /* ExportDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExportDataViewController.xib; sourceTree = "<group>"; };
 		BF6493C51C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfFoalsChoosingToAttachedViewController.h; sourceTree = "<group>"; };
 		BF6493C61C74E9AA0074BEC7 /* ListOfFoalsChoosingToAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfFoalsChoosingToAttachedViewController.m; sourceTree = "<group>"; };
 		BF68A80D1CB6E7E1000A9B37 /* MiscellaneousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiscellaneousViewController.h; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 				BF7379CE1CB19875005452FF /* OverviewPageViewController */,
 				BF4AB3601CB5DBE300B1D5EF /* ShowSepsisScoreViewController */,
 				BF68A8101CB6E7E6000A9B37 /* MiscellaneousViewController */,
+				BF624A0A1CBAC3100057B6BF /* ExportDataViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -288,6 +294,16 @@
 				BF4F81141CACAB680021AD1F /* UiModal.m */,
 			);
 			name = UiComponents;
+			sourceTree = "<group>";
+		};
+		BF624A0A1CBAC3100057B6BF /* ExportDataViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF624A051CBAC30C0057B6BF /* ExportDataViewController.h */,
+				BF624A061CBAC30C0057B6BF /* ExportDataViewController.m */,
+				BF624A071CBAC30C0057B6BF /* ExportDataViewController.xib */,
+			);
+			name = ExportDataViewController;
 			sourceTree = "<group>";
 		};
 		BF6493C81C74EDC30074BEC7 /* ListOfFoalsToAttachedViewController */ = {
@@ -628,6 +644,7 @@
 				BF7379CD1CB19870005452FF /* OverviewPage.xib in Resources */,
 				BFFC48F81CA4B19A009C2D91 /* RegisterViewController.xib in Resources */,
 				BF4AB35F1CB5DBDB00B1D5EF /* ShowSepsisScoreViewController.xib in Resources */,
+				BF624A091CBAC30C0057B6BF /* ExportDataViewController.xib in Resources */,
 				BFA5F9931C586E5A00DF6445 /* LoginViewController.xib in Resources */,
 				BFEF05DF1C54006300EF60C5 /* Assets.xcassets in Resources */,
 				BF7187061C5E945E00605426 /* UserInfoViewController.xib in Resources */,
@@ -733,6 +750,7 @@
 				BF7379CC1CB19870005452FF /* OverviewPage.m in Sources */,
 				CF1EEAE41C875EBF001269C1 /* FoalScoreAFAPIClient.m in Sources */,
 				BFD1B8181C63FF460023C8C6 /* AddNewFoalViewController.m in Sources */,
+				BF624A081CBAC30C0057B6BF /* ExportDataViewController.m in Sources */,
 				BF7187001C5D802700605426 /* DataManager.m in Sources */,
 				BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */,
 				BF68A80F1CB6E7E2000A9B37 /* MiscellaneousViewController.m in Sources */,

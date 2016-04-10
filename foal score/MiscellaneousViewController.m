@@ -68,7 +68,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    //TODO
+    if (indexPath.row == 0) {
+        ExportDataViewController* edc = [[ExportDataViewController alloc]init];
+        [self.navigationController pushViewController:edc animated:YES];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
