@@ -125,7 +125,8 @@
         }
         // miscellaneous
         case 3:{
-            NSLog(@"ok");
+            MiscellaneousViewController* mvc = [[MiscellaneousViewController alloc]init];
+            [[self navigationController] pushViewController:mvc animated:YES];
             break;
         }
             

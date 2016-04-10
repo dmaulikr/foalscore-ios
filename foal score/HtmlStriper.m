@@ -17,6 +17,9 @@
     {
         str = [str stringByReplacingCharactersInRange:r withString:@""];
     }
+    str = [str stringByReplacingOccurrencesOfString:@"&ge;"withString:@"≥ "];
+    str = [str stringByReplacingOccurrencesOfString:@"&le;"withString:@"≤"];
+
     return str;
 }
 
