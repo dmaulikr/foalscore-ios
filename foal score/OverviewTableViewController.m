@@ -24,7 +24,7 @@
     self.tabBarController.tabBar.hidden = YES;
     [self.navigationItem setTitle:@"Overview"];
     // modify navigation bar
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]initWithTitle:@"Info" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonAction)];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]initWithTitle:@"Hub" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonAction)];
     self.navigationItem.leftBarButtonItem = newBackButton;
     [self tableView];
     self.tableView.separatorColor = [UIColor clearColor];

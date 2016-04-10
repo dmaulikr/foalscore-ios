@@ -23,7 +23,7 @@
     [self tableView];
     [self.navigationItem setTitle:@"My Foals"];
     self.tableView.separatorColor = [UIColor clearColor];
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]initWithTitle:@"Info" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonAction)];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]initWithTitle:@"Hub" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonAction)];
     self.navigationItem.leftBarButtonItem = newBackButton;
     // add new foal button
     UIBarButtonItem *newAddingButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addingButtonAction)];
