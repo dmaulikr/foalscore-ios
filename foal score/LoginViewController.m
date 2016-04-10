@@ -10,7 +10,6 @@
 
 @interface LoginViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailIDTextField;
@@ -24,7 +23,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.doneButton.enabled = NO;
-    [self.userNameTextField addTarget:self action:@selector(textFieldDidChange_UserName) forControlEvents:UIControlEventEditingDidEnd];
     [self.passwordTextField addTarget:self action:@selector(textFieldDidChange_Password) forControlEvents:UIControlEventEditingDidEnd];
     [self.emailIDTextField addTarget:self action:@selector(textFieldDidChange_emailID) forControlEvents:UIControlEventEditingDidEnd];
     // Listen for keyboard appearances and disappearances
@@ -50,7 +48,6 @@
 }
 
 - (IBAction)doneButtonPress:(id)sender {
-    NSString *userName = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
     NSString *email = self.emailIDTextField.text;
     
@@ -68,7 +65,7 @@
                                          
                                          //Save user login status
                                          UserInfoModel* userInfo = [DataManager userInfo];
-                                         [userInfo modifyUserName:userName AndPassword:password AndEmailID:email];
+                                         [userInfo modifyUserName:response[@"userObj"][@"User"][@"name"] AndPassword:password AndEmailID:email];
                                          userInfo.userId = response[@"userObj"][@"User"][@"id"];
                                          
                                          //UserInfoViewController* userInfoVC = [[UserInfoViewController alloc] init];
@@ -88,7 +85,7 @@
 }
 
 - (void)textFieldDidChange_UserName{
-    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
         self.doneButton.enabled = YES;
     }else{
         self.doneButton.enabled = NO;
@@ -96,7 +93,7 @@
 }
 
 - (void)textFieldDidChange_Password{
-    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
         self.doneButton.enabled = YES;
     }else{
         self.doneButton.enabled = NO;
@@ -105,7 +102,7 @@
 }
 
 - (void)textFieldDidChange_emailID{
-    if (![self.passwordTextField.text  isEqual: @""] && ![self.userNameTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
+    if (![self.passwordTextField.text  isEqual: @""] && ![self.emailIDTextField.text isEqual:@""]) {
         self.doneButton.enabled = YES;
     }else{
         self.doneButton.enabled = NO;
