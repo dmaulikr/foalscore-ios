@@ -33,10 +33,10 @@
                                 <exclude reference="YSA-Uh-ybe"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="O0g-h0-k67"/>
                                 <exclude reference="VMa-3m-jzd"/>
                                 <exclude reference="q91-44-1Bs"/>
                                 <exclude reference="xgg-gb-1Qq"/>
-                                <exclude reference="O0g-h0-k67"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -44,10 +44,10 @@
                                 <include reference="YSA-Uh-ybe"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="O0g-h0-k67"/>
                                 <include reference="VMa-3m-jzd"/>
                                 <include reference="q91-44-1Bs"/>
                                 <include reference="xgg-gb-1Qq"/>
-                                <include reference="O0g-h0-k67"/>
                             </mask>
                         </variation>
                     </view>
