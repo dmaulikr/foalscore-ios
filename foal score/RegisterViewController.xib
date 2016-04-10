@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
@@ -21,6 +21,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYc-rv-MTB">
                     <rect key="frame" x="96" y="83" width="129" height="63"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="129" id="7u4-HI-8P3"/>
                         <constraint firstAttribute="height" constant="63" id="PN9-zx-azE"/>
@@ -31,6 +32,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7k-fS-GhF">
                     <rect key="frame" x="28" y="203" width="133" height="19"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="6EM-zH-Ytx"/>
                         <constraint firstAttribute="width" constant="133" id="LjB-bU-xcJ"/>
@@ -41,6 +43,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dse-Ge-wfe">
                     <rect key="frame" x="28" y="302" width="133" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="ZKF-w1-HpA"/>
                         <constraint firstAttribute="width" constant="133" id="wZy-dx-doI"/>
@@ -51,6 +54,7 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Y2-mN-39f" userLabel="Name Text Field">
                     <rect key="frame" x="180" y="201" width="113" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="37X-1b-Lwx"/>
                         <constraint firstAttribute="height" constant="30" id="HIk-DH-iCV"/>
@@ -60,6 +64,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34B-fT-ADB">
                     <rect key="frame" x="77" y="395" width="68" height="49"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="7Fy-hg-IUA"/>
                         <constraint firstAttribute="width" constant="68" id="Fge-Dx-TXo"/>
@@ -72,6 +77,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2B-Co-8OW">
                     <rect key="frame" x="28" y="254" width="133" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="HPD-iD-0p9"/>
                         <constraint firstAttribute="width" constant="133" id="XUc-Z7-cKH"/>
@@ -82,6 +88,7 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i3W-Cw-DB0">
                     <rect key="frame" x="180" y="247" width="113" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="jya-SQ-Vb0"/>
                         <constraint firstAttribute="height" constant="30" id="knZ-jY-Mq6"/>
@@ -91,6 +98,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVi-xr-fpg">
                     <rect key="frame" x="202" y="395" width="68" height="49"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="68" id="80Y-uq-npC"/>
                         <constraint firstAttribute="height" constant="49" id="blK-CH-2v6"/>
@@ -103,6 +111,7 @@
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5q-Bm-0yr">
                     <rect key="frame" x="180" y="300" width="113" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="1hx-eG-SNB"/>
                         <constraint firstAttribute="height" constant="30" id="4uC-Vn-Brp"/>
@@ -111,6 +120,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="i3W-Cw-DB0" secondAttribute="trailing" constant="27" id="5gW-1b-4dI"/>
