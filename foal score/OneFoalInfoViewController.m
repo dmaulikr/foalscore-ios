@@ -128,28 +128,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell...
-    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    CalculationModel* cal  = self.calculations[indexPath.row];
-    NSString *rightDate = [self RightDateString:cal.date];
-    if(cal.isSurvivalScore){
-        cell.textLabel.textColor = [UIColor colorWithRed:(252/255.0) green:(81/255.0) blue:(87/255.0) alpha:1.0];
-       
-        
-        
-        cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:rightDate];
-        
-        
+
+    if([self.calculations count]!=0){
+        CalculationModel* cal  = self.calculations[indexPath.row];
+        if(cal.isSurvivalScore){
+            cell.textLabel.textColor = [UIColor colorWithRed:(252/255.0) green:(81/255.0) blue:(87/255.0) alpha:1.0];
+            cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
+        }else{
+            cell.textLabel.textColor = [UIColor colorWithRed:(184/255.0) green:(206/255.0) blue:(255/255.0) alpha:1.0];
+            cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
+        }
+        cell.detailTextLabel.text = cal.message;
     }else{
-        cell.textLabel.textColor = [UIColor colorWithRed:(184/255.0) green:(206/255.0) blue:(255/255.0) alpha:1.0];
-        cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:rightDate];
+        [cell.textLabel setText:@"No calculation history"];
+        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
-    cell.detailTextLabel.text = cal.message;
     return cell;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -158,6 +157,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //dsds
+    if([self.calculations count] == 0){
+        return 1;
+    }
     return [self.calculations count];
 }
 

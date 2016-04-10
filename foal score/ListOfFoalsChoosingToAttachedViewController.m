@@ -49,29 +49,29 @@
     }
     return _foals;
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    if([DataManager loginOrNot]){
-        NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
-        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
-        [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
-            if(response){
-                if([response[@"status"] isEqual:@"success"]){
-                    [self parseFoalsFromServer: response];
-                } else {
-                    [UiModal showModalWithTitle:@"Error" message:response[@"error"] buttonTitle:@"OK" viewController:self];
-                }
-            } else{
-                [UiModal showModalWithTitle:@"Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
-            }}];
-        
-    }else{
-        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
-    }
-
-    [self.tableView reloadData];
-}
+//
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:YES];
+//    if([DataManager loginOrNot]){
+//        NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
+//        [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+//        [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+//            if(response){
+//                if([response[@"status"] isEqual:@"success"]){
+//                    [self parseFoalsFromServer: response];
+//                } else {
+//                    [UiModal showModalWithTitle:@"Error" message:response[@"error"] buttonTitle:@"OK" viewController:self];
+//                }
+//            } else{
+//                [UiModal showModalWithTitle:@"Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
+//            }}];
+//        
+//    }else{
+//        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
+//    }
+//
+//    [self.tableView reloadData];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

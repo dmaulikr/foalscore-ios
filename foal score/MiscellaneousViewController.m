@@ -68,7 +68,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    //TODO
+    if (indexPath.row == 0) {
+        ExportDataViewController* edc = [[ExportDataViewController alloc]init];
+        [self.navigationController pushViewController:edc animated:YES];
+    }else if (indexPath.row == 1){
+        ReferViewController* rvc = [[ReferViewController alloc]init];
+        [self.navigationController pushViewController:rvc animated:YES];
+    }else{
+        FeedBackViewController* fvc = [[FeedBackViewController alloc]init];
+        [self.navigationController pushViewController:fvc animated:YES];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

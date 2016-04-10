@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExportDataViewController">
+            <connections>
+                <outlet property="tableView" destination="AiZ-gc-9TS" id="adz-tv-KEP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the Foals:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlC-MJ-ywg">
+                    <rect key="frame" x="8" y="83" width="148" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="0h2-2q-m21"/>
+                        <constraint firstAttribute="width" constant="148" id="15U-h8-LjG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs3-lQ-VLt">
+                    <rect key="frame" x="322" y="79" width="84" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="aZm-wG-Lrr"/>
+                        <constraint firstAttribute="height" constant="30" id="lMR-Au-hov"/>
+                    </constraints>
+                    <state key="normal" title="Select All"/>
+                    <connections>
+                        <action selector="pressSelectAll:" destination="-1" eventType="touchUpInside" id="Ou3-N3-gNm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxH-xF-TSK">
+                    <rect key="frame" x="106" y="626" width="202" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="eOd-qX-ul6"/>
+                        <constraint firstAttribute="width" constant="202" id="mk8-Gz-v0b"/>
+                    </constraints>
+                    <state key="normal" title="Export data to your e-mail"/>
+                    <connections>
+                        <action selector="pressExport:" destination="-1" eventType="touchUpInside" id="Tha-oy-fFm"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AiZ-gc-9TS">
+                    <rect key="frame" x="0.0" y="117" width="414" height="501"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6Jr-dR-3PM"/>
+                        <outlet property="delegate" destination="-1" id="vNy-rh-GBW"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qs3-lQ-VLt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="APa-aw-UOa"/>
+                <constraint firstItem="AiZ-gc-9TS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ClB-fB-hhz"/>
+                <constraint firstAttribute="trailing" secondItem="AiZ-gc-9TS" secondAttribute="trailing" id="DXe-8y-mSD"/>
+                <constraint firstAttribute="trailing" secondItem="qs3-lQ-VLt" secondAttribute="trailing" constant="8" id="Juc-iM-duc"/>
+                <constraint firstItem="AiZ-gc-9TS" firstAttribute="top" secondItem="qs3-lQ-VLt" secondAttribute="bottom" constant="8" id="MCU-ag-VCy"/>
+                <constraint firstAttribute="bottom" secondItem="NxH-xF-TSK" secondAttribute="bottom" constant="55" id="VC7-dQ-yDR"/>
+                <constraint firstItem="GlC-MJ-ywg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fr6-xF-mJv"/>
+                <constraint firstItem="NxH-xF-TSK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lUJ-lh-9D8"/>
+                <constraint firstItem="GlC-MJ-ywg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="qYZ-em-V1N"/>
+                <constraint firstItem="NxH-xF-TSK" firstAttribute="top" secondItem="AiZ-gc-9TS" secondAttribute="bottom" constant="8" id="v5z-pp-luI"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="518" y="404"/>
+        </view>
+    </objects>
+</document>
