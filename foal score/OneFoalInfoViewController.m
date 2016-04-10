@@ -136,12 +136,18 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     CalculationModel* cal  = self.calculations[indexPath.row];
+    NSString *rightDate = [self RightDateString:cal.date];
     if(cal.isSurvivalScore){
         cell.textLabel.textColor = [UIColor colorWithRed:(252/255.0) green:(81/255.0) blue:(87/255.0) alpha:1.0];
-        cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
+       
+        
+        
+        cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:rightDate];
+        
+        
     }else{
         cell.textLabel.textColor = [UIColor colorWithRed:(184/255.0) green:(206/255.0) blue:(255/255.0) alpha:1.0];
-        cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
+        cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:rightDate];
     }
     cell.detailTextLabel.text = cal.message;
     return cell;
@@ -153,6 +159,78 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //dsds
     return [self.calculations count];
+}
+
+-(NSString*)RightDateString:(NSString*)data{
+    NSString *returnString=@"";
+    NSArray *arr = [data componentsSeparatedByCharactersInSet:
+                    [NSCharacterSet characterSetWithCharactersInString:@"^~ -:"]];
+    NSString *month ;
+    if([arr[1]isEqualToString:@"01"])
+    {
+        month = @"Jan ";
+    }
+    else if([arr[1]isEqualToString:@"02"])
+    {
+        month =@"Feb ";
+    }
+    else if([arr[1]isEqualToString:@"03"])
+    {
+        month = @"Mar ";
+    }else if([arr[1]isEqualToString:@"04"])
+    {
+        month= @"Apr ";
+    }
+    else if([arr[1]isEqualToString:@"05"])
+    {
+        month =@"May ";
+    }
+    else if([arr[1]isEqualToString:@"06"])
+    {
+        month=@"June ";
+    }
+    else if([arr[1]isEqualToString:@"07"])
+    {
+        month =@"July ";
+    }
+    else if([arr[1]isEqualToString:@"08"])
+    {
+        month = @"Aug ";
+    }
+    else if( [arr[1]isEqualToString:@"09"])
+    {
+        month = @"Sept ";
+        
+    }else if([arr[1]isEqualToString:@"10"])
+    {
+        month = @"Oct ";
+    }else if([arr[1]isEqualToString:@"11"])
+    {
+        month = @"Nov ";
+    }
+    else if([arr[1]isEqualToString:@"12"])
+        
+    {
+        month =@"Dec ";
+    }
+    else {
+        month = @" ";
+    }
+    
+    NSString *day = arr[2];
+    NSString *year = arr[0];
+    NSString *space =@" ";
+    returnString = [returnString stringByAppendingString:month];
+    
+    returnString = [returnString stringByAppendingString:day];
+    returnString = [returnString stringByAppendingString:space];
+    
+    returnString = [returnString stringByAppendingString:year];
+ 
+
+    
+    
+    return returnString;
 }
 
 
