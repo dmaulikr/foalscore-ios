@@ -21,6 +21,9 @@
 @end
 
 @implementation SepsisScoreViewController
+- (IBAction)pressShareInfo:(id)sender {
+    [UiModal showModalWithTitle:@"Note" message:@"The FoalScore App offers an option to share data with The Ohio State University that will be used for future studies. If shared, data from this App will ONLY be used for research purposes and it will not reveal personal information from its users. User information is not required to use this App." buttonTitle:@"OK" viewController:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

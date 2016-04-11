@@ -84,10 +84,10 @@
                     </constraints>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share data with The Ohio State University?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bns-ht-y9f">
-                    <rect key="frame" x="17" y="492" width="178" height="72"/>
+                    <rect key="frame" x="17" y="492" width="148" height="72"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="Pg5-0e-uXO"/>
-                        <constraint firstAttribute="width" constant="178" id="led-Lf-Mhi"/>
+                        <constraint firstAttribute="width" constant="148" id="led-Lf-Mhi"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,10 +98,21 @@
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="separatorColor" red="1" green="0.13292620729999999" blue="0.7821538039" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="288-iF-glC">
+                    <rect key="frame" x="162" y="526" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="BJP-HG-koj"/>
+                        <constraint firstAttribute="height" constant="22" id="kg4-ZS-Xyw"/>
+                    </constraints>
+                    <connections>
+                        <action selector="pressShareInfo:" destination="-1" eventType="touchUpInside" id="HAh-cl-3JH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottomMargin" secondItem="bns-ht-y9f" secondAttribute="bottom" constant="95" id="6Ru-5x-xe1"/>
+                <constraint firstItem="288-iF-glC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="162" id="9RT-KU-1HA"/>
                 <constraint firstItem="bns-ht-y9f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="AoS-PG-nbb"/>
                 <constraint firstItem="dGJ-NM-wMB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="B7p-zr-Vpt"/>
                 <constraint firstItem="bns-ht-y9f" firstAttribute="top" secondItem="bL5-VJ-dg6" secondAttribute="bottom" constant="8" id="DM8-DG-uH6"/>
@@ -110,6 +121,7 @@
                 <constraint firstAttribute="bottom" secondItem="ArB-Dz-toA" secondAttribute="bottom" constant="69" id="RoB-El-eLa"/>
                 <constraint firstItem="6pZ-52-D2j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="TBx-sf-Ipk"/>
                 <constraint firstAttribute="trailing" secondItem="f6e-5z-JZp" secondAttribute="trailing" constant="58" id="Tsh-9d-pFD"/>
+                <constraint firstItem="288-iF-glC" firstAttribute="top" secondItem="bL5-VJ-dg6" secondAttribute="bottom" constant="42" id="bGI-7M-F6V"/>
                 <constraint firstAttribute="trailing" secondItem="6pZ-52-D2j" secondAttribute="trailing" constant="43" id="dtS-iO-x65"/>
                 <constraint firstAttribute="trailing" secondItem="oY8-XK-Idj" secondAttribute="trailing" constant="31" id="fMh-2b-1Kg"/>
                 <constraint firstAttribute="trailing" secondItem="bL5-VJ-dg6" secondAttribute="trailing" id="naI-hE-jk2"/>
