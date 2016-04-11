@@ -12,6 +12,7 @@
 #import "CalculationModel.h"
 #import "UiModal.h"
 #import "FoalScoreAFAPIClient.h"
+#import "MBProgressHUD.h"
 @interface OneFoalInfoViewController : UIViewController
 // foal data
 @property (nonatomic, assign) NSInteger indexOfFoal;

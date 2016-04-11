@@ -459,7 +459,9 @@
             [dict setObject:@"0" forKey:@"allowShare"];
         }
         // HTTP req
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]calculateSepsisScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 if([response[@"status"] isEqual:@"success"]){
                     showSepsisScore.scoreID = response[@"calculationId"];

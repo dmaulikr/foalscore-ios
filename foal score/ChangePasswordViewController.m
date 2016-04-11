@@ -39,7 +39,9 @@
             [dict setObject:[DataManager userInfo].email forKey:@"email"];
             [dict setObject:self.currentPTextField.text forKey:@"oldPassword"];
             [dict setObject:self.PTextField.text forKey:@"newPassword"];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [[FoalScoreAFAPIClient sharedClient]changePassword:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 if(response){
                     if([response[@"status"] isEqual:@"success"]){
                         [UiModal showModalWithTitle:@"Note" message:@"Password changed successfully" buttonTitle:@"OK" viewController:self];

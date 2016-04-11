@@ -49,7 +49,9 @@
     if([DataManager loginOrNot]){
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
         [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if(response){
                 if([response[@"status"] isEqual:@"success"]){
                     [self parseFoalsFromServer: response];
@@ -150,7 +152,9 @@
     NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
     [dict setObject:[self foalsNeedToExport] forKey:@"foalids"];
     [dict setObject:[DataManager userInfo].email forKey:@"userEmail"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[FoalScoreAFAPIClient sharedClient]exportFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if(response){
             if([response[@"status"] isEqual:@"success"]){
                 [UiModal showModalWithTitle:@"Note" message:@"Email has been sent" buttonTitle:@"OK" viewController:self];

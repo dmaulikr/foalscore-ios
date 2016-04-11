@@ -21,11 +21,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"Choosing A Foal"];
+    CGRect r = CGRectMake(0,0, self.tableView.frame.size.width, self.tableView.frame.size.height);
+    self.tableView.frame = r;
     //
     if([DataManager loginOrNot]){
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
         [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]allFoals:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if(response){
                 if([response[@"status"] isEqual:@"success"]){
                     [self parseFoalsFromServer: response];
@@ -127,7 +131,9 @@
         [dict setObject:self.scoreID forKey:@"calculationId"];
         NSLog(@"%@", foal.foalId);
         [dict setObject:foal.foalId forKey:@"foalId"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]foalSurvivalScoreLink:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 if (![response[@"status"]isEqual:@"success"]) {
                     [UiModal showModalWithTitle:@"Error" message:response[error] buttonTitle:@"OK" viewController:self];
@@ -144,7 +150,9 @@
         [dict setObject:self.scoreID forKey:@"calculationId"];
         NSLog(@"%@", foal.foalId);
         [dict setObject:foal.foalId forKey:@"foalId"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]foalSepsisScoreLink:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 if (![response[@"status"]isEqual:@"success"]) {
                     [UiModal showModalWithTitle:@"Error" message:response[error] buttonTitle:@"OK" viewController:self];

@@ -11,6 +11,7 @@
 #import "ShowScoreViewController.h"
 #import "FoalScoreAFAPIClient.h"
 #import "UiModal.h"
+#import "MBProgressHUD.h"
 @interface SurvivalScoreViewController : UIViewController
 
 @end

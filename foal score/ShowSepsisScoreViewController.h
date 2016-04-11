@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ListOfFoalsChoosingToAttachedViewController.h"
 #import "UiModal.h"
+#import "MBProgressHUD.h"
 @interface ShowSepsisScoreViewController : UIViewController
 
 @property (nonatomic, copy)NSString* message;

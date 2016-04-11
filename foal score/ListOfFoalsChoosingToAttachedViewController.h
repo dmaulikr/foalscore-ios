@@ -12,6 +12,7 @@
 #import "CalculationModel.h"
 #import "FoalScoreAFAPIClient.h"
 #import "UiModal.h"
+#import "MBProgressHUD.h"
 @interface ListOfFoalsChoosingToAttachedViewController : UIViewController
 
 @property (nonatomic, assign)BOOL isSurvivalScore;

@@ -59,8 +59,9 @@
     registrationInfo[@"email"] = email;
     registrationInfo[@"name"] = name;
     registrationInfo[@"password"] = password;
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[FoalScoreAFAPIClient sharedClient] registerNewUser:registrationInfo withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (response) {
             if ([response[@"status"] isEqual: @"success"]) {
                 NSLog(@"%@ %@", @"ID:", response[@"userObj"][@"User"][@"id"]);

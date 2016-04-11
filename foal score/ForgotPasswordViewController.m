@@ -26,7 +26,9 @@
 - (IBAction)pressSubmit:(id)sender {
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
         [dict setObject:self.emailIDTextField.text forKey:@"email"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]forgotPassword:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if(response){
                 if([response[@"status"] isEqual:@"success"]){
                     [UiModal showModalWithTitle:@"Note" message:@"Check your email for new password" buttonTitle:@"OK" viewController:self];

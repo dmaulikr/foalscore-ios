@@ -25,7 +25,9 @@
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]init];
         [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
         [dict setObject:self.emailIDTextField.text forKey:@"referredEmail"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]referUser:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if(response){
                 if([response[@"status"] isEqual:@"success"]){
                     [UiModal showModalWithTitle:@"Note" message:@"Referral email has been sent" buttonTitle:@"OK" viewController:self];

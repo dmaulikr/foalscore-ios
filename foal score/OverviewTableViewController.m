@@ -125,7 +125,9 @@
         }];
     }else if (indexPath.row ==1){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [api getSurvivalInfo:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
@@ -138,7 +140,9 @@
 
     }else if (indexPath.row ==4){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [api getOverview:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
@@ -151,7 +155,9 @@
         
     }else if (indexPath.row == 2){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [api getReferences:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 OverviewPage* op = [[OverviewPage alloc]init];
@@ -167,7 +173,9 @@
 
     }else{
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [api getTerminology:^(NSDictionary *response, NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 OverviewPage* op = [[OverviewPage alloc]init];
