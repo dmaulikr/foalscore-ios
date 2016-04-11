@@ -61,11 +61,11 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgT-xt-6Sw">
-                    <rect key="frame" x="18" y="192" width="284" height="63"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgT-xt-6Sw">
+                    <rect key="frame" x="13" y="184" width="294" height="112"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="63" id="dR2-0o-KdD"/>
-                        <constraint firstAttribute="width" constant="284" id="dwY-0W-lvw"/>
+                        <constraint firstAttribute="height" constant="112" id="dR2-0o-KdD"/>
+                        <constraint firstAttribute="width" constant="294" id="dwY-0W-lvw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,14 +75,14 @@
             <color key="backgroundColor" red="0.7713205645767266" green="0.84770277684080053" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="1Um-2u-mic" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8V9-1U-vkf"/>
-                <constraint firstItem="GgT-xt-6Sw" firstAttribute="top" secondItem="JRB-Rs-HGU" secondAttribute="bottom" constant="20" id="9Mb-Xn-Vto"/>
+                <constraint firstItem="GgT-xt-6Sw" firstAttribute="top" secondItem="JRB-Rs-HGU" secondAttribute="bottom" constant="12" id="9Mb-Xn-Vto"/>
                 <constraint firstItem="0bj-jx-kUP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="CNA-SK-fzY"/>
                 <constraint firstItem="JRB-Rs-HGU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="57" id="LTA-8b-Rhp"/>
                 <constraint firstItem="lgJ-xC-6N8" firstAttribute="top" secondItem="1Um-2u-mic" secondAttribute="bottom" constant="8" id="NQK-S9-iyj"/>
                 <constraint firstItem="GgT-xt-6Sw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ww3-tg-llS"/>
                 <constraint firstAttribute="trailing" secondItem="0bj-jx-kUP" secondAttribute="trailing" constant="38" id="Xv2-uz-r5w"/>
                 <constraint firstItem="lgJ-xC-6N8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aYz-uF-gep"/>
-                <constraint firstItem="1Um-2u-mic" firstAttribute="top" secondItem="GgT-xt-6Sw" secondAttribute="bottom" constant="87" id="xMa-n5-Flj"/>
+                <constraint firstItem="1Um-2u-mic" firstAttribute="top" secondItem="GgT-xt-6Sw" secondAttribute="bottom" constant="46" id="xMa-n5-Flj"/>
                 <constraint firstItem="JRB-Rs-HGU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="42" id="yok-DF-ox4"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
