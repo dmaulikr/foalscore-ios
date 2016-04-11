@@ -56,8 +56,10 @@
     NSMutableDictionary *requestObj =  [[NSMutableDictionary alloc]init];
     requestObj[@"email"] = email;
     requestObj[@"password"] = password;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[FoalScoreAFAPIClient sharedClient] loginUser: requestObj
                              withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                                  if(response) {
                                      if([response[@"status"] isEqual: @"success"]) {
                                          

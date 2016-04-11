@@ -145,7 +145,9 @@
                     [dict setObject:[foal foalId] forKey:@"foalid"];
                     // send request
                     FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
+                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                     [client editFoal:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
                         if(response) {
                             if([response[@"status"] isEqual: @"success"]) {
                                 NSString* foalId = response[@"foalid"];
@@ -199,7 +201,9 @@
             }
             // send request
             FoalScoreAFAPIClient* client = [FoalScoreAFAPIClient sharedClient];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [client addFoal:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 if(response) {
                     if([response[@"status"] isEqual: @"success"]) {
                         NSString* foalId = response[@"foalid"];

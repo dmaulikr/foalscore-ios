@@ -11,7 +11,7 @@
 #import "FoalInfoModel.h"
 #import "UiModal.h"
 #import "FoalScoreAFAPIClient.h"
-
+#import "MBProgressHUD.h"
 @interface AddNewFoalViewController : UIViewController
 
 - (instancetype)initWithAnIndexOfFoalThatNeedToModify:(NSInteger)index ModifyOrNot:(BOOL)modify;

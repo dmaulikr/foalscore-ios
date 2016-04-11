@@ -11,6 +11,7 @@
 #import "UiModal.h"
 #import "DataManager.h"
 #import "ShowSepsisScoreViewController.h"
+#import "MBProgressHUD.h"
 @interface SepsisScoreViewController : UIViewController
 
 @end

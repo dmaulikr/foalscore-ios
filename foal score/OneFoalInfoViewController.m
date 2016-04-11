@@ -85,8 +85,10 @@
     //request
     NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
     [dict setObject:foalNeedToShow.foalId forKey:@"foalid"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[FoalScoreAFAPIClient sharedClient]foalScores:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
         if(response){
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if([response[@"status"] isEqual:@"success"]) {
                 NSMutableArray* calcs = response[@"results"];
                 for(NSMutableDictionary* d in calcs){

@@ -207,6 +207,7 @@
 		632889C11C7D5F4800A30BCD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
 				BF06B9481C5706B300700A6F /* InfoPageViewController */,
 				BFF878191C6FDC75006B4FA7 /* ShowScoreViewController */,
 				BF06B93C1C5705CE00700A6F /* SurvivalScoreViewController */,
@@ -486,7 +487,6 @@
 		BFD1B81A1C63FF4D0023C8C6 /* AddNewFoalViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF3650C41C6BAED300E09DC3 /* OneFoalInfoViewController */,
 				BFD1B8151C63FF460023C8C6 /* AddNewFoalViewController.h */,
 				BFD1B8161C63FF460023C8C6 /* AddNewFoalViewController.m */,
 				BFD1B8171C63FF460023C8C6 /* AddNewFoalViewController.xib */,

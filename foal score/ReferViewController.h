@@ -10,6 +10,7 @@
 #import "DataManager.h"
 #import "UiModal.h"
 #import "FoalScoreAFAPIClient.h"
+#import "MBProgressHUD.h"
 
 @interface ReferViewController : UIViewController
 

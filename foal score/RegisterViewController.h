@@ -13,6 +13,7 @@
 #import "UiModal.h"
 #import "UserInfoViewController.h"
 #import "LoginViewController.h"
+#import "MBProgressHUD.h"
 
 @interface RegisterViewController : UIViewController
 @property (nonatomic, strong) UIViewController* parent;

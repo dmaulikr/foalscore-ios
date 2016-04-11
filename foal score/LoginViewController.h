@@ -13,6 +13,7 @@
 #import "RegisterViewController.h"
 #import "UiModal.h"
 #import "ForgotPasswordViewController.h"
+#import "MBProgressHUD.h"
 @interface LoginViewController : UIViewController
 
 @end
