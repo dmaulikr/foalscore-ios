@@ -28,35 +28,38 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-8n-T5g">
-                    <rect key="frame" x="63" y="251" width="194" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="194" id="IOW-Tt-kXV"/>
-                        <constraint firstAttribute="height" constant="30" id="rYm-KB-GWR"/>
-                    </constraints>
-                    <state key="normal" title="Submit"/>
-                    <connections>
-                        <action selector="pressSubmit:" destination="-1" eventType="touchUpInside" id="H3M-Iw-aUV"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gS-1k-niG">
                     <rect key="frame" x="111" y="135" width="98" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="7aW-Qz-9LP"/>
                         <constraint firstAttribute="width" constant="98" id="Idb-xL-Vf3"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-8n-T5g">
+                    <rect key="frame" x="39" y="240" width="247" height="42"/>
+                    <color key="backgroundColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="247" id="Gi4-0V-0hA"/>
+                        <constraint firstAttribute="height" constant="42" id="K4H-RR-c5B"/>
+                    </constraints>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pressSubmit:" destination="-1" eventType="touchUpInside" id="H3M-Iw-aUV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Xd0-8n-T5g" secondAttribute="bottom" constant="199" id="Kjq-Wy-6qo"/>
+                <constraint firstAttribute="bottom" secondItem="Xd0-8n-T5g" secondAttribute="bottom" constant="198" id="Kjq-Wy-6qo"/>
                 <constraint firstItem="9gS-1k-niG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="135" id="Sbr-t5-LhC"/>
                 <constraint firstItem="QI7-F4-3LY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zla-Fj-rtc"/>
                 <constraint firstItem="QI7-F4-3LY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="183" id="ibS-tp-ayd"/>
-                <constraint firstItem="Xd0-8n-T5g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="md6-0M-nJe"/>
+                <constraint firstItem="Xd0-8n-T5g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="2.5" id="md6-0M-nJe"/>
                 <constraint firstItem="9gS-1k-niG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wX2-xZ-9id"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

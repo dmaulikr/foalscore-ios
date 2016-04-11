@@ -23,12 +23,15 @@
     // start here
     // create tabbar controller
     UITabBarController *tabBars = [[UITabBarController alloc]init];
+    tabBars.tabBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
+
     // create 2 main controllers on main page
     SurvivalScoreViewController *tab1 = [[SurvivalScoreViewController alloc]init];
     SepsisScoreViewController *tab2 = [[SepsisScoreViewController alloc]init];
     // create UiNaviController for user info part
     UserInfoTableViewController *userInfor = [[UserInfoTableViewController alloc]init];
     UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:userInfor];
+    nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
     // Add them into array
     NSMutableArray *localViewControllersArray = [[NSMutableArray alloc]initWithCapacity:3];
     [localViewControllersArray addObject:tab1];

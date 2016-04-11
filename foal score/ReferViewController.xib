@@ -17,17 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onp-BQ-Xki">
-                    <rect key="frame" x="63" y="241" width="194" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="194" id="IG2-ay-5cU"/>
-                        <constraint firstAttribute="height" constant="30" id="eVU-u9-q4r"/>
-                    </constraints>
-                    <state key="normal" title="Refer"/>
-                    <connections>
-                        <action selector="pressRefer:" destination="-1" eventType="touchUpInside" id="D2C-Lh-cx0"/>
-                    </connections>
-                </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-09-64v">
                     <rect key="frame" x="18" y="173" width="285" height="30"/>
                     <constraints>
@@ -43,16 +32,30 @@
                         <constraint firstAttribute="height" constant="21" id="XBi-Li-D96"/>
                         <constraint firstAttribute="width" constant="99" id="Y7S-mK-4xj"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onp-BQ-Xki">
+                    <rect key="frame" x="37" y="241" width="247" height="42"/>
+                    <color key="backgroundColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="247" id="IG2-ay-5cU"/>
+                        <constraint firstAttribute="height" constant="42" id="eVU-u9-q4r"/>
+                    </constraints>
+                    <state key="normal" title="Refer">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pressRefer:" destination="-1" eventType="touchUpInside" id="D2C-Lh-cx0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="onp-BQ-Xki" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0u8-j8-BMF"/>
                 <constraint firstItem="L7q-09-64v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="173" id="CSg-w8-Hc9"/>
-                <constraint firstAttribute="bottom" secondItem="onp-BQ-Xki" secondAttribute="bottom" constant="209" id="OLl-JV-Hp3"/>
+                <constraint firstAttribute="bottom" secondItem="onp-BQ-Xki" secondAttribute="bottom" constant="197" id="OLl-JV-Hp3"/>
                 <constraint firstItem="L7q-09-64v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bvk-Z4-9HC"/>
                 <constraint firstItem="jAp-M4-Mde" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="126" id="fZY-Fj-EhF"/>
                 <constraint firstItem="jAp-M4-Mde" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gqh-yV-Zn1"/>

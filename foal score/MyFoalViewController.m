@@ -121,13 +121,7 @@
     NSString *date_string = [formatter stringFromDate:foal.addDate];
     cell.detailTextLabel.text = date_string;
     //configure right buttons
-    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell *sender) {
-        NSLog(@"Convenience callback for delete buttons!");
-        NSMutableArray* foals = [DataManager foals];
-        [foals removeObjectAtIndex:indexPath.row];
-        [tableView reloadData];
-        return YES;
-    }], [MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:[UIColor blueColor] callback:^BOOL(MGSwipeTableCell *sender) {
+    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:[UIColor blueColor] callback:^BOOL(MGSwipeTableCell *sender) {
         NSLog(@"Convenience callback for edit buttons!");
         AddNewFoalViewController* addNewFoalVC = [[AddNewFoalViewController alloc]initWithAnIndexOfFoalThatNeedToModify:indexPath.row ModifyOrNot:YES];
         [self.navigationController pushViewController:addNewFoalVC animated:YES];

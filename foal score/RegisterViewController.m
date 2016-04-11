@@ -119,24 +119,11 @@
 }
 
 - (void)keyboardDidShow: (NSNotification *) notif{
-    CGFloat screenHeight =[[UIScreen mainScreen]bounds].size.height;
-    CGFloat height = 0 - 0.25 * screenHeight;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    self.view.frame = CGRectMake(self.view.frame.origin.x, height, self.view.frame.size.width, self.view.frame.size.height);
-    [UIView commitAnimations];
+    // TODO
 }
 
 - (void)keyboardDidHide: (NSNotification *) notif{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [UIView commitAnimations];
-    
+    // TODO
 }
 
 /*

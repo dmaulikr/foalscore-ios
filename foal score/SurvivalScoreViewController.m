@@ -150,16 +150,11 @@
                 if ([response[@"status"] isEqual:@"success"]) {
                     ss.scoreID = response[@"calculationId"];
                     ss.survivalScore = totalScore;
-                    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
-                    [self presentViewController:nv animated:YES completion:nil];
                 }else{
-                    
                     // Present local score result
                     ss.networkError = true;//network error
                     ss.scoreID = nil;
                     ss.survivalScore = totalScore;
-                    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
-                    [self presentViewController:nv animated:YES completion:nil];
                 }
                 
             } else {
@@ -167,17 +162,20 @@
                 // Present local score result
                 ss.scoreID = nil;
                 ss.survivalScore = totalScore;
-                UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
-                [self presentViewController:nv animated:YES completion:nil];
             }
+            UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+            nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
+            [self presentViewController:nv animated:YES completion:nil];
         }];
     }else{
         ss.networkError = false;
         ss.scoreID = nil;
         ss.survivalScore = totalScore;
         UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:ss];
+        nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
         [self presentViewController:nv animated:YES completion:nil];
     }
+    
 }
 
 - (NSMutableDictionary*)buildingRequestDictionary{

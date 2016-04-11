@@ -378,7 +378,7 @@
     NSString* title = [[self.As objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     [cell.textLabel setText:title];
     UIView* bv = [[UIView alloc]init];
-    bv.backgroundColor = [UIColor colorWithRed:(132/255.0) green:(207/255.0) blue:(250/255.0) alpha:1];
+    bv.backgroundColor = [UIColor colorWithRed:(116/255.0) green:(43/255.0) blue:(36/255.0) alpha:1];
     cell.selectedBackgroundView = bv;
     return cell;
 }
@@ -393,6 +393,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.highlightedTextColor = [UIColor blackColor];
     [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 - (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath {
@@ -412,6 +414,8 @@
     NSInteger score = [self calculateTotalScore];
     NSString *score_string = [@(score) stringValue];
     self.totalScore.text = score_string;
+    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.highlightedTextColor = [UIColor whiteColor];
 }
 
 
@@ -470,33 +474,29 @@
                     showSepsisScore.scoreID = response[@"calculationId"];
                     showSepsisScore.message = result;
                     showSepsisScore.sepsisScore = totalScore;
-                    UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
-                    [self presentViewController:nv animated:YES completion:nil];
                 }else{
                     showSepsisScore.networkError = true;
                     showSepsisScore.scoreID = nil;
                     showSepsisScore.message = result;
                     showSepsisScore.sepsisScore = totalScore;
-                    UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
-                    [self presentViewController:nv animated:YES completion:nil];
                 }
             }else{
                 showSepsisScore.networkError = true;
                 showSepsisScore.scoreID = nil;
                 showSepsisScore.message = result;
                 showSepsisScore.sepsisScore = totalScore;
-                UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
-                [self presentViewController:nv animated:YES completion:nil];
             }
+            UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
+            nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
+            [self presentViewController:nv animated:YES completion:nil];
         }];
-
-        
     }else{
         showSepsisScore.networkError = false;
         showSepsisScore.scoreID = nil;
         showSepsisScore.message = result;
         showSepsisScore.sepsisScore = totalScore;
         UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
+        nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
         [self presentViewController:nv animated:YES completion:nil];
     }
 }
