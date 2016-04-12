@@ -27,7 +27,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="exT-R5-30T">
-            <rect key="frame" x="0.0" y="0.0" width="308" height="711"/>
+            <rect key="frame" x="0.0" y="0.0" width="308" height="684"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNV-Vl-NaE">
@@ -333,11 +333,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBv-n0-mPC">
-                    <rect key="frame" x="6" y="610" width="296" height="44"/>
+                    <rect key="frame" x="0.0" y="594" width="307" height="37"/>
                     <color key="backgroundColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="W0q-xG-lNg"/>
-                        <constraint firstAttribute="width" constant="296" id="xUl-e8-uSe"/>
+                        <constraint firstAttribute="height" constant="37" id="W0q-xG-lNg"/>
+                        <constraint firstAttribute="width" constant="307" id="xUl-e8-uSe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Calculate">
@@ -380,7 +380,7 @@
                 <constraint firstAttribute="trailing" secondItem="m2M-Ks-Q1W" secondAttribute="trailing" constant="-15" id="WTi-TD-3iZ"/>
                 <constraint firstItem="rSf-tW-Mkg" firstAttribute="top" secondItem="FNV-Vl-NaE" secondAttribute="bottom" constant="19" id="XFU-b0-3Ae"/>
                 <constraint firstItem="G8d-Lf-xSe" firstAttribute="leading" secondItem="exT-R5-30T" secondAttribute="leading" constant="8" id="YPX-4p-27s"/>
-                <constraint firstItem="IBv-n0-mPC" firstAttribute="centerX" secondItem="exT-R5-30T" secondAttribute="centerX" id="Yt5-zf-M9L"/>
+                <constraint firstItem="IBv-n0-mPC" firstAttribute="centerX" secondItem="exT-R5-30T" secondAttribute="centerX" constant="-0.5" id="Yt5-zf-M9L"/>
                 <constraint firstItem="Pvk-lb-pQ3" firstAttribute="top" secondItem="iOM-Ec-OIq" secondAttribute="bottom" constant="1" id="YxC-M1-vCy"/>
                 <constraint firstItem="rYd-69-OwS" firstAttribute="top" secondItem="Pvk-lb-pQ3" secondAttribute="bottom" constant="37" id="ah9-1b-Q6G"/>
                 <constraint firstAttribute="trailing" secondItem="rSf-tW-Mkg" secondAttribute="trailing" constant="-15" id="byi-DV-hcr"/>
@@ -395,7 +395,7 @@
                 <constraint firstItem="RFc-eE-cKr" firstAttribute="top" secondItem="exT-R5-30T" secondAttribute="top" constant="9" id="hhf-1a-z56"/>
                 <constraint firstItem="5nb-KX-W19" firstAttribute="top" secondItem="0PJ-de-IbS" secondAttribute="bottom" constant="79" id="iZ1-Ra-aC6"/>
                 <constraint firstItem="iOM-Ec-OIq" firstAttribute="top" secondItem="jLj-5Y-5bF" secondAttribute="bottom" constant="30" id="jzD-LO-fnk"/>
-                <constraint firstItem="IBv-n0-mPC" firstAttribute="top" secondItem="6I7-Ps-KOO" secondAttribute="bottom" constant="24" id="kRb-Ja-NZ8"/>
+                <constraint firstItem="IBv-n0-mPC" firstAttribute="top" secondItem="6I7-Ps-KOO" secondAttribute="bottom" constant="8" id="kRb-Ja-NZ8"/>
                 <constraint firstItem="5nb-KX-W19" firstAttribute="leading" secondItem="exT-R5-30T" secondAttribute="leading" constant="156" id="kbb-qD-B7G"/>
                 <constraint firstAttribute="trailing" secondItem="iOM-Ec-OIq" secondAttribute="trailing" constant="-15" id="o8Z-qZ-fy6"/>
                 <constraint firstItem="Nx5-YJ-cVK" firstAttribute="leading" secondItem="exT-R5-30T" secondAttribute="leading" constant="8" id="p6j-Id-0u6"/>
@@ -424,7 +424,7 @@
                     <exclude reference="BEl-Cw-Vgw"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="130" y="639.5"/>
+            <point key="canvasLocation" x="130" y="626"/>
         </view>
         <view contentMode="scaleToFill" id="PTl-gb-ocI">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
