@@ -258,6 +258,7 @@
                         <constraint firstAttribute="height" constant="42" id="Lhc-dR-THs"/>
                         <constraint firstAttribute="width" constant="247" id="pkv-ds-CGH"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="OK">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>

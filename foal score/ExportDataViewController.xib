@@ -22,7 +22,7 @@
                         <constraint firstAttribute="height" constant="21" id="0h2-2q-m21"/>
                         <constraint firstAttribute="width" constant="148" id="15U-h8-LjG"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -54,6 +54,7 @@
                         <constraint firstAttribute="height" constant="47" id="eOd-qX-ul6"/>
                         <constraint firstAttribute="width" constant="231" id="mk8-Gz-v0b"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Export data to your e-mail">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>

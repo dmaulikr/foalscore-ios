@@ -27,7 +27,7 @@
                         <constraint firstAttribute="width" constant="57" id="Ud6-H0-Ed8"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="hur-j2-xly"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -39,7 +39,7 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="129" id="i7y-a5-7R9"/>
                         <constraint firstAttribute="height" constant="55" id="vj5-9T-GyI"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -51,33 +51,10 @@
                         <constraint firstAttribute="height" constant="21" id="j7N-cx-ElN"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="upi-BH-zKX"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-Dz-toA">
-                    <rect key="frame" x="7" y="374" width="307" height="37"/>
-                    <color key="backgroundColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="S8g-pH-BKL"/>
-                        <constraint firstAttribute="height" constant="37" id="idD-9o-7Bc"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="qu1-uy-GN9"/>
-                        <constraint firstAttribute="width" constant="307" id="r4v-9P-so9"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <state key="normal">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Calculate">
-                                <attributes>
-                                    <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </state>
-                    <connections>
-                        <action selector="pressCalculateButton:" destination="-1" eventType="touchUpInside" id="EAg-0E-04W"/>
-                    </connections>
-                </button>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oY8-XK-Idj">
                     <rect key="frame" x="240" y="325" width="51" height="31"/>
                     <constraints>
@@ -112,6 +89,29 @@
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="separatorColor" red="1" green="0.13292620729999999" blue="0.7821538039" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-Dz-toA">
+                    <rect key="frame" x="7" y="374" width="307" height="37"/>
+                    <color key="backgroundColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="S8g-pH-BKL"/>
+                        <constraint firstAttribute="height" constant="37" id="idD-9o-7Bc"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="qu1-uy-GN9"/>
+                        <constraint firstAttribute="width" constant="307" id="r4v-9P-so9"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Calculate">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="pressCalculateButton:" destination="-1" eventType="touchUpInside" id="EAg-0E-04W"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -136,6 +136,7 @@
             </constraints>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="158" y="383"/>
         </view>
     </objects>
 </document>

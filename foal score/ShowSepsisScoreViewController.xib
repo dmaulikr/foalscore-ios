@@ -17,16 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bj-jx-kUP">
-                    <rect key="frame" x="183" y="83" width="99" height="63"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="63" id="HeX-iA-eoU"/>
-                        <constraint firstAttribute="width" constant="99" id="YrD-f1-2pq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-xC-6N8">
                     <rect key="frame" x="118" y="406" width="84" height="56"/>
                     <constraints>
@@ -34,7 +24,9 @@
                         <constraint firstAttribute="height" constant="56" id="xp9-sO-NFk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="Cancel"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="pressCancelButton:" destination="-1" eventType="touchUpInside" id="Jsz-Rl-sup"/>
                     </connections>
@@ -46,7 +38,9 @@
                         <constraint firstAttribute="width" constant="119" id="lX9-MD-BOq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="Add A Foal"/>
+                    <state key="normal" title="Add A Foal">
+                        <color key="titleColor" red="0.35294117650000001" green="0.066666666669999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="pressAddAFoalButton:" destination="-1" eventType="touchUpInside" id="Lcm-kC-J6B"/>
                     </connections>
@@ -57,7 +51,7 @@
                         <constraint firstAttribute="height" constant="115" id="1wj-qS-f16"/>
                         <constraint firstAttribute="width" constant="160" id="3OY-iU-0e8"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -68,6 +62,16 @@
                         <constraint firstAttribute="width" constant="294" id="dwY-0W-lvw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bj-jx-kUP">
+                    <rect key="frame" x="183" y="83" width="99" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="HeX-iA-eoU"/>
+                        <constraint firstAttribute="width" constant="99" id="YrD-f1-2pq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>

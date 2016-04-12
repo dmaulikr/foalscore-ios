@@ -34,7 +34,7 @@
                         <constraint firstAttribute="height" constant="21" id="7aW-Qz-9LP"/>
                         <constraint firstAttribute="width" constant="98" id="Idb-xL-Vf3"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -45,6 +45,7 @@
                         <constraint firstAttribute="width" constant="247" id="Gi4-0V-0hA"/>
                         <constraint firstAttribute="height" constant="42" id="K4H-RR-c5B"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Submit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>

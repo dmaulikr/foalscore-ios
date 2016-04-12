@@ -32,7 +32,7 @@
                         <constraint firstAttribute="height" constant="21" id="XBi-Li-D96"/>
                         <constraint firstAttribute="width" constant="99" id="Y7S-mK-4xj"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -43,6 +43,7 @@
                         <constraint firstAttribute="width" constant="247" id="IG2-ay-5cU"/>
                         <constraint firstAttribute="height" constant="42" id="eVU-u9-q4r"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Refer">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>
