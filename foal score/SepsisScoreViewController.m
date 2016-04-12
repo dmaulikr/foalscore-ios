@@ -380,6 +380,9 @@
     UIView* bv = [[UIView alloc]init];
     bv.backgroundColor = [UIColor colorWithRed:(116/255.0) green:(43/255.0) blue:(36/255.0) alpha:1];
     cell.selectedBackgroundView = bv;
+    if(indexPath.row == [self.scores[indexPath.section] count]-1){
+        cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+    }
     return cell;
 }
 #pragma mark - Table view data source

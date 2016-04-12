@@ -26,6 +26,11 @@
     return _choices;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.tabBarController.tabBar setHidden:YES];
+}
+
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame: self.view.bounds style:UITableViewStylePlain];
@@ -85,8 +90,13 @@
     [self.navigationItem setTitle:@"Miscellaneous"];
     self.tableView.separatorColor = [UIColor clearColor];
     [self.tableView setScrollEnabled:NO];
+    [self.tabBarController.tabBar setHidden:YES];
 
     // Do any additional setup after loading the view.
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [self.tabBarController.tabBar setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
