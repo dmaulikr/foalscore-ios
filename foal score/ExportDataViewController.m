@@ -63,7 +63,7 @@
             }}];
         
     }else{
-        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
+        [UiModal showModalWithTitle:@"Note" message:@"Please log in to export foals." buttonTitle:@"OK" viewController:self];
     }
     //
 }

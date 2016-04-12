@@ -39,7 +39,7 @@
             }}];
         
     }else{
-        [UiModal showModalWithTitle:@"Note" message:@"Login to view synced foals" buttonTitle:@"OK" viewController:self];
+        [UiModal showModalWithTitle:@"Note" message:@"Please log in to give feedback." buttonTitle:@"OK" viewController:self];
     }
 }
 
