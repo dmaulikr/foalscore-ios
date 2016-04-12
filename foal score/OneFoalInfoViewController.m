@@ -141,16 +141,17 @@
         CalculationModel* cal  = self.calculations[indexPath.row];
         if(cal.isSurvivalScore){
             cell.textLabel.textColor = [UIColor colorWithRed:(252/255.0) green:(81/255.0) blue:(87/255.0) alpha:1.0];
-            cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
+            cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:[self RightDateString:cal.date]];
         }else{
             cell.textLabel.textColor = [UIColor colorWithRed:(184/255.0) green:(206/255.0) blue:(255/255.0) alpha:1.0];
-            cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:cal.date];
+            cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:[self RightDateString:cal.date]];
         }
         cell.detailTextLabel.text = cal.message;
     }else{
         [cell.textLabel setText:@"No calculation history"];
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
+    cell.detailTextLabel.numberOfLines = 2;
     return cell;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
