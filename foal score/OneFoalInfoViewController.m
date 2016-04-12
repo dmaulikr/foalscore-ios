@@ -40,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self tableView];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     // Do any additional setup after loading the view from its nib.
     // add scroll View
     CGRect newFrame = self.scrollContent.frame;
@@ -143,7 +145,7 @@
             cell.textLabel.textColor = [UIColor colorWithRed:(252/255.0) green:(81/255.0) blue:(87/255.0) alpha:1.0];
             cell.textLabel.text = [[[@"Survival Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:[self RightDateString:cal.date]];
         }else{
-            cell.textLabel.textColor = [UIColor colorWithRed:(184/255.0) green:(206/255.0) blue:(255/255.0) alpha:1.0];
+            cell.textLabel.textColor = [UIColor colorWithRed:(82/255.0) green:(104/255.0) blue:(153/255.0) alpha:1.0];
             cell.textLabel.text = [[[@"Sepsis   Score: " stringByAppendingString:cal.score]stringByAppendingString:@"    "]stringByAppendingString:[self RightDateString:cal.date]];
         }
         cell.detailTextLabel.text = cal.message;
@@ -151,7 +153,8 @@
         [cell.textLabel setText:@"No calculation history"];
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
-    cell.detailTextLabel.numberOfLines = 2;
+    cell.detailTextLabel.numberOfLines = 0;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     return cell;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
