@@ -40,8 +40,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self tableView];
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-
     // Do any additional setup after loading the view from its nib.
     // add scroll View
     CGRect newFrame = self.scrollContent.frame;
