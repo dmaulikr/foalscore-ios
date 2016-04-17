@@ -32,7 +32,6 @@
     self.tableView.dataSource = self;
     [self tableView];
     [self.tableView reloadData];
-    NSLog(@"sss");
     
     // pr select
     NSIndexPath *p1 = [NSIndexPath indexPathForItem:5 inSection:0];

@@ -129,7 +129,6 @@
     if (self.isSurvivalScore) {
         NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
         [dict setObject:self.scoreID forKey:@"calculationId"];
-        NSLog(@"%@", foal.foalId);
         [dict setObject:foal.foalId forKey:@"foalId"];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]foalSurvivalScoreLink:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
@@ -148,7 +147,6 @@
     }else{
         NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
         [dict setObject:self.scoreID forKey:@"calculationId"];
-        NSLog(@"%@", foal.foalId);
         [dict setObject:foal.foalId forKey:@"foalId"];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]foalSepsisScoreLink:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {

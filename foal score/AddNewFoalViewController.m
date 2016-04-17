@@ -156,7 +156,6 @@
                                 [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
                                 [self.navigationController popViewControllerAnimated:YES];
                             } else {
-                                NSLog(@"%@ %@", @"Error", response[@"error"]);
                                 [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
                             }
                         } else {
@@ -212,7 +211,6 @@
                         
                         [self.navigationController popViewControllerAnimated:YES];
                     } else {
-                        NSLog(@"%@ %@", @"Error", response[@"error"]);
                         [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
                     }
                 } else {

@@ -122,7 +122,6 @@
     cell.detailTextLabel.text = date_string;
     //configure right buttons
     cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Edit" backgroundColor:[UIColor blueColor] callback:^BOOL(MGSwipeTableCell *sender) {
-        NSLog(@"Convenience callback for edit buttons!");
         AddNewFoalViewController* addNewFoalVC = [[AddNewFoalViewController alloc]initWithAnIndexOfFoalThatNeedToModify:indexPath.row ModifyOrNot:YES];
         [self.navigationController pushViewController:addNewFoalVC animated:YES];
         return YES;

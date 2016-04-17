@@ -104,7 +104,6 @@
                     [self.calculations addObject:calc];
         
                 }
-                NSLog(@"%@",@"RELOADING");
                 
                 [self.tableView reloadData];
             }else{

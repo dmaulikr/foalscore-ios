@@ -142,7 +142,6 @@
     if ([DataManager loginOrNot]) {
         // send HTTP request
         NSMutableDictionary* dict = self.buildingRequestDictionary;
-        NSLog(@"%@", dict);
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient] calculateSurvivalScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];

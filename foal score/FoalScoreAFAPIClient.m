@@ -176,11 +176,9 @@
         parameters:params
         progress:nil
         success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@",@"APIClient - success");
         block(responseObject, nil);
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",@"APIClient - error");
         block(nil, error);
         
     }];
@@ -194,11 +192,9 @@
     parameters:params
       progress:nil
        success:^(NSURLSessionDataTask *task, id responseObject) {
-           NSLog(@"%@",@"APIClient - success");
            block(responseObject, nil);
            
        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-           NSLog(@"%@",@"APIClient - error");
            block(nil, error);
            
        }];
@@ -211,11 +207,9 @@
     parameters:params
       progress:nil
        success:^(NSURLSessionDataTask *task, id responseObject) {
-           NSLog(@"%@",@"APIClient - success");
            block(responseObject, nil);
            
        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-           NSLog(@"%@",@"APIClient - error");
            block(nil, error);
            
        }];
@@ -228,11 +222,9 @@
     parameters:params
       progress:nil
        success:^(NSURLSessionDataTask *task, id responseObject) {
-           NSLog(@"%@",@"APIClient - success");
            block(responseObject, nil);
            
        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-           NSLog(@"%@",@"APIClient - error");
            block(nil, error);
            
        }];
@@ -245,12 +237,10 @@
     [self GET:@"contents/overview.json"
         parameters:nil
         progress:nil
-        success:^(NSURLSessionDataTask *task, id responseObject) {
-           NSLog(@"%@",@"APIClient - success");
+      success:^(NSURLSessionDataTask *task, id responseObject) {
            block(responseObject, nil);
            
        }failure:^(NSURLSessionDataTask *task, NSError *error) {
-           NSLog(@"%@",@"APIClient - error");
            block(nil, error);
            
        }];
@@ -262,11 +252,9 @@
    parameters:nil
      progress:nil
       success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSLog(@"%@",@"APIClient - success");
           block(responseObject, nil);
           
       }failure:^(NSURLSessionDataTask *task, NSError *error) {
-          NSLog(@"%@",@"APIClient - error");
           block(nil, error);
           
       }];
@@ -278,11 +266,9 @@
    parameters:nil
      progress:nil
       success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSLog(@"%@",@"APIClient - success");
           block(responseObject, nil);
           
       }failure:^(NSURLSessionDataTask *task, NSError *error) {
-          NSLog(@"%@",@"APIClient - error");
           block(nil, error);
           
       }];
@@ -293,11 +279,9 @@
    parameters:nil
      progress:nil
       success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSLog(@"%@",@"APIClient - success");
           block(responseObject, nil);
           
       }failure:^(NSURLSessionDataTask *task, NSError *error) {
-          NSLog(@"%@",@"APIClient - error");
           block(nil, error);
           
       }];
@@ -308,11 +292,9 @@
    parameters:nil
      progress:nil
       success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSLog(@"%@",@"APIClient - success");
           block(responseObject, nil);
           
       }failure:^(NSURLSessionDataTask *task, NSError *error) {
-          NSLog(@"%@",@"APIClient - error");
           block(nil, error);
           
       }];

@@ -63,7 +63,6 @@
                                  if(response) {
                                      if([response[@"status"] isEqual: @"success"]) {
                                          
-                                         NSLog(@"%@ %@", @"ID:", response[@"userObj"][@"User"][@"id"]);
                                          
                                          //Save user login status
                                          UserInfoModel* userInfo = [DataManager userInfo];
@@ -74,12 +73,10 @@
                                          //[self.navigationController pushViewController:userInfoVC animated:YES];
                                          [self dismissViewControllerAnimated:YES completion:nil];
                                      } else {
-                                         NSLog(@"%@ %@", @"Error", response[@"error"]);
                                          [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
                                      }
                                  } else {
                                      [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
-                                     NSLog(@"%@ %@", @"Error", [error localizedDescription]);
 
                                  }
                             }];
@@ -126,7 +123,6 @@
     //TODO
 }
 - (IBAction)pressNewUserButton:(id)sender {
-    NSLog(@"mama");
     RegisterViewController* rg = [[RegisterViewController alloc]init];
     rg.parent = self;
     [self presentViewController:rg animated:YES completion:nil];

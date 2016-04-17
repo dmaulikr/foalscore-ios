@@ -64,8 +64,6 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (response) {
             if ([response[@"status"] isEqual: @"success"]) {
-                NSLog(@"%@ %@", @"ID:", response[@"userObj"][@"User"][@"id"]);
-                
                 //Save user login status
                 UserInfoModel* userInfo = [DataManager userInfo];
                 [userInfo modifyUserName:name AndPassword:password AndEmailID:email];
@@ -80,9 +78,7 @@
                 [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
             }
         } else {
-            [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
-            NSLog(@"%@ %@", @"Error", [error localizedDescription]);
-        }
+            [UiModal showModalWithTitle:@"Network Error" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];        }
     }];
 }
 
