@@ -395,10 +395,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    cell.textLabel.highlightedTextColor = [UIColor blackColor];
     [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
+
 - (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     for ( NSIndexPath* selectedIndexPath in tableView.indexPathsForSelectedRows ) {
         if ( selectedIndexPath.section == indexPath.section )
