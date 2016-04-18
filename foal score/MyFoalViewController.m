@@ -30,6 +30,12 @@
     self.navigationItem.rightBarButtonItem = newAddingButton;
 
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    if([DataManager first]){
+        [UiModal showModalWithTitle:@"Note" message:@"sdsds" buttonTitle:@"Yes" viewController:self];
+    }
+}
 
 
 
