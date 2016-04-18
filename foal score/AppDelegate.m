@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -27,6 +28,12 @@
 
     // create 2 main controllers on main page
     SurvivalScoreViewController *tab1 = [[SurvivalScoreViewController alloc]init];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        [DataManager setFirst:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     SepsisScoreViewController *tab2 = [[SepsisScoreViewController alloc]init];
     // create UiNaviController for user info part
     UserInfoTableViewController *userInfor = [[UserInfoTableViewController alloc]init];
@@ -58,7 +65,7 @@
     self.window.rootViewController = tabBars;
     
     [self.window makeKeyAndVisible];
-    return YES;
+        return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

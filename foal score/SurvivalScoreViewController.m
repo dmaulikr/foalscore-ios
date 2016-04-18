@@ -29,7 +29,6 @@
 @end
 
 @implementation SurvivalScoreViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -83,6 +82,12 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    if([DataManager first]){
+        [UiModal showModalWithTitle:@"Note" message:@"" buttonTitle:@"Yes" viewController:self];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

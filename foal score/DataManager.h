@@ -10,7 +10,6 @@
 #import "UserInfoModel.h"
 #import "FoalInfoModel.h"
 @interface DataManager : NSObject
-
 @property (nonatomic, strong) UserInfoModel* userInfo;
 + (Boolean)loginOrNot;
 + (UserInfoModel *)userInfo;
@@ -19,4 +18,7 @@
 + (NSString *)foalInfoArchivePath;
 + (NSString *)userInfoArchivePath;
 + (BOOL)saveChanges;
+
++ (BOOL)first;
++ (void)setFirst:(BOOL)isFirst;
 @end

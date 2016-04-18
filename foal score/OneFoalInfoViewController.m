@@ -113,7 +113,17 @@
             [UiModal showModalWithTitle:@"Error" message:error.localizedDescription buttonTitle:@"OK" viewController:self];
         }
     }];
+    
+    UIBarButtonItem *newEditingButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(EditingButtonAction)];
+    self.navigationItem.rightBarButtonItem = newEditingButton;
 }
+
+- (void)EditingButtonAction{
+    AddNewFoalViewController* addNewFoalVC = [[AddNewFoalViewController alloc]initWithAnIndexOfFoalThatNeedToModify:self.indexOfFoal ModifyOrNot:YES];
+    addNewFoalVC.fromBarButton = true;
+    [self.navigationController pushViewController:addNewFoalVC animated:YES];
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self.tableView reloadData];

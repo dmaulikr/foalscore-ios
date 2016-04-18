@@ -10,6 +10,13 @@
 #import "DataManager.h"
 
 @implementation DataManager
+static BOOL first = false;
++ (BOOL)first{
+    return first;
+}
++ (void)setFirst:(BOOL)isFirst{
+    first =isFirst;
+}
 + (Boolean)loginOrNot{
     UserInfoModel* user = [DataManager userInfo];
     if (user!=nil && user.flag == true) {
@@ -18,7 +25,6 @@
         return false;
     }
 }
-
 + (UserInfoModel *)userInfo{
     // nextline only run once if it is started with static
     static UserInfoModel* userInfo = nil;

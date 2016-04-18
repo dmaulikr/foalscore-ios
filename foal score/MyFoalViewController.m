@@ -31,8 +31,6 @@
 
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     if([DataManager loginOrNot]){

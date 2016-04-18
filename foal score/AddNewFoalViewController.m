@@ -32,7 +32,13 @@
 @end
 
 @implementation AddNewFoalViewController
-
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.fromBarButton = false;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     // Do any additional setup after loading the view from its nib.
     // load UiSrollViewController
@@ -47,9 +53,11 @@
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.scrollContent];
     self.scrollView.contentSize = self.scrollContent.frame.size;
-    
-    self.navigationItem.title = @"Add New Foal";
-    
+    if(self.modify){
+        self.navigationItem.title = @"Edit Foal";
+    }else{
+        self.navigationItem.title = @"Add New Foal";
+    }
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideTheKeyBoard:)];
     gestureRecognizer.delegate = self;
@@ -154,7 +162,11 @@
                                 [newFoal setFoalId:foalId];
                                 [[DataManager foals] addObject:newFoal];
                                 [foals removeObjectAtIndex:self.indexOfFoalThatNeedToModify];
-                                [self.navigationController popViewControllerAnimated:YES];
+                                if (self.fromBarButton) {
+                                    [self.navigationController popToRootViewControllerAnimated:YES];
+                                }else{
+                                    [self.navigationController popViewControllerAnimated:YES];
+                                }
                             } else {
                                 [UiModal showModalWithTitle:@"Unsuccessful Request" message:response[@"error"] buttonTitle:@"OK" viewController:self];
                             }
