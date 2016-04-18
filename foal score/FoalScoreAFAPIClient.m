@@ -10,6 +10,8 @@
 
 @implementation FoalScoreAFAPIClient
 
+static NSString *const token = @"e2f7337be7aaa1de9d25d79d679e6913";
+
 +(instancetype)sharedClient
 {
     static FoalScoreAFAPIClient *_sharedClient = nil;
@@ -26,7 +28,7 @@
 
 -(void)registerNewUser:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"users/add.json"
         parameters:params
         progress:nil
@@ -39,7 +41,7 @@
 
 -(void)loginUser:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"users/login.json"
         parameters:params
         progress:nil
@@ -53,7 +55,7 @@
 
 -(void)forgotPassword:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"users/forgotpassword.json"
     parameters:params
       progress:nil
@@ -66,7 +68,7 @@
 
 -(void)changePassword:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"users/changepassword.json"
     parameters:params
       progress:nil
@@ -79,7 +81,7 @@
 
 -(void)referUser:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"users/referuser.json"
     parameters:params
       progress:nil
@@ -93,7 +95,7 @@
 
 -(void)userFeedback:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"users/feedback.json"
     parameters:params
       progress:nil
@@ -106,7 +108,7 @@
 
 -(void)addFoal:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"foals/add.json"
     parameters:params
       progress:nil
@@ -119,7 +121,7 @@
 
 -(void)editFoal:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"foals/edit.json"
     parameters:params
       progress:nil
@@ -132,7 +134,7 @@
 
 -(void)allFoals:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"foals/all.json"
     parameters:params
       progress:nil
@@ -145,7 +147,7 @@
 
 -(void)exportFoals:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"foals/export.json"
     parameters:params
       progress:nil
@@ -158,7 +160,7 @@
 
 -(void)foalScores:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"foals/foalcalculations.json"
     parameters:params
       progress:nil
@@ -171,7 +173,7 @@
 
 -(void)calculateSurvivalScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"survivalscores/add.json"
         parameters:params
         progress:nil
@@ -187,7 +189,7 @@
 
 -(void)calculateSepsisScore:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"sepsisscores/add.json"
     parameters:params
       progress:nil
@@ -202,7 +204,7 @@
 
 -(void)foalSurvivalScoreLink:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"survivalscores/foalsurvivalcalculatorlink.json"
     parameters:params
       progress:nil
@@ -217,7 +219,7 @@
 
 -(void)foalSepsisScoreLink:(NSMutableDictionary *)params withCompletitionBlock:(SuccessOrFailureCompletionBlock)block
 {
-    params[@"token"] = @"TODO";
+    params[@"token"] = token;
     [self POST:@"sepsisscores/foalsepsiscalculatorlink.json"
     parameters:params
       progress:nil

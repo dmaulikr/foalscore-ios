@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5605988D4AD6819B3E475985 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 016984577122FC205FFBA04A /* libPods.a */; };
-		63B3DCC41C8D50BD00421235 /* APIHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3DCC31C8D50BD00421235 /* APIHash.m */; };
 		BF06B9391C5705A100700A6F /* SurvivalScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */; };
 		BF06B93A1C5705A100700A6F /* SurvivalScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */; };
 		BF06B94B1C570E6800700A6F /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06B94A1C570E6800700A6F /* UserInfoTableViewController.m */; };
@@ -82,8 +81,6 @@
 /* Begin PBXFileReference section */
 		016984577122FC205FFBA04A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8B1658147B80DF76A1B7D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		63B3DCC31C8D50BD00421235 /* APIHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHash.m; sourceTree = "<group>"; };
-		63B3DCC51C8D50D800421235 /* APIHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIHash.h; sourceTree = "<group>"; };
 		BF06B9361C5705A100700A6F /* SurvivalScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurvivalScoreViewController.h; sourceTree = "<group>"; };
 		BF06B9371C5705A100700A6F /* SurvivalScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurvivalScoreViewController.m; sourceTree = "<group>"; };
 		BF06B9381C5705A100700A6F /* SurvivalScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurvivalScoreViewController.xib; sourceTree = "<group>"; };
@@ -242,8 +239,6 @@
 		63B3DCC11C8D505D00421235 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				63B3DCC31C8D50BD00421235 /* APIHash.m */,
-				63B3DCC51C8D50D800421235 /* APIHash.h */,
 				BF7379C61CB18ECE005452FF /* HtmlStriper.h */,
 				BF7379C71CB18ECE005452FF /* HtmlStriper.m */,
 			);
@@ -818,7 +813,6 @@
 				BF624A141CBADF380057B6BF /* FeedBackViewController.m in Sources */,
 				BFFC48F71CA4B19A009C2D91 /* RegisterViewController.m in Sources */,
 				BFAF13EB1C62E45000126A5B /* FoalInfoModel.m in Sources */,
-				63B3DCC41C8D50BD00421235 /* APIHash.m in Sources */,
 				BF7379CC1CB19870005452FF /* OverviewPage.m in Sources */,
 				CF1EEAE41C875EBF001269C1 /* FoalScoreAFAPIClient.m in Sources */,
 				BFD1B8181C63FF460023C8C6 /* AddNewFoalViewController.m in Sources */,
