@@ -13,7 +13,7 @@
 #import "FoalScoreAFAPIClient.h"
 #import "MBProgressHUD.h"
 @interface AddNewFoalViewController : UIViewController
-
+@property (nonatomic, assign)BOOL fromBarButton;
 - (instancetype)initWithAnIndexOfFoalThatNeedToModify:(NSInteger)index ModifyOrNot:(BOOL)modify;
 
 @end

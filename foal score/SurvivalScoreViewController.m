@@ -84,9 +84,8 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    BOOL flag = [DataManager first];
     if([DataManager first]){
-        [UiModal showModalWithTitle:@"Note" message:@"dsds" buttonTitle:@"Yes" viewController:self];
+        [UiModal showModalWithTitle:@"Note" message:@"" buttonTitle:@"Yes" viewController:self];
     }
 }
 - (void)didReceiveMemoryWarning {

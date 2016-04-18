@@ -13,8 +13,9 @@
 #import "UiModal.h"
 #import "FoalScoreAFAPIClient.h"
 #import "MBProgressHUD.h"
+#import "AddNewFoalViewController.h"
+
 @interface OneFoalInfoViewController : UIViewController
 // foal data
 @property (nonatomic, assign) NSInteger indexOfFoal;
-
 @end
