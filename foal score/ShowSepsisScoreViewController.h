@@ -16,5 +16,5 @@
 @property(nonatomic, assign) NSInteger sepsisScore;
 @property(nonatomic, copy)NSString* scoreID;
 @property(nonatomic, assign) BOOL networkError;
-
+@property(nonatomic, assign) BOOL anyNotAvailable;
 @end

@@ -8,7 +8,7 @@
 
 #import "SepsisScoreViewController.h"
 
-@interface SepsisScoreViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface SepsisScoreViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -17,10 +17,20 @@
 @property (nonatomic, strong) NSMutableArray* scores;
 @property (weak, nonatomic) IBOutlet UILabel *totalScore;
 @property (weak, nonatomic) IBOutlet UISwitch *shareOrNot;
+@property (nonatomic, assign)BOOL goOn;
 
 @end
 
+
 @implementation SepsisScoreViewController
+
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.goOn = false;
+    }
+    return self;
+}
 - (IBAction)pressShareInfo:(id)sender {
     [UiModal showModalWithTitle:@"Note" message:@"The FoalScore App offers an option to share data with The Ohio State University that will be used for future studies. If shared, data from this App will ONLY be used for research purposes and it will not reveal personal information from its users. User information is not required to use this App." buttonTitle:@"OK" viewController:self];
 }
@@ -425,12 +435,16 @@
     ShowSepsisScoreViewController* showSepsisScore = [[ShowSepsisScoreViewController alloc]init];
     NSInteger totalScore = [self calculateTotalScore];
     NSString* result = [self decideSepsis:totalScore];
+    BOOL anyNotAvailable = false;
     if([DataManager loginOrNot]){
         NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
         [dict setObject:[DataManager userInfo].userId forKey:@"userId"];
         for (NSIndexPath* select in selects) {
             NSInteger section = select.section;
             NSInteger row = select.row;
+            if(row == [self.As[section] count]-1){
+                anyNotAvailable = true;
+            }
             if(section == 0){
                 [dict setObject:self.scores[0][row] forKey:@"CBC_neutrophilCount"];
             }else if (section == 1){
@@ -466,6 +480,7 @@
         }else{
             [dict setObject:@"0" forKey:@"allowShare"];
         }
+
         // HTTP req
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[FoalScoreAFAPIClient sharedClient]calculateSepsisScore:dict withCompletitionBlock:^(NSDictionary *response, NSError *error) {
@@ -487,21 +502,34 @@
                 showSepsisScore.message = result;
                 showSepsisScore.sepsisScore = totalScore;
             }
+            showSepsisScore.anyNotAvailable = anyNotAvailable;
             UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
             nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
             [self presentViewController:nv animated:YES completion:nil];
         }];
     }else{
+        for (NSIndexPath* select in selects) {
+            NSInteger section = select.section;
+            NSInteger row = select.row;
+            if(row == [self.As[section] count]-1){
+                anyNotAvailable = true;
+            }
+        }
         showSepsisScore.networkError = false;
         showSepsisScore.scoreID = nil;
         showSepsisScore.message = result;
         showSepsisScore.sepsisScore = totalScore;
+        showSepsisScore.anyNotAvailable = anyNotAvailable;
         UINavigationController* nv = [[UINavigationController alloc]initWithRootViewController:showSepsisScore];
         nv.navigationBar.tintColor = [UIColor colorWithRed:(90/255.0) green:(17/255.0) blue:(10/255.0) alpha:1];
         [self presentViewController:nv animated:YES completion:nil];
     }
 }
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        self.goOn = true;
+    }
+}
 - (NSString*)decideSepsis:(NSInteger)totalScore{
     if(totalScore < 12){
         return @"The foal is predicted to not have Sepsis with 88% accuracy.";

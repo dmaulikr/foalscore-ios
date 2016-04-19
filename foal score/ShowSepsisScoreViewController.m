@@ -21,6 +21,13 @@
     self.scoreValueLabel.text = [@(self.sepsisScore) stringValue];
     self.resultLabel.text = self.message;
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    if(self.anyNotAvailable == true){
+        [UiModal showModalWithTitle:@"Note" message:@"You have selected the option \"Not Available\" for one or more questions. This may affect the accuracy of the results." buttonTitle:@"Yes" viewController:self];
+    }
+}
 - (IBAction)pressAddAFoalButton:(id)sender {
     if(self.scoreID != nil){
         ListOfFoalsChoosingToAttachedViewController* foalsToAttachedVC = [[ListOfFoalsChoosingToAttachedViewController alloc]init];
