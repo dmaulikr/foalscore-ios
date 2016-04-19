@@ -87,6 +87,8 @@
     if([DataManager first]){
         [UiModal showModalWithTitle:@"Note" message:@"This application is intended to be used by veterinary professionals as a supplementary tool to determine likelihood of Sepsis and Survival in neonatal foals. \n\nThe purpose of this application is not to replace veterinary clinical judgment and expertise, nor the consultation of authoritative sources like veterinary textbooks, and professional or institutional guidelines. \n\nBy clicking the OK button, you certify that you have read and understood this statement." buttonTitle:@"OK" viewController:self];
     }
+    [DataManager setFirst:NO];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
