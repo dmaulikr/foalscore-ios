@@ -188,13 +188,13 @@
         NSMutableArray* choices13 = [[NSMutableArray alloc]init];
         NSMutableArray* choices14 = [[NSMutableArray alloc]init];
 
-        NSString *c11 = [NSString stringWithFormat:@"%@%@",@"< 2.0 * ",tenSymbol];
+        NSString *c11 = [NSString stringWithFormat:@"%@%@/L",@"< 2.0 * ",tenSymbol];
         
-        NSString *c12 = [NSString stringWithFormat:@"%@%@",@"2.0 - 4.0* ",tenSymbol];
+        NSString *c12 = [NSString stringWithFormat:@"%@%@/L",@"2.0 - 4.0* ",tenSymbol];
         
-        NSString *c13 = [NSString stringWithFormat:@"%@%@",@"8.0 - 12.0 * ",tenSymbol];
+        NSString *c13 = [NSString stringWithFormat:@"%@%@/L",@"8.0 - 12.0 * ",tenSymbol];
         
-        NSString *c14 = [NSString stringWithFormat:@"%@%@",@"> 12.0 * ",tenSymbol];
+        NSString *c14 = [NSString stringWithFormat:@"%@%@/L",@"> 12.0 * ",tenSymbol];
         
         
         [choices1 addObject:c11];
@@ -204,11 +204,11 @@
         [choices1 addObject:@"Normal"];
         [choices1 addObject:@"Not Available"];
         
-        NSString *c21 = [NSString stringWithFormat:@"%@%@",@"> 2.0 * ",tenSymbol];
+        NSString *c21 = [NSString stringWithFormat:@"%@%@/L",@"> 2.0 * ",tenSymbol];
         
-        NSString *c22 = [NSString stringWithFormat:@"%@%@",@"0.05 - 0.20 * ",tenSymbol];
+        NSString *c22 = [NSString stringWithFormat:@"%@%@/L",@"0.05 - 0.20 * ",tenSymbol];
         
-        NSString *c23 = [NSString stringWithFormat:@"%@%@",@"< 0.05 * ",tenSymbol];
+        NSString *c23 = [NSString stringWithFormat:@"%@%@/L",@"< 0.05 * ",tenSymbol];
         
         [choices2 addObject:c21];
         [choices2 addObject:c22];
@@ -355,7 +355,7 @@
             header.textLabel.text=@"Fever";
             break;
         case 10:
-            header.textLabel.text=@"Hypotonia, coma depression, convulsions";
+            header.textLabel.text=@"Hypotonia, coma, depression, convulsions";
             break;
         case 11:
             header.textLabel.text=@"Anterior uveitis, diarrhea, respiratory distress, swollen joints, open wounds";

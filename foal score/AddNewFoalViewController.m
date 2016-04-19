@@ -24,8 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *rRate;
 @property (weak, nonatomic) IBOutlet UITextField *hRate;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sex;
-@property (weak, nonatomic) IBOutlet UISwitch *dystocia;
-@property (weak, nonatomic) IBOutlet UISwitch *survived;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *dystocia;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *survived;
 @property (weak, nonatomic) IBOutlet UISwitch *share;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
@@ -94,26 +94,35 @@
             [self.sex sendActionsForControlEvents:UIControlEventValueChanged];
         }
         if(foalNeedToModify.dystocia == true){
-            [self.dystocia setOn:YES animated:YES];
+            self.dystocia.selectedSegmentIndex = 0;
+            [self.dystocia sendActionsForControlEvents:UIControlEventValueChanged];
         }else{
-            [self.dystocia setOn:NO animated:YES];
+            self.dystocia.selectedSegmentIndex = 1;
+            [self.dystocia sendActionsForControlEvents:UIControlEventValueChanged];
         }
         if(foalNeedToModify.survivalUntilDischarge == true){
-            [self.survived setOn:YES animated:YES];
+            self.survived.selectedSegmentIndex = 0;
+            [self.survived sendActionsForControlEvents:UIControlEventValueChanged];
         }else{
-            [self.survived setOn:NO animated:YES];
-        }
+            self.survived.selectedSegmentIndex = 1;
+            [self.survived sendActionsForControlEvents:UIControlEventValueChanged];        }
     }
     
 }
 
 - (IBAction)pressSaveButton:(id)sender {
     
-    FoalInfoModel* newFoal = [[FoalInfoModel alloc]initWithName:self.name.text Age:[self.age.text integerValue] Breed:self.breed.text Temperature:[self.temp.text integerValue] RespiratoryRate:[self.rRate.text integerValue] HeartRate:[self.hRate.text integerValue] Sex:@"Colt" Dystocia:self.dystocia.isOn SurvivalUntilDischarge:self.survived.isOn Date:[NSDate date]];
+    FoalInfoModel* newFoal = [[FoalInfoModel alloc]initWithName:self.name.text Age:[self.age.text integerValue] Breed:self.breed.text Temperature:[self.temp.text integerValue] RespiratoryRate:[self.rRate.text integerValue] HeartRate:[self.hRate.text integerValue] Sex:@"Colt" Dystocia:YES SurvivalUntilDischarge:YES Date:[NSDate date]];
     if(self.sex.selectedSegmentIndex == 0){
         newFoal.sex = @"Colt";
     }else{
         newFoal.sex = @"Filly";
+    }
+    if(self.dystocia.selectedSegmentIndex ==1){
+        newFoal.dystocia = NO;
+    }
+    if(self.survived.selectedSegmentIndex ==1){
+        newFoal.survivalUntilDischarge = NO;
     }
     NSMutableArray* foals = [DataManager foals];
     if (self.modify) {
@@ -134,12 +143,12 @@
                     [dict setObject:self.rRate.text forKey:@"respiratoryRate"];
                     [dict setObject:self.hRate.text forKey:@"heartRate"];
                     
-                    if (self.dystocia.isOn) {
+                    if (self.dystocia.selectedSegmentIndex == 0) {
                         [dict setObject:@"Yes" forKey:@"dystocia"];
                     }else{
                         [dict setObject:@"No" forKey:@"dystocia"];
                     }
-                    if(self.survived.isOn){
+                    if(self.survived.selectedSegmentIndex == 0){
                         [dict setObject:@"Yes" forKey:@"survivedUntilHospitalDischarge"];
                     }else{
                         [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];
@@ -194,12 +203,12 @@
             [dict setObject:self.rRate.text forKey:@"respiratoryRate"];
             [dict setObject:self.hRate.text forKey:@"heartRate"];
             
-            if (self.dystocia.isOn) {
+            if (self.dystocia.selectedSegmentIndex == 0) {
                 [dict setObject:@"Yes" forKey:@"dystocia"];
             }else{
                 [dict setObject:@"No" forKey:@"dystocia"];
             }
-            if(self.survived.isOn){
+            if(self.survived.selectedSegmentIndex == 0){
                 [dict setObject:@"Yes" forKey:@"survivedUntilHospitalDischarge"];
             }else{
                 [dict setObject:@"No" forKey:@"survivedUntilHospitalDischarge"];

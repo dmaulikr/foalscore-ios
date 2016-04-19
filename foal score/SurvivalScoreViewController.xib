@@ -288,21 +288,6 @@
                         <action selector="segementChoosing:" destination="-1" eventType="valueChanged" id="QH2-yh-TLG"/>
                     </connections>
                 </segmentedControl>
-                <segmentedControl opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-de-IbS">
-                    <rect key="frame" x="8" y="455" width="178" height="29"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="28" id="Jy3-Kw-TtU"/>
-                        <constraint firstAttribute="width" constant="178" id="k22-Wk-Okl"/>
-                    </constraints>
-                    <segments>
-                        <segment title="≤ 4x10³"/>
-                        <segment title="&gt; 4x10³"/>
-                    </segments>
-                    <color key="tintColor" red="0.3529411764705882" green="0.066666666666666666" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                    <connections>
-                        <action selector="segementChoosing:" destination="-1" eventType="valueChanged" id="74r-22-Gqk"/>
-                    </connections>
-                </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share data with The Ohio State University?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I7-Ps-KOO">
                     <rect key="frame" x="12" y="538" width="148" height="48"/>
                     <constraints>
@@ -347,6 +332,21 @@
                         <action selector="pressCalculator:" destination="-1" eventType="touchUpInside" id="1I9-PQ-LwE"/>
                     </connections>
                 </button>
+                <segmentedControl opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-de-IbS">
+                    <rect key="frame" x="8" y="455" width="178" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="Jy3-Kw-TtU"/>
+                        <constraint firstAttribute="width" constant="178" id="k22-Wk-Okl"/>
+                    </constraints>
+                    <segments>
+                        <segment title="≤ 4x10³/uL"/>
+                        <segment title="&gt; 4x10³/uL"/>
+                    </segments>
+                    <color key="tintColor" red="0.3529411764705882" green="0.066666666666666666" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="segementChoosing:" destination="-1" eventType="valueChanged" id="74r-22-Gqk"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>

@@ -18,8 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *rRateLable;
 @property (weak, nonatomic) IBOutlet UILabel *hRateLable;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sexSeg;
-@property (weak, nonatomic) IBOutlet UISwitch *dystociaSwich;
-@property (weak, nonatomic) IBOutlet UISwitch *survivedSwich;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *dystociaSwich;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *survivedSwich;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UIView *scrollContent;
 
@@ -68,14 +68,19 @@
         [self.sexSeg sendActionsForControlEvents:UIControlEventValueChanged];
     }
     if(foalNeedToShow.dystocia == true){
-        [self.dystociaSwich setOn:YES animated:YES];
+        self.dystociaSwich.selectedSegmentIndex = 0;
+        [self.dystociaSwich sendActionsForControlEvents:UIControlEventValueChanged];
     }else{
-        [self.dystociaSwich setOn:NO animated:YES];
+        self.dystociaSwich.selectedSegmentIndex = 1;
+        [self.dystociaSwich sendActionsForControlEvents:UIControlEventValueChanged];
     }
     if(foalNeedToShow.survivalUntilDischarge == true){
-        [self.survivedSwich setOn:YES animated:YES];
-    }else{
-        [self.survivedSwich setOn:NO animated:YES];
+        self.survivedSwich.selectedSegmentIndex = 0;
+        [self.survivedSwich sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+    else{
+        self.survivedSwich.selectedSegmentIndex = 1;
+        [self.survivedSwich sendActionsForControlEvents:UIControlEventValueChanged];
     }
     
     self.sexSeg.enabled = NO;
