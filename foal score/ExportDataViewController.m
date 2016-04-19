@@ -172,8 +172,8 @@
     NSArray* selects = [self.tableView indexPathsForSelectedRows];
     for(NSIndexPath* select in selects){
         FoalInfoModel* foal = self.foals[select.row];
-        [foalIDsString stringByAppendingString:foal.foalId];
-        [foalIDsString stringByAppendingString:@","];
+        foalIDsString = [foalIDsString stringByAppendingString:foal.foalId];
+        foalIDsString = [foalIDsString stringByAppendingString:@","];
     }
     if ([foalIDsString length] > 0) {
         foalIDsString = [foalIDsString substringWithRange:NSMakeRange(0,[foalIDsString length] - 1)];
