@@ -49,11 +49,6 @@ static BOOL first = false;
         if(!foals){
             foals = [[NSMutableArray alloc]init];
         }
-//        // Test---------------------------------------
-//        FoalInfoModel* foal1 = [[FoalInfoModel alloc]initWithName:@"Seabiscuit" Age:1 Breed:@"Thoroughbred" Temperature:98.6 RespiratoryRate:45 HeartRate:55 Sex:@"Colt" Dystocia:NO SurvivalUntilDischarge:YES Date:[NSDate date]];
-//        FoalInfoModel* foal2 = [[FoalInfoModel alloc]initWithName:@"Mahubah" Age:2 Breed:@"Thoroughbred" Temperature:98.7 RespiratoryRate:64 HeartRate:70 Sex:@"Filly" Dystocia:YES SurvivalUntilDischarge:YES Date:[NSDate date]];
-//        [foals addObject:foal1];
-//        [foals addObject:foal2];
     });
     return foals;
 }

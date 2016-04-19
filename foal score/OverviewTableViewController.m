@@ -37,8 +37,10 @@
 }
 
 - (void)backButtonAction{
+    [[[FoalScoreAFAPIClient sharedClient] operationQueue] cancelAllOperations];
     self.tabBarController.tabBar.hidden = NO;
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (UITableView *)tableView{
@@ -63,17 +65,6 @@
     return _choices;
 }
 
-//- (NSMutableArray *)contents{
-//    if(_contents == nil){
-//        _contents = [[NSMutableArray alloc]initWithCapacity:5];
-//        [_contents addObject:@"111111111111111"];
-//        [_contents addObject:@"222222222222222"];
-//        [_contents addObject:@"333333333333333"];
-//        [_contents addObject:@"444444444444444"];
-//        [_contents addObject:@"Cities Recover After Winter Storm Jonas Posted: Jan 26 2016 10:45 AM ES Updated: Jan 26 2016 05:00 PM EST Meteorologist Domenica Davis gives an overview of the impacts and travel conditions followi...read more Cities Recover After Winter Storm Jonas weather.com Posted: Jan 26 2016 10:45 AM EST Updated: Jan 26 2016 05:00 PM ESTMeteorologist Domenica Davis gives an overview of the impacts and travel conditions following Winter Storm Jonas."];
-//    }
-//    return _contents;
-//}
 
 #pragma mark - Table view data source
 
@@ -197,6 +188,5 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
 }
-
 
 @end

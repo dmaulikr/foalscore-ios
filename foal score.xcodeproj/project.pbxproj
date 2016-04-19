@@ -239,6 +239,8 @@
 		63B3DCC11C8D505D00421235 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */,
+				CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */,
 				BF7379C61CB18ECE005452FF /* HtmlStriper.h */,
 				BF7379C71CB18ECE005452FF /* HtmlStriper.m */,
 			);
@@ -512,8 +514,6 @@
 				BFEF05DE1C54006300EF60C5 /* Assets.xcassets */,
 				BFEF05E01C54006300EF60C5 /* LaunchScreen.storyboard */,
 				BF7187011C5D802D00605426 /* DataManager */,
-				CF1EEAE21C875EBF001269C1 /* FoalScoreAFAPIClient.h */,
-				CF1EEAE31C875EBF001269C1 /* FoalScoreAFAPIClient.m */,
 				63B3DCC11C8D505D00421235 /* Utilities */,
 				BF4F81171CACAB760021AD1F /* UiComponents */,
 			);
