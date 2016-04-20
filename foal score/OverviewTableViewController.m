@@ -27,6 +27,12 @@
     [self.alertView show];
 }
 
+- (void)dealloc {
+    [self.alertView dismissWithClickedButtonIndex:0 animated:NO];
+    [self.alertView setDelegate:nil];
+    self.alertView = nil;
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     self.alertView = nil;
 }
