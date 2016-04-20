@@ -78,7 +78,7 @@
     }
     [cell.textLabel setText:[self.choices objectAtIndex:indexPath.row]];
     cell.imageView.image = [UIImage imageNamed:
-                            [NSString stringWithFormat:@"icon%d.png",indexPath.row]];
+                            [NSString stringWithFormat:@"icon%ld.png",(long)indexPath.row]];
     
     return cell;
 }

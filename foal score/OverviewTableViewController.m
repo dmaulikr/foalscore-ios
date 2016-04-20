@@ -137,6 +137,7 @@
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
+                text = [text stringByAppendingString:@"\nIcon Credits:\nSepsis Icon made by Freepik from flaticon.com"];
                 [UiModal showModalWithTitle:self.choices[4] message:text buttonTitle:@"Yes" viewController:self];
             } else {
                 [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
