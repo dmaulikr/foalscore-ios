@@ -103,13 +103,15 @@
     if(indexPath.row == 0){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        //
+        
+        // Prevent user from tapping back button.
         UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height + self.tabBarController.tabBar.frame.size.height)];
         glass.backgroundColor = [UIColor grayColor];
         glass.alpha = 0.5;
         UIWindow* window = [UIApplication sharedApplication].keyWindow;
         [window addSubview:glass];
         //
+        
         [api getSepsisInfo:^(NSDictionary *response, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [glass removeFromSuperview];
@@ -125,8 +127,18 @@
     }else if (indexPath.row ==1){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        // Prevent user from tapping back button.
+        UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height + self.tabBarController.tabBar.frame.size.height)];
+        glass.backgroundColor = [UIColor grayColor];
+        glass.alpha = 0.5;
+        UIWindow* window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:glass];
+        //
+        
         [api getSurvivalInfo:^(NSDictionary *response, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [glass removeFromSuperview];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
@@ -140,8 +152,18 @@
     }else if (indexPath.row ==4){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        // Prevent user from tapping back button.
+        UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height + self.tabBarController.tabBar.frame.size.height)];
+        glass.backgroundColor = [UIColor grayColor];
+        glass.alpha = 0.5;
+        UIWindow* window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:glass];
+        //
+        
         [api getOverview:^(NSDictionary *response, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [glass removeFromSuperview];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
@@ -156,8 +178,18 @@
     }else if (indexPath.row == 2){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        // Prevent user from tapping back button.
+        UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height + self.tabBarController.tabBar.frame.size.height)];
+        glass.backgroundColor = [UIColor grayColor];
+        glass.alpha = 0.5;
+        UIWindow* window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:glass];
+        //
+        
         [api getReferences:^(NSDictionary *response, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [glass removeFromSuperview];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 OverviewPage* op = [[OverviewPage alloc]init];
@@ -174,8 +206,18 @@
     }else{
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        // Prevent user from tapping back button.
+        UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height + self.tabBarController.tabBar.frame.size.height)];
+        glass.backgroundColor = [UIColor grayColor];
+        glass.alpha = 0.5;
+        UIWindow* window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:glass];
+        //
+        
         [api getTerminology:^(NSDictionary *response, NSError *error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [glass removeFromSuperview];
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 OverviewPage* op = [[OverviewPage alloc]init];
