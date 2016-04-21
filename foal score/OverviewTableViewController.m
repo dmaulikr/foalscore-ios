@@ -8,10 +8,8 @@
 
 #import "OverviewTableViewController.h"
 
-@interface OverviewTableViewController () <UITableViewDelegate, UITableViewDataSource> {
-    UIAlertView *alertView;
-}
-@property (nonatomic, retain) UIAlertView *alertView;
+@interface OverviewTableViewController () <UITableViewDelegate, UITableViewDataSource>
+
 @property (nonatomic, strong) NSMutableArray *choices;
 @property (nonatomic, strong) UITableView *tableView;
 //@property (nonatomic, strong) NSString *content;
@@ -20,20 +18,8 @@
 
 @implementation OverviewTableViewController
 
-@synthesize alertView;
-
-- (void)showAlertWithMessage:(NSString*) msg Title:(NSString*)title ButtonTitle:(NSString*)button{
-    self.alertView = [self.alertView initWithTitle:title message:msg delegate:self cancelButtonTitle:button otherButtonTitles:nil];
-    [self.alertView show];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    self.alertView = nil;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.alertView = [UIAlertView alloc];
     // Do any additional setup after loading the view.
     self.tabBarController.tabBar.hidden = YES;
     [self.navigationItem setTitle:@"Overview"];
@@ -122,26 +108,11 @@
             if (response) {
                 NSString* text_html = [response valueForKey:@"text"];
                 NSString* text = [HtmlStriper stringByStrippingHTML:text_html];
-                
-                if ([UIAlertController class]) {
-                    [UiModal showModalWithTitle:self.choices[0] message:text buttonTitle:@"Yes" viewController:self];
-                } else {
-                    // Check to see if overview vc has been dismissed
-                    if (self.alertView){
-                        [self showAlertWithMessage:text Title:self.choices[0] ButtonTitle:@"Yes"];
-                    }
-                }
+                [UiModal showModalWithTitle:self.choices[0] message:text buttonTitle:@"Yes" viewController:self];
             } else {
-                if ([UIAlertController class]) {
-                    [UiModal showModalWithTitle:@"Error" message:[error localizedDescription] buttonTitle:@"Ok" viewController:self];
-                } else {
-                    // Check to see if overview vc has been dismissed
-                    if (self.alertView){
-                        [self showAlertWithMessage:[error localizedDescription] Title:@"Error" ButtonTitle:@"Yes"];
-                    }
-                }
+                [UiModal showModalWithTitle:@"ERROR" message:[error localizedDescription] buttonTitle:@"OK" viewController:self];
             }
-            
+
         }];
     }else if (indexPath.row ==1){
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
