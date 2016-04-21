@@ -104,7 +104,7 @@
         FoalScoreAFAPIClient* api = [FoalScoreAFAPIClient sharedClient];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //
-        UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height)];
+        UIView* glass = [[UIView alloc]initWithFrame:CGRectMake(0,-1 * self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height + self.tabBarController.tabBar.frame.size.height)];
         glass.backgroundColor = [UIColor grayColor];
         glass.alpha = 0.5;
         UIWindow* window = [UIApplication sharedApplication].keyWindow;
